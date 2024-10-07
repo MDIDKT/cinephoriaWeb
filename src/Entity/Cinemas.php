@@ -25,18 +25,16 @@ class Cinemas
     #[ORM\Column(type: Types::TEXT)]
     private ?string $adresse = null;
 
+    /**
+     * @var Collection<int, Reservations>
+     */
+    #[ORM\OneToMany(targetEntity: Reservations::class, mappedBy: 'cinemas')]
+    private Collection $reservations;
 
-    #[ORM\ManyToMany(targetEntity: Films::class, inversedBy: 'cinemas')]
-    private Collection $film;
-
-
-    #[ORM\OneToMany(targetEntity: Salles::class, mappedBy: 'cinema')]
-    private Collection $salles;
 
     public function __construct()
     {
-        $this->film = new ArrayCollection();
-        $this->salles = new ArrayCollection();
+        $this->reservations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -80,62 +78,44 @@ class Cinemas
         return $this;
     }
 
-    /**
-     * @return Collection<int, Films>
-     */
-    public function getFilm(): Collection
+    public function __toString(): string
     {
-        return $this->film;
+        return $this->nom;
     }
 
-    public function addFilm(Films $film): static
+    public function removeFilm (Films $param)
     {
-        if (!$this->film->contains($film)) {
-            $this->film->add($film);
+
+    }
+
+    /**
+     * @return Collection<int, Reservations>
+     */
+    public function getReservations(): Collection
+    {
+        return $this->reservations;
+    }
+
+    public function addReservation(Reservations $reservation): static
+    {
+        if (!$this->reservations->contains($reservation)) {
+            $this->reservations->add($reservation);
+            $reservation->setCinemas($this);
         }
 
         return $this;
     }
 
-    public function removeFilm(Films $film): static
+    public function removeReservation(Reservations $reservation): static
     {
-        $this->film->removeElement($film);
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Salles>
-     */
-    public function getSalles(): Collection
-    {
-        return $this->salles;
-    }
-
-    public function addSalle(Salles $salle): static
-    {
-        if (!$this->salles->contains($salle)) {
-            $this->salles->add($salle);
-            $salle->setCinema($this);
-        }
-
-        return $this;
-    }
-
-    public function removeSalle(Salles $salle): static
-    {
-        if ($this->salles->removeElement($salle)) {
+        if ($this->reservations->removeElement($reservation)) {
             // set the owning side to null (unless already changed)
-            if ($salle->getCinema() === $this) {
-                $salle->setCinema(null);
+            if ($reservation->getCinemas() === $this) {
+                $reservation->setCinemas(null);
             }
         }
 
         return $this;
     }
 
-    public function __toString(): string
-    {
-        return $this->nom;
-    }
 }

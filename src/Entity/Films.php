@@ -49,10 +49,18 @@ class Films
     #[ORM\Column(length: 255)]
     private ?string $qualite = null;
 
+    /**
+     * @var Collection<int, Reservations>
+     */
+    #[ORM\OneToMany(targetEntity: Reservations::class, mappedBy: 'films')]
+    private Collection $reservations;
+
+
     public function __construct()
     {
         $this->cinemas = new ArrayCollection();
         $this->seances = new ArrayCollection();
+        $this->reservations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -205,4 +213,36 @@ class Films
     {
         return $this->titre;
     }
+
+    /**
+     * @return Collection<int, Reservations>
+     */
+    public function getReservations(): Collection
+    {
+        return $this->reservations;
+    }
+
+    public function addReservation(Reservations $reservation): static
+    {
+        if (!$this->reservations->contains($reservation)) {
+            $this->reservations->add($reservation);
+            $reservation->setFilms($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservation(Reservations $reservation): static
+    {
+        if ($this->reservations->removeElement($reservation)) {
+            // set the owning side to null (unless already changed)
+            if ($reservation->getFilms() === $this) {
+                $reservation->setFilms(null);
+            }
+        }
+
+        return $this;
+    }
+
+
 }

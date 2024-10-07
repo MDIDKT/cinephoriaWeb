@@ -16,9 +16,6 @@ class Salles
     #[ORM\Column]
     private ?int $numeroSalle = null;
 
-    #[ORM\ManyToOne(inversedBy: 'salles')]
-    private ?Cinemas $cinema = null;
-
     #[ORM\Column]
     private ?int $nombreSiege = null;
 
@@ -42,17 +39,6 @@ class Salles
         return $this;
     }
 
-    public function getCinema(): ?Cinemas
-    {
-        return $this->cinema;
-    }
-
-    public function setCinema(?Cinemas $cinema): static
-    {
-        $this->cinema = $cinema;
-
-        return $this;
-    }
 
     public function getNombreSiege(): ?int
     {
@@ -78,8 +64,5 @@ class Salles
         return $this;
     }
 
-    public function __toString(): string
-    {
-        return $this->cinema;
-    }
+
 }
