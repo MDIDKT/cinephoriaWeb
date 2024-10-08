@@ -90,4 +90,9 @@ class Seance
 
         return $this;
     }
+
+    public function __toString(): string
+    {
+        return $this->getHeureDebut()->format('H:i');
+    }
 }

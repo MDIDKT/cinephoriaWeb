@@ -23,7 +23,7 @@ class Reservations
     private ?Seance $seances = null;
 
     #[ORM\Column]
-    private int $nombrePlaces;
+    private ?int $nombrePlaces = null;
 
     #[ORM\Column]
     private ?bool $typePMR = null;
@@ -31,6 +31,10 @@ class Reservations
     #[ORM\Column]
     private ?float $prixTotal = null;
 
+    public function __construct()
+    {
+        $this->prixTotal = $this->getNombrePlaces() * 8;
+    }
     public function getId(): ?int
     {
         return $this->id;

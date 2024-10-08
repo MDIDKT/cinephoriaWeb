@@ -5,8 +5,10 @@ namespace App\Controller\Admin;
 use App\Entity\Reservations;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
+
 
 class ReservationsCrudController extends AbstractCrudController
 {
@@ -15,19 +17,21 @@ class ReservationsCrudController extends AbstractCrudController
         return Reservations::class;
     }
 
-
     public function configureFields(string $pageName): iterable
     {
         return [
-            AssociationField::new ('cinemas', 'Cinéma'),
-            AssociationField::new ('films', 'Film'),
-            AssociationField::new ('seances', 'Séance'),
-            IntegerField::new ('nombrePlace', 'Nombre de places'),
-            IntegerField::new ('typePMR', 'Type PMR ?'),
-            MoneyField::new ('prixTotal', 'Prix total')
-                ->setCurrency ('EUR')
-                ->setStoredAsCents (false)
-                ->setNumDecimals (2),
+            AssociationField::new('cinemas'),
+            AssociationField::new('films'),
+            AssociationField::new('seances'),
+            IntegerField::new('nombrePlaces'),
+            BooleanField::new('typePMR'),
+            MoneyField::new('prixTotal')
+                ->setCurrency('EUR')
+                ->setStoredAsCents(false)
+                ->setCustomOption('storedAsCents', false)
+                /*->setFormTypeOption('mapped', false)*/
+                ->setFormTypeOption ('disabled', true)
+
         ];
     }
 
