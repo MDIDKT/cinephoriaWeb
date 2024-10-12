@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Reservations{% endblock %}
+
+{% block body %}
+    <h1>Edit Reservations</h1>
+
+    <form method="post" action="{{ path('app_reservations_edit', {'id': reservation.id}) }}" onsubmit="return confirm('Valider la modification de votre reservation?');">
+        {{ form_widget(form) }}
+        <button class="btn">Valider</button>
+    </form>
+
+
+    <a href="{{ path('app_reservations_index') }}">Retour à la liste</a>
+
+{% endblock %}

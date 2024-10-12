@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reservations index{% endblock %}
+
+{% block body %}
+    <h1>Vos réservations</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Places</th>
+                <th>Type PMR ?</th>
+                <th>Prix Total</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reservation in reservations %}
+            <tr>
+                <td>{{ reservation.nombrePlaces }}</td>
+                <td>{{ reservation.typePMR ? 'Oui' : 'Non' }}</td>
+                <td>{{ reservation.prixTotal }}</td>
+                <td>
+                    <a href="{{ path('app_reservations_show', {'id': reservation.id}) }}">Voir</a>
+                    <a href="{{ path('app_reservations_edit', {'id': reservation.id}) }}">Modifier</a>
+                    {{ include('reservations/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
