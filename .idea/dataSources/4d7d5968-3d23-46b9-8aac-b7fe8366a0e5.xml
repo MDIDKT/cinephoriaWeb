@@ -834,7 +834,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Charset>utf8mb4</Charset>
     </collation>
     <schema id="224" parent="1" name="Admin_Cinephoria">
-      <LastIntrospectionLocalTimestamp>2024-10-08.18:23:47</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-10-09.17:41:49</LastIntrospectionLocalTimestamp>
       <CollationName>utf8_general_ci</CollationName>
     </schema>
     <schema id="225" parent="1" name="AppECF">
@@ -1124,7 +1124,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="296" parent="260" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>3</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
@@ -1142,7 +1142,6 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <StoredType>int(11)|0s</StoredType>
     </column>
     <column id="300" parent="260" name="nombre_places">
-      <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>

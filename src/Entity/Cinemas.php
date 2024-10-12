@@ -118,4 +118,8 @@ class Cinemas
         return $this;
     }
 
+    public function addFilm (Films $param)
+    {
+    }
+
 }
