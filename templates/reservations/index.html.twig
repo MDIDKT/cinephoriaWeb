@@ -19,9 +19,9 @@
                 <td>{{ reservation.nombrePlaces }}</td>
                 <td>{{ reservation.typePMR ? 'Oui' : 'Non' }}</td>
                 <td>{{ reservation.prixTotal }}</td>
-                <td>
-                    <a href="{{ path('app_reservations_show', {'id': reservation.id}) }}">Voir</a>
-                    <a href="{{ path('app_reservations_edit', {'id': reservation.id}) }}">Modifier</a>
+                <td class="d-flex">
+                    <a href="{{ path('app_reservations_show', {'id': reservation.id}) }}" class="btn btn-primary m-lg-3 ">Voir</a>
+                    <a href="{{ path('app_reservations_edit', {'id': reservation.id}) }}" class="btn btn-secondary m-lg-3 ">Modifier</a>
                     {{ include('reservations/_delete_form.html.twig') }}
                 </td>
             </tr>

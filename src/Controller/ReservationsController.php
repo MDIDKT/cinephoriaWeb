@@ -32,8 +32,6 @@ final class ReservationsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($reservation);
             $entityManager->flush();
-
-            return $this->redirectToRoute('app_reservations_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('reservations/new.html.twig', [

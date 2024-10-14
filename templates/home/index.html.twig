@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello HomeController!{% endblock %}
+
+
+{% block body %}
+    <html lang="fr">
+    <!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page d'accueil</title>
+    </head>
+    <body>
+
+
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <h1>Bienvenue sur MonSite</h1>
+                <p>Créez rapidement votre frontend avec Bootstrap et intégrez-le facilement dans Symfony.</p>
+                <a href="#" class="btn btn-primary">En savoir plus</a>
+
+                {#                <div>
+                    <h2>Recuperer les films rechercher</h2>
+                    <form action="{{ path('app_film_index') }}" method="get">
+                        <div class="input-group mb-3">
+                            <label>
+                                <input type="text" class="form-control" placeholder="Rechercher un film" name="search" value="{{ search }}">
+                            </label>
+                            <button class="btn btn-primary" type="submit">Rechercher</button>
+                        </div>
+                    </form>
+                </div>#}
+
+                <h1>Liste des films</h1>
+            </div>
+            <div class="wrapper m-5 p-3">
+                <a href="#"> <img src="https://images.unsplash.com/photo-1726853522009-8dc4c4e306a3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=slava-auchynnikau-se0aqc8f2bA-unsplash.jpg" alt="Image illustrative 1" class="img-fluid m-2" style="width: 300px; height: auto;"></a>
+                <img src="https://images.unsplash.com/photo-1726853522009-8dc4c4e306a3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=slava-auchynnikau-se0aqc8f2bA-unsplash.jpg" alt="Image illustrative 1" class="img-fluid m-2" style="width: 300px; height: auto;">
+
+                <img src="https://via.placeholder.com/200" alt="Image illustrative 2" class="img-fluid m-2">
+                <img src="https://via.placeholder.com/200" alt="Image illustrative 3" class="img-fluid m-2">
+            </div>
+
+        </div>
+    </div>
+    </body>
+    </html>
+{% endblock %}
