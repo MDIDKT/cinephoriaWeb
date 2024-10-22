@@ -28,4 +28,11 @@ return [
     '@symfony/stimulus-bridge' => [
         'version' => '3.2.2',
     ],
+    'mdb-ui-kit' => [
+        'version' => '8.0.0',
+    ],
+    'mdb-ui-kit/css/mdb.min.css' => [
+        'version' => '8.0.0',
+        'type' => 'css',
+    ],
 ];
