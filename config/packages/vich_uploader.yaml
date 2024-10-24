@@ -1,7 +1,8 @@
 vich_uploader:
-  db_driver: orm  # 'orm' pour Doctrine ORM ou 'mongodb' si tu utilises MongoDB
-  mappings:       # Ici tu configures les entités qui auront des fichiers uploadés
-    your_mapping_name: # Remplace par le nom que tu veux
-      uri_prefix: /uploads/images
-      upload_destination: '%kernel.project_dir%/public/uploads/images'
-      namer: Vich\UploaderBundle\Naming\UniqidNamer
+    db_driver: orm
+
+    mappings:
+        affiche:
+            uri_prefix: /images/films
+            upload_destination: '%kernel.project_dir%/public/images/films'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

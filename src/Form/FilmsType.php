@@ -16,7 +16,7 @@ class FilmsType extends AbstractType
         $builder
             ->add('titre')
             ->add('description')
-            ->add('affiche')
+            ->add('imageFile')
             ->add('ageMinimum')
             ->add('coupDeCoeur')
             ->add('note')

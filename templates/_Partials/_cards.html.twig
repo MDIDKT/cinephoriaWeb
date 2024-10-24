@@ -1,12 +1,14 @@
-<div class="film-item bg-gray-50 shadow-lg rounded-lg overflow-hidden w-full sm:w-1/2 lg:w-1/4 p-4 m-4 flex flex-col justify-between">
-    {% if film.affiche %}
-        <img src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="{{ film.titre }} affiche" class="w-full h-48 object-cover">
-    {% endif %}
-    <div class="film-info p-4 flex flex-col flex-grow">
-        <h2 class="text-lg font-semibold mb-2 text-gray-800">{{ film.titre }}</h2>
-        <p class="text-sm text-gray-600 mb-4 line-clamp-3">{{ film.description }}</p>
+<div class="film-item bg-gray-50 shadow-lg rounded-lg overflow-hidden w-full sm:w-1/2 lg:w-1/4 m-4 flex flex-col justify-between">
+    <img src="{{ vich_uploader_asset(film, 'imageFile') }}" alt="{{ film.titre }}" class="w-full object-cover">
+
+    <div class="film-item__content p-4">
+        <h2 class="film-item__title text-2xl font-bold text-gray-800">{{ film.titre }}</h2>
+        <p class="film-item__description text-gray-600">{{ film.description }}</p>
+        <p class="film-item__age-minimum text-gray-600">Age minimum: {{ film.ageMinimum }}</p>
+        <p class="film-item__note text-gray-600">Note: {{ film.note }}</p>
+        <p class="film-item__qualite text-gray-600">Qualité: {{ film.qualite }}</p>
     </div>
-    <div class="flex justify-center pb-4">
-        <a href="{{ film.id }}" class="bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700 transition-all">Voir le film</a> <!-- Bouton d'action -->
+    <div class="film-item__actions p-6">
+        <a href="{{ path('app_films_show', {'id': film.id}) }}" class="bg-blue-500">Voir</a>
     </div>
 </div>

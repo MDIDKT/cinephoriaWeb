@@ -25,7 +25,7 @@
                 <td>{{ film.id }}</td>
                 <td>{{ film.titre }}</td>
                 <td>{{ film.description }}</td>
-                <td>{{ film.affiche }}</td>
+                <td> <img src="{{ vich_uploader_asset(film, 'imageFile') }}" alt="{{ film.titre }}"></td>
                 <td>{{ film.ageMinimum }}</td>
                 <td>{{ film.coupDeCoeur ? 'Yes' : 'No' }}</td>
                 <td>{{ film.note }}</td>
