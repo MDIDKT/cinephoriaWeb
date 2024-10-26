@@ -15,10 +15,6 @@ class Reservations
 
     #[ORM\ManyToOne(inversedBy: 'reservations')]
     private ?Cinemas $cinemas = null;
-
-    #[ORM\ManyToOne(inversedBy: 'reservations')]
-    private ?Films $films = null;
-
     #[ORM\ManyToOne(inversedBy: 'reservations')]
     private ?Seance $seances = null;
 
@@ -30,6 +26,12 @@ class Reservations
 
     #[ORM\Column]
     private ?float $prixTotal = null;
+
+    #[ORM\ManyToOne(inversedBy: 'reservations')]
+    private ?Films $Films = null;
+
+    #[ORM\ManyToOne(inversedBy: 'reservations')]
+    private ?Films $films = null;
 
     public function __construct()
     {
@@ -48,18 +50,6 @@ class Reservations
     public function setCinemas(?Cinemas $cinemas): static
     {
         $this->cinemas = $cinemas;
-
-        return $this;
-    }
-
-    public function getFilms(): ?Films
-    {
-        return $this->films;
-    }
-
-    public function setFilms(?Films $films): static
-    {
-        $this->films = $films;
 
         return $this;
     }
@@ -108,6 +98,18 @@ class Reservations
     public function setPrixTotal(float $prixTotal): static
     {
         $this->prixTotal = $prixTotal;
+
+        return $this;
+    }
+
+    public function getFilms(): ?Films
+    {
+        return $this->films;
+    }
+
+    public function setFilms(?Films $films): static
+    {
+        $this->films = $films;
 
         return $this;
     }

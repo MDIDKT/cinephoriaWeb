@@ -1,14 +1,6 @@
-<div class="film-item bg-gray-50 shadow-lg rounded-lg overflow-hidden w-full sm:w-1/2 lg:w-1/4 m-4 flex flex-col justify-between">
+<div class="film-item bg-gray-50 shadow-sm rounded-lg overflow-hidden w-full sm:w-1/2 lg:w-1/4 m-4 flex flex-col justify-between">
+    <a href="{{ path('app_films_show', {'id': film.id}) }}" class="block w-full h-64 relative">
+        <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
     <img src="{{ vich_uploader_asset(film, 'imageFile') }}" alt="{{ film.titre }}" class="w-full object-cover">
-
-    <div class="film-item__content p-4">
-        <h2 class="film-item__title text-2xl font-bold text-gray-800">{{ film.titre }}</h2>
-        <p class="film-item__description text-gray-600">{{ film.description }}</p>
-        <p class="film-item__age-minimum text-gray-600">Age minimum: {{ film.ageMinimum }}</p>
-        <p class="film-item__note text-gray-600">Note: {{ film.note }}</p>
-        <p class="film-item__qualite text-gray-600">Qualité: {{ film.qualite }}</p>
-    </div>
-    <div class="film-item__actions p-6">
-        <a href="{{ path('app_films_show', {'id': film.id}) }}" class="bg-blue-500">Voir</a>
-    </div>
+    </a>
 </div>
