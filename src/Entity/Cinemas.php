@@ -31,10 +31,17 @@ class Cinemas
     #[ORM\OneToMany(targetEntity: Reservations::class, mappedBy: 'cinemas')]
     private Collection $reservations;
 
+    /**
+     * @var Collection<int, Films>
+     */
+    #[ORM\OneToMany(targetEntity: Films::class, mappedBy: 'cinemas')]
+    private Collection $films;
+
 
     public function __construct()
     {
         $this->reservations = new ArrayCollection();
+        $this->films = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -120,6 +127,14 @@ class Cinemas
 
     public function addFilm (Films $param)
     {
+    }
+
+    /**
+     * @return Collection<int, Films>
+     */
+    public function getFilms(): Collection
+    {
+        return $this->films;
     }
 
 }

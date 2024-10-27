@@ -28,9 +28,6 @@ class Reservations
     private ?float $prixTotal = null;
 
     #[ORM\ManyToOne(inversedBy: 'reservations')]
-    private ?Films $Films = null;
-
-    #[ORM\ManyToOne(inversedBy: 'reservations')]
     private ?Films $films = null;
 
     public function __construct()
@@ -113,4 +110,5 @@ class Reservations
 
         return $this;
     }
+
 }

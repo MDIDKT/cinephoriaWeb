@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
+
 #[Route('/reservations')]
 final class ReservationsController extends AbstractController
 {
@@ -32,12 +33,14 @@ final class ReservationsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($reservation);
             $entityManager->flush();
-        }
 
+            return $this->redirectToRoute('app_reservations_index', [], Response::HTTP_SEE_OTHER);
+        }
         return $this->render('reservations/new.html.twig', [
             'reservation' => $reservation,
             'form' => $form,
         ]);
+
     }
 
     #[Route('/{id}', name: 'app_reservations_show', methods: ['GET'])]
