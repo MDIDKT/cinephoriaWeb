@@ -25,7 +25,7 @@ class Reservations
     private ?bool $typePMR = null;
 
     #[ORM\Column]
-    private ?float $prixTotal = null;
+    private ?float $prixTotal;
 
     #[ORM\ManyToOne(inversedBy: 'reservations')]
     private ?Films $films = null;
@@ -89,7 +89,7 @@ class Reservations
 
     public function getPrixTotal(): ?float
     {
-        return $this->prixTotal;
+        return $this->prixTotal = $this->getNombrePlaces() * 8 + $this->isTypePMR ($this->typePMR*5/100);
     }
 
     public function setPrixTotal(float $prixTotal): static
