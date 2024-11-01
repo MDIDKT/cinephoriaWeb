@@ -19,7 +19,7 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_home_show', methods: ['GET'])]
+    #[Route('/films/{id}', name: 'app_home_show', methods: ['GET'])]
     public function show(Films $film): Response
     {
         return $this->render('films/show.html.twig', [

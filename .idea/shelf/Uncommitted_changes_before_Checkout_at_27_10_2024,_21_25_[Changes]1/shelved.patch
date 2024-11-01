@@ -1,0 +1,36 @@
+Index: .idea/symfony2.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"Symfony2PluginSettings\">\n    <option name=\"pluginEnabled\" value=\"true\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/symfony2.xml b/.idea/symfony2.xml
+--- a/.idea/symfony2.xml	(revision 823b6638ccd2baf6b08944b5afaf19a663d0f573)
++++ b/.idea/symfony2.xml	(date 1730060666224)
+@@ -2,5 +2,6 @@
+ <project version="4">
+   <component name="Symfony2PluginSettings">
+     <option name="pluginEnabled" value="true" />
++    <option name="lastServiceGeneratorLanguage" value="yaml" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/dataSources.local.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"dataSourceStorageLocal\" created-in=\"PS-242.23339.16\">\n    <data-source name=\"localhost:8889\" uuid=\"4d7d5968-3d23-46b9-8aac-b7fe8366a0e5\">\n      <database-info product=\"MySQL\" version=\"5.7.39\" jdbc-version=\"4.2\" driver-name=\"MySQL Connector/J\" driver-version=\"mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c)\" dbms=\"MYSQL\" exact-version=\"5.7.39\" exact-driver-version=\"8.2\">\n        <extra-name-characters>#@</extra-name-characters>\n        <identifier-quote-string>`</identifier-quote-string>\n        <jdbc-catalog-is-schema>true</jdbc-catalog-is-schema>\n      </database-info>\n      <case-sensitivity plain-identifiers=\"mixed\" quoted-identifiers=\"mixed\" />\n      <secret-storage>master_key</secret-storage>\n      <user-name>root</user-name>\n      <schema-mapping>\n        <introspection-scope>\n          <node kind=\"schema\" qname=\"Admin_Cinephoria\" />\n        </introspection-scope>\n      </schema-mapping>\n    </data-source>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.local.xml b/.idea/dataSources.local.xml
+--- a/.idea/dataSources.local.xml	(revision 823b6638ccd2baf6b08944b5afaf19a663d0f573)
++++ b/.idea/dataSources.local.xml	(date 1730060666225)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="dataSourceStorageLocal" created-in="PS-242.23339.16">
++  <component name="dataSourceStorageLocal" created-in="PS-242.23726.107">
+     <data-source name="localhost:8889" uuid="4d7d5968-3d23-46b9-8aac-b7fe8366a0e5">
+       <database-info product="MySQL" version="5.7.39" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c)" dbms="MYSQL" exact-version="5.7.39" exact-driver-version="8.2">
+         <extra-name-characters>#@</extra-name-characters>

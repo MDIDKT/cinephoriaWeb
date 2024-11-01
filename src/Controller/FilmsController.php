@@ -49,6 +49,7 @@ final class FilmsController extends AbstractController
 
         if (!$film) {
             throw $this->createNotFoundException('Le film avec cet identifiant n\'existe pas.');
+            throw $this->NotFoundException('Film introuvable');
         }
 
         return $this->render('films/show.html.twig', [
