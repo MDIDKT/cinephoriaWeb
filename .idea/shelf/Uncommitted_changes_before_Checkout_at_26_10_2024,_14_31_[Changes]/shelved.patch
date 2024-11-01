@@ -1,0 +1,962 @@
+Index: templates/_Partials/_navbar.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><div class=\"=container\">\n    <nav class=\"navbar navbar-expand-lg bg-primary\" data-bs-theme=\"dark\">\n\n        <div class=\"container-fluid\">\n            <a class=\"navbar-brand\" href=\"#\">LOGO</a>\n\n            <div class=\"collapse navbar-collapse \" id=\"navbarColor01\">\n                <ul class=\"navbar-nav me-auto\">\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link active\" href=\"{{ path('app_home') }}\">page d'accueil\n                            <span class=\"visually-hidden\">(current)</span>\n                        </a>\n                    </li>\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link\" href=\"{{ path('app_reservations_index') }}\">Vos Réservation</a>\n                    </li>\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link\" href=\"{{ path('app_reservations_new') }}\">New Réservation</a>\n                    </li>\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link\" href=\"{{ path('app_films_index') }}\">Films</a>\n                    </li>\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link\" href=\"\">Contact</a>\n                    </li>\n                    {% if app.request.attributes.get('_route') == 'app_home' %}\n                    {% endif %}\n                </ul>\n\n                <form class=\"d-flex\">\n                    <label>\n                        <button class=\"btn btn-primary btn-lg my-2 my-sm-0 m-1\" type=\"button\" onclick=\"window.location.href='{{ path('app_login') }}'\">Connexion</button>\n                    </label>\n                    <label>\n                        <button class=\"btn btn-primary btn-lg my-2 my-sm-0 m-1\" type=\"button\" onclick=\"window.location.href='{{ path('app_register') }}'\">Inscription</button>\n                    </label>\n                </form>\n\n                <div class=\"d-flex\">\n                    <form class=\"d-flex\">\n                        <label>\n                            <input class=\"form-control me-2\" type=\"text\" placeholder=\"Recherche\">\n                        </label>\n                        <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Rechercher</button>\n                    </form>\n                </div>\n                <div class=\"d-flex\">\n                    <form class=\"d-flex\">\n                        <label>\n                            <button class=\"btn btn-primary btn-lg my-2 my-sm-0 m-1\" type=\"button\" onclick=\"window.location.href='{{ path('app_logout') }}'\">Déconnexion</button>\n                        </label>\n                    </form>\n                </div>\n        </div>\n            <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" >\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n        </div>\n\n    </nav>\n</div>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/_Partials/_navbar.html.twig b/templates/_Partials/_navbar.html.twig
+--- a/templates/_Partials/_navbar.html.twig	(revision 624b1a92e26654221492ddf1f5bb3c04ddab6ca8)
++++ b/templates/_Partials/_navbar.html.twig	(date 1729945702494)
+@@ -11,7 +11,7 @@
+                             <span class="visually-hidden">(current)</span>
+                         </a>
+                     </li>
+-                    <li class="nav-item">
++{#                    <li class="nav-item">
+                         <a class="nav-link" href="{{ path('app_reservations_index') }}">Vos Réservation</a>
+                     </li>
+                     <li class="nav-item">
+@@ -19,7 +19,7 @@
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" href="{{ path('app_films_index') }}">Films</a>
+-                    </li>
++                    </li>#}
+                     <li class="nav-item">
+                         <a class="nav-link" href="">Contact</a>
+                     </li>
+Index: src/Controller/FilmsController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nnamespace App\\Controller;\n\nuse App\\Entity\\Films;\nuse App\\Form\\FilmsType;\nuse App\\Repository\\FilmsRepository;\nuse Doctrine\\ORM\\EntityManagerInterface;\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\nuse Symfony\\Component\\HttpFoundation\\Request;\nuse Symfony\\Component\\HttpFoundation\\Response;\nuse Symfony\\Component\\Routing\\Attribute\\Route;\n\n#[Route('/films')]\nfinal class FilmsController extends AbstractController\n{\n    #[Route(name: 'app_films_index', methods: ['GET'])]\n    public function index(FilmsRepository $filmsRepository): Response\n    {\n        return $this->render('films/index.html.twig', [\n            'films' => $filmsRepository->findAll(),\n        ]);\n    }\n\n    #[Route('/new', name: 'app_films_new', methods: ['GET', 'POST'])]\n    public function new(Request $request, EntityManagerInterface $entityManager): Response\n    {\n        $film = new Films();\n        $form = $this->createForm(FilmsType::class, $film);\n        $form->handleRequest($request);\n\n        if ($form->isSubmitted() && $form->isValid()) {\n            $entityManager->persist($film);\n            $entityManager->flush();\n\n            return $this->redirectToRoute('app_films_index', [], Response::HTTP_SEE_OTHER);\n        }\n\n        return $this->render('films/new.html.twig', [\n            'film' => $film,\n            'form' => $form,\n        ]);\n    }\n\n    #[Route('/{id}', name: 'app_films_show', methods: ['GET'])]\n    public function show(Films $film): Response\n    {\n        return $this->render('films/show.html.twig', [\n            'film' => $film,\n        ]);\n    }\n\n    #[Route('/{id}/edit', name: 'app_films_edit', methods: ['GET', 'POST'])]\n    public function edit(Request $request, Films $film, EntityManagerInterface $entityManager): Response\n    {\n        $form = $this->createForm(FilmsType::class, $film);\n        $form->handleRequest($request);\n\n        if ($form->isSubmitted() && $form->isValid()) {\n            $entityManager->flush();\n\n            return $this->redirectToRoute('app_films_index', [], Response::HTTP_SEE_OTHER);\n        }\n\n        return $this->render('films/edit.html.twig', [\n            'film' => $film,\n            'form' => $form,\n        ]);\n    }\n\n    #[Route('/{id}', name: 'app_films_delete', methods: ['POST'])]\n    public function delete(Request $request, Films $film, EntityManagerInterface $entityManager): Response\n    {\n        if ($this->isCsrfTokenValid('delete'.$film->getId(), $request->getPayload()->getString('_token'))) {\n            $entityManager->remove($film);\n            $entityManager->flush();\n        }\n\n        return $this->redirectToRoute('app_films_index', [], Response::HTTP_SEE_OTHER);\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Controller/FilmsController.php b/src/Controller/FilmsController.php
+--- a/src/Controller/FilmsController.php	(revision 624b1a92e26654221492ddf1f5bb3c04ddab6ca8)
++++ b/src/Controller/FilmsController.php	(date 1729945658466)
+@@ -1,81 +1,0 @@
+-<?php
+-
+-namespace App\Controller;
+-
+-use App\Entity\Films;
+-use App\Form\FilmsType;
+-use App\Repository\FilmsRepository;
+-use Doctrine\ORM\EntityManagerInterface;
+-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+-use Symfony\Component\HttpFoundation\Request;
+-use Symfony\Component\HttpFoundation\Response;
+-use Symfony\Component\Routing\Attribute\Route;
+-
+-#[Route('/films')]
+-final class FilmsController extends AbstractController
+-{
+-    #[Route(name: 'app_films_index', methods: ['GET'])]
+-    public function index(FilmsRepository $filmsRepository): Response
+-    {
+-        return $this->render('films/index.html.twig', [
+-            'films' => $filmsRepository->findAll(),
+-        ]);
+-    }
+-
+-    #[Route('/new', name: 'app_films_new', methods: ['GET', 'POST'])]
+-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+-    {
+-        $film = new Films();
+-        $form = $this->createForm(FilmsType::class, $film);
+-        $form->handleRequest($request);
+-
+-        if ($form->isSubmitted() && $form->isValid()) {
+-            $entityManager->persist($film);
+-            $entityManager->flush();
+-
+-            return $this->redirectToRoute('app_films_index', [], Response::HTTP_SEE_OTHER);
+-        }
+-
+-        return $this->render('films/new.html.twig', [
+-            'film' => $film,
+-            'form' => $form,
+-        ]);
+-    }
+-
+-    #[Route('/{id}', name: 'app_films_show', methods: ['GET'])]
+-    public function show(Films $film): Response
+-    {
+-        return $this->render('films/show.html.twig', [
+-            'film' => $film,
+-        ]);
+-    }
+-
+-    #[Route('/{id}/edit', name: 'app_films_edit', methods: ['GET', 'POST'])]
+-    public function edit(Request $request, Films $film, EntityManagerInterface $entityManager): Response
+-    {
+-        $form = $this->createForm(FilmsType::class, $film);
+-        $form->handleRequest($request);
+-
+-        if ($form->isSubmitted() && $form->isValid()) {
+-            $entityManager->flush();
+-
+-            return $this->redirectToRoute('app_films_index', [], Response::HTTP_SEE_OTHER);
+-        }
+-
+-        return $this->render('films/edit.html.twig', [
+-            'film' => $film,
+-            'form' => $form,
+-        ]);
+-    }
+-
+-    #[Route('/{id}', name: 'app_films_delete', methods: ['POST'])]
+-    public function delete(Request $request, Films $film, EntityManagerInterface $entityManager): Response
+-    {
+-        if ($this->isCsrfTokenValid('delete'.$film->getId(), $request->getPayload()->getString('_token'))) {
+-            $entityManager->remove($film);
+-            $entityManager->flush();
+-        }
+-
+-        return $this->redirectToRoute('app_films_index', [], Response::HTTP_SEE_OTHER);
+-    }
+-}
+Index: tests/Controller/FilmsControllerTest.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nnamespace App\\Tests\\Controller;\n\nuse App\\Entity\\Films;\nuse Doctrine\\ORM\\EntityManagerInterface;\nuse Doctrine\\ORM\\EntityRepository;\nuse Symfony\\Bundle\\FrameworkBundle\\KernelBrowser;\nuse Symfony\\Bundle\\FrameworkBundle\\Test\\WebTestCase;\n\nfinal class FilmsControllerTest extends WebTestCase\n{\n    private KernelBrowser $client;\n    private EntityManagerInterface $manager;\n    private EntityRepository $repository;\n    private string $path = '/films/';\n\n    protected function setUp(): void\n    {\n        $this->client = static::createClient();\n        $this->manager = static::getContainer()->get('doctrine')->getManager();\n        $this->repository = $this->manager->getRepository(Films::class);\n\n        foreach ($this->repository->findAll() as $object) {\n            $this->manager->remove($object);\n        }\n\n        $this->manager->flush();\n    }\n\n    public function testIndex(): void\n    {\n        $this->client->followRedirects();\n        $crawler = $this->client->request('GET', $this->path);\n\n        self::assertResponseStatusCodeSame(200);\n        self::assertPageTitleContains('Film index');\n\n        // Use the $crawler to perform additional assertions e.g.\n        // self::assertSame('Some text on the page', $crawler->filter('.p')->first());\n    }\n\n    public function testNew(): void\n    {\n        $this->markTestIncomplete();\n        $this->client->request('GET', sprintf('%snew', $this->path));\n\n        self::assertResponseStatusCodeSame(200);\n\n        $this->client->submitForm('Save', [\n            'film[titre]' => 'Testing',\n            'film[description]' => 'Testing',\n            'film[affiche]' => 'Testing',\n            'film[ageMinimum]' => 'Testing',\n            'film[coupDeCoeur]' => 'Testing',\n            'film[note]' => 'Testing',\n            'film[qualite]' => 'Testing',\n            'film[cinemas]' => 'Testing',\n        ]);\n\n        self::assertResponseRedirects($this->path);\n\n        self::assertSame(1, $this->repository->count([]));\n    }\n\n    public function testShow(): void\n    {\n        $this->markTestIncomplete();\n        $fixture = new Films();\n        $fixture->setTitre('My Title');\n        $fixture->setDescription('My Title');\n        $fixture->setAffiche('My Title');\n        $fixture->setAgeMinimum('My Title');\n        $fixture->setCoupDeCoeur('My Title');\n        $fixture->setNote('My Title');\n        $fixture->setQualite('My Title');\n        $fixture->setCinemas('My Title');\n\n        $this->manager->persist($fixture);\n        $this->manager->flush();\n\n        $this->client->request('GET', sprintf('%s%s', $this->path, $fixture->getId()));\n\n        self::assertResponseStatusCodeSame(200);\n        self::assertPageTitleContains('Film');\n\n        // Use assertions to check that the properties are properly displayed.\n    }\n\n    public function testEdit(): void\n    {\n        $this->markTestIncomplete();\n        $fixture = new Films();\n        $fixture->setTitre('Value');\n        $fixture->setDescription('Value');\n        $fixture->setAffiche('Value');\n        $fixture->setAgeMinimum('Value');\n        $fixture->setCoupDeCoeur('Value');\n        $fixture->setNote('Value');\n        $fixture->setQualite('Value');\n        $fixture->setCinemas('Value');\n\n        $this->manager->persist($fixture);\n        $this->manager->flush();\n\n        $this->client->request('GET', sprintf('%s%s/edit', $this->path, $fixture->getId()));\n\n        $this->client->submitForm('Update', [\n            'film[titre]' => 'Something New',\n            'film[description]' => 'Something New',\n            'film[affiche]' => 'Something New',\n            'film[ageMinimum]' => 'Something New',\n            'film[coupDeCoeur]' => 'Something New',\n            'film[note]' => 'Something New',\n            'film[qualite]' => 'Something New',\n            'film[cinemas]' => 'Something New',\n        ]);\n\n        self::assertResponseRedirects('/films/');\n\n        $fixture = $this->repository->findAll();\n\n        self::assertSame('Something New', $fixture[0]->getTitre());\n        self::assertSame('Something New', $fixture[0]->getDescription());\n        self::assertSame('Something New', $fixture[0]->getAffiche());\n        self::assertSame('Something New', $fixture[0]->getAgeMinimum());\n        self::assertSame('Something New', $fixture[0]->getCoupDeCoeur());\n        self::assertSame('Something New', $fixture[0]->getNote());\n        self::assertSame('Something New', $fixture[0]->getQualite());\n        self::assertSame('Something New', $fixture[0]->getCinemas());\n    }\n\n    public function testRemove(): void\n    {\n        $this->markTestIncomplete();\n        $fixture = new Films();\n        $fixture->setTitre('Value');\n        $fixture->setDescription('Value');\n        $fixture->setAffiche('Value');\n        $fixture->setAgeMinimum('Value');\n        $fixture->setCoupDeCoeur('Value');\n        $fixture->setNote('Value');\n        $fixture->setQualite('Value');\n        $fixture->setCinemas('Value');\n\n        $this->manager->persist($fixture);\n        $this->manager->flush();\n\n        $this->client->request('GET', sprintf('%s%s', $this->path, $fixture->getId()));\n        $this->client->submitForm('Delete');\n\n        self::assertResponseRedirects('/films/');\n        self::assertSame(0, $this->repository->count([]));\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tests/Controller/FilmsControllerTest.php b/tests/Controller/FilmsControllerTest.php
+--- a/tests/Controller/FilmsControllerTest.php	(revision 624b1a92e26654221492ddf1f5bb3c04ddab6ca8)
++++ b/tests/Controller/FilmsControllerTest.php	(date 1729945658455)
+@@ -1,155 +1,0 @@
+-<?php
+-
+-namespace App\Tests\Controller;
+-
+-use App\Entity\Films;
+-use Doctrine\ORM\EntityManagerInterface;
+-use Doctrine\ORM\EntityRepository;
+-use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+-
+-final class FilmsControllerTest extends WebTestCase
+-{
+-    private KernelBrowser $client;
+-    private EntityManagerInterface $manager;
+-    private EntityRepository $repository;
+-    private string $path = '/films/';
+-
+-    protected function setUp(): void
+-    {
+-        $this->client = static::createClient();
+-        $this->manager = static::getContainer()->get('doctrine')->getManager();
+-        $this->repository = $this->manager->getRepository(Films::class);
+-
+-        foreach ($this->repository->findAll() as $object) {
+-            $this->manager->remove($object);
+-        }
+-
+-        $this->manager->flush();
+-    }
+-
+-    public function testIndex(): void
+-    {
+-        $this->client->followRedirects();
+-        $crawler = $this->client->request('GET', $this->path);
+-
+-        self::assertResponseStatusCodeSame(200);
+-        self::assertPageTitleContains('Film index');
+-
+-        // Use the $crawler to perform additional assertions e.g.
+-        // self::assertSame('Some text on the page', $crawler->filter('.p')->first());
+-    }
+-
+-    public function testNew(): void
+-    {
+-        $this->markTestIncomplete();
+-        $this->client->request('GET', sprintf('%snew', $this->path));
+-
+-        self::assertResponseStatusCodeSame(200);
+-
+-        $this->client->submitForm('Save', [
+-            'film[titre]' => 'Testing',
+-            'film[description]' => 'Testing',
+-            'film[affiche]' => 'Testing',
+-            'film[ageMinimum]' => 'Testing',
+-            'film[coupDeCoeur]' => 'Testing',
+-            'film[note]' => 'Testing',
+-            'film[qualite]' => 'Testing',
+-            'film[cinemas]' => 'Testing',
+-        ]);
+-
+-        self::assertResponseRedirects($this->path);
+-
+-        self::assertSame(1, $this->repository->count([]));
+-    }
+-
+-    public function testShow(): void
+-    {
+-        $this->markTestIncomplete();
+-        $fixture = new Films();
+-        $fixture->setTitre('My Title');
+-        $fixture->setDescription('My Title');
+-        $fixture->setAffiche('My Title');
+-        $fixture->setAgeMinimum('My Title');
+-        $fixture->setCoupDeCoeur('My Title');
+-        $fixture->setNote('My Title');
+-        $fixture->setQualite('My Title');
+-        $fixture->setCinemas('My Title');
+-
+-        $this->manager->persist($fixture);
+-        $this->manager->flush();
+-
+-        $this->client->request('GET', sprintf('%s%s', $this->path, $fixture->getId()));
+-
+-        self::assertResponseStatusCodeSame(200);
+-        self::assertPageTitleContains('Film');
+-
+-        // Use assertions to check that the properties are properly displayed.
+-    }
+-
+-    public function testEdit(): void
+-    {
+-        $this->markTestIncomplete();
+-        $fixture = new Films();
+-        $fixture->setTitre('Value');
+-        $fixture->setDescription('Value');
+-        $fixture->setAffiche('Value');
+-        $fixture->setAgeMinimum('Value');
+-        $fixture->setCoupDeCoeur('Value');
+-        $fixture->setNote('Value');
+-        $fixture->setQualite('Value');
+-        $fixture->setCinemas('Value');
+-
+-        $this->manager->persist($fixture);
+-        $this->manager->flush();
+-
+-        $this->client->request('GET', sprintf('%s%s/edit', $this->path, $fixture->getId()));
+-
+-        $this->client->submitForm('Update', [
+-            'film[titre]' => 'Something New',
+-            'film[description]' => 'Something New',
+-            'film[affiche]' => 'Something New',
+-            'film[ageMinimum]' => 'Something New',
+-            'film[coupDeCoeur]' => 'Something New',
+-            'film[note]' => 'Something New',
+-            'film[qualite]' => 'Something New',
+-            'film[cinemas]' => 'Something New',
+-        ]);
+-
+-        self::assertResponseRedirects('/films/');
+-
+-        $fixture = $this->repository->findAll();
+-
+-        self::assertSame('Something New', $fixture[0]->getTitre());
+-        self::assertSame('Something New', $fixture[0]->getDescription());
+-        self::assertSame('Something New', $fixture[0]->getAffiche());
+-        self::assertSame('Something New', $fixture[0]->getAgeMinimum());
+-        self::assertSame('Something New', $fixture[0]->getCoupDeCoeur());
+-        self::assertSame('Something New', $fixture[0]->getNote());
+-        self::assertSame('Something New', $fixture[0]->getQualite());
+-        self::assertSame('Something New', $fixture[0]->getCinemas());
+-    }
+-
+-    public function testRemove(): void
+-    {
+-        $this->markTestIncomplete();
+-        $fixture = new Films();
+-        $fixture->setTitre('Value');
+-        $fixture->setDescription('Value');
+-        $fixture->setAffiche('Value');
+-        $fixture->setAgeMinimum('Value');
+-        $fixture->setCoupDeCoeur('Value');
+-        $fixture->setNote('Value');
+-        $fixture->setQualite('Value');
+-        $fixture->setCinemas('Value');
+-
+-        $this->manager->persist($fixture);
+-        $this->manager->flush();
+-
+-        $this->client->request('GET', sprintf('%s%s', $this->path, $fixture->getId()));
+-        $this->client->submitForm('Delete');
+-
+-        self::assertResponseRedirects('/films/');
+-        self::assertSame(0, $this->repository->count([]));
+-    }
+-}
+Index: tests/Controller/ReservationsControllerTest.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nnamespace App\\Tests\\Controller;\n\nuse App\\Entity\\Reservations;\nuse Doctrine\\ORM\\EntityManagerInterface;\nuse Doctrine\\ORM\\EntityRepository;\nuse Symfony\\Bundle\\FrameworkBundle\\KernelBrowser;\nuse Symfony\\Bundle\\FrameworkBundle\\Test\\WebTestCase;\n\nfinal class ReservationsControllerTest extends WebTestCase\n{\n    private KernelBrowser $client;\n    private EntityManagerInterface $manager;\n    private EntityRepository $repository;\n    private string $path = '/reservations/';\n\n    protected function setUp(): void\n    {\n        $this->client = static::createClient();\n        $this->manager = static::getContainer()->get('doctrine')->getManager();\n        $this->repository = $this->manager->getRepository(Reservations::class);\n\n        foreach ($this->repository->findAll() as $object) {\n            $this->manager->remove($object);\n        }\n\n        $this->manager->flush();\n    }\n\n    public function testIndex(): void\n    {\n        $this->client->followRedirects();\n        $crawler = $this->client->request('GET', $this->path);\n\n        self::assertResponseStatusCodeSame(200);\n        self::assertPageTitleContains('Reservation index');\n\n        // Use the $crawler to perform additional assertions e.g.\n        // self::assertSame('Some text on the page', $crawler->filter('.p')->first());\n    }\n\n    public function testNew(): void\n    {\n        $this->markTestIncomplete();\n        $this->client->request('GET', sprintf('%snew', $this->path));\n\n        self::assertResponseStatusCodeSame(200);\n\n        $this->client->submitForm('Save', [\n            'reservation[nombrePlaces]' => 'Testing',\n            'reservation[typePMR]' => 'Testing',\n            'reservation[prixTotal]' => 'Testing',\n            'reservation[cinemas]' => 'Testing',\n            'reservation[films]' => 'Testing',\n            'reservation[seances]' => 'Testing',\n        ]);\n\n        self::assertResponseRedirects($this->path);\n\n        self::assertSame(1, $this->repository->count([]));\n    }\n\n    public function testShow(): void\n    {\n        $this->markTestIncomplete();\n        $fixture = new Reservations();\n        $fixture->setNombrePlaces('My Title');\n        $fixture->setTypePMR('My Title');\n        $fixture->setPrixTotal('My Title');\n        $fixture->setCinemas('My Title');\n        $fixture->setFilms('My Title');\n        $fixture->setSeances('My Title');\n\n        $this->manager->persist($fixture);\n        $this->manager->flush();\n\n        $this->client->request('GET', sprintf('%s%s', $this->path, $fixture->getId()));\n\n        self::assertResponseStatusCodeSame(200);\n        self::assertPageTitleContains('Reservation');\n\n        // Use assertions to check that the properties are properly displayed.\n    }\n\n    public function testEdit(): void\n    {\n        $this->markTestIncomplete();\n        $fixture = new Reservations();\n        $fixture->setNombrePlaces('Value');\n        $fixture->setTypePMR('Value');\n        $fixture->setPrixTotal('Value');\n        $fixture->setCinemas('Value');\n        $fixture->setFilms('Value');\n        $fixture->setSeances('Value');\n\n        $this->manager->persist($fixture);\n        $this->manager->flush();\n\n        $this->client->request('GET', sprintf('%s%s/edit', $this->path, $fixture->getId()));\n\n        $this->client->submitForm('Update', [\n            'reservation[nombrePlaces]' => 'Something New',\n            'reservation[typePMR]' => 'Something New',\n            'reservation[prixTotal]' => 'Something New',\n            'reservation[cinemas]' => 'Something New',\n            'reservation[films]' => 'Something New',\n            'reservation[seances]' => 'Something New',\n        ]);\n\n        self::assertResponseRedirects('/reservations/');\n\n        $fixture = $this->repository->findAll();\n\n        self::assertSame('Something New', $fixture[0]->getNombrePlaces());\n        self::assertSame('Something New', $fixture[0]->getTypePMR());\n        self::assertSame('Something New', $fixture[0]->getPrixTotal());\n        self::assertSame('Something New', $fixture[0]->getCinemas());\n        self::assertSame('Something New', $fixture[0]->getFilms());\n        self::assertSame('Something New', $fixture[0]->getSeances());\n    }\n\n    public function testRemove(): void\n    {\n        $this->markTestIncomplete();\n        $fixture = new Reservations();\n        $fixture->setNombrePlaces('Value');\n        $fixture->setTypePMR('Value');\n        $fixture->setPrixTotal('Value');\n        $fixture->setCinemas('Value');\n        $fixture->setFilms('Value');\n        $fixture->setSeances('Value');\n\n        $this->manager->persist($fixture);\n        $this->manager->flush();\n\n        $this->client->request('GET', sprintf('%s%s', $this->path, $fixture->getId()));\n        $this->client->submitForm('Delete');\n\n        self::assertResponseRedirects('/reservations/');\n        self::assertSame(0, $this->repository->count([]));\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tests/Controller/ReservationsControllerTest.php b/tests/Controller/ReservationsControllerTest.php
+--- a/tests/Controller/ReservationsControllerTest.php	(revision 624b1a92e26654221492ddf1f5bb3c04ddab6ca8)
++++ b/tests/Controller/ReservationsControllerTest.php	(date 1729945658458)
+@@ -1,143 +1,0 @@
+-<?php
+-
+-namespace App\Tests\Controller;
+-
+-use App\Entity\Reservations;
+-use Doctrine\ORM\EntityManagerInterface;
+-use Doctrine\ORM\EntityRepository;
+-use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+-
+-final class ReservationsControllerTest extends WebTestCase
+-{
+-    private KernelBrowser $client;
+-    private EntityManagerInterface $manager;
+-    private EntityRepository $repository;
+-    private string $path = '/reservations/';
+-
+-    protected function setUp(): void
+-    {
+-        $this->client = static::createClient();
+-        $this->manager = static::getContainer()->get('doctrine')->getManager();
+-        $this->repository = $this->manager->getRepository(Reservations::class);
+-
+-        foreach ($this->repository->findAll() as $object) {
+-            $this->manager->remove($object);
+-        }
+-
+-        $this->manager->flush();
+-    }
+-
+-    public function testIndex(): void
+-    {
+-        $this->client->followRedirects();
+-        $crawler = $this->client->request('GET', $this->path);
+-
+-        self::assertResponseStatusCodeSame(200);
+-        self::assertPageTitleContains('Reservation index');
+-
+-        // Use the $crawler to perform additional assertions e.g.
+-        // self::assertSame('Some text on the page', $crawler->filter('.p')->first());
+-    }
+-
+-    public function testNew(): void
+-    {
+-        $this->markTestIncomplete();
+-        $this->client->request('GET', sprintf('%snew', $this->path));
+-
+-        self::assertResponseStatusCodeSame(200);
+-
+-        $this->client->submitForm('Save', [
+-            'reservation[nombrePlaces]' => 'Testing',
+-            'reservation[typePMR]' => 'Testing',
+-            'reservation[prixTotal]' => 'Testing',
+-            'reservation[cinemas]' => 'Testing',
+-            'reservation[films]' => 'Testing',
+-            'reservation[seances]' => 'Testing',
+-        ]);
+-
+-        self::assertResponseRedirects($this->path);
+-
+-        self::assertSame(1, $this->repository->count([]));
+-    }
+-
+-    public function testShow(): void
+-    {
+-        $this->markTestIncomplete();
+-        $fixture = new Reservations();
+-        $fixture->setNombrePlaces('My Title');
+-        $fixture->setTypePMR('My Title');
+-        $fixture->setPrixTotal('My Title');
+-        $fixture->setCinemas('My Title');
+-        $fixture->setFilms('My Title');
+-        $fixture->setSeances('My Title');
+-
+-        $this->manager->persist($fixture);
+-        $this->manager->flush();
+-
+-        $this->client->request('GET', sprintf('%s%s', $this->path, $fixture->getId()));
+-
+-        self::assertResponseStatusCodeSame(200);
+-        self::assertPageTitleContains('Reservation');
+-
+-        // Use assertions to check that the properties are properly displayed.
+-    }
+-
+-    public function testEdit(): void
+-    {
+-        $this->markTestIncomplete();
+-        $fixture = new Reservations();
+-        $fixture->setNombrePlaces('Value');
+-        $fixture->setTypePMR('Value');
+-        $fixture->setPrixTotal('Value');
+-        $fixture->setCinemas('Value');
+-        $fixture->setFilms('Value');
+-        $fixture->setSeances('Value');
+-
+-        $this->manager->persist($fixture);
+-        $this->manager->flush();
+-
+-        $this->client->request('GET', sprintf('%s%s/edit', $this->path, $fixture->getId()));
+-
+-        $this->client->submitForm('Update', [
+-            'reservation[nombrePlaces]' => 'Something New',
+-            'reservation[typePMR]' => 'Something New',
+-            'reservation[prixTotal]' => 'Something New',
+-            'reservation[cinemas]' => 'Something New',
+-            'reservation[films]' => 'Something New',
+-            'reservation[seances]' => 'Something New',
+-        ]);
+-
+-        self::assertResponseRedirects('/reservations/');
+-
+-        $fixture = $this->repository->findAll();
+-
+-        self::assertSame('Something New', $fixture[0]->getNombrePlaces());
+-        self::assertSame('Something New', $fixture[0]->getTypePMR());
+-        self::assertSame('Something New', $fixture[0]->getPrixTotal());
+-        self::assertSame('Something New', $fixture[0]->getCinemas());
+-        self::assertSame('Something New', $fixture[0]->getFilms());
+-        self::assertSame('Something New', $fixture[0]->getSeances());
+-    }
+-
+-    public function testRemove(): void
+-    {
+-        $this->markTestIncomplete();
+-        $fixture = new Reservations();
+-        $fixture->setNombrePlaces('Value');
+-        $fixture->setTypePMR('Value');
+-        $fixture->setPrixTotal('Value');
+-        $fixture->setCinemas('Value');
+-        $fixture->setFilms('Value');
+-        $fixture->setSeances('Value');
+-
+-        $this->manager->persist($fixture);
+-        $this->manager->flush();
+-
+-        $this->client->request('GET', sprintf('%s%s', $this->path, $fixture->getId()));
+-        $this->client->submitForm('Delete');
+-
+-        self::assertResponseRedirects('/reservations/');
+-        self::assertSame(0, $this->repository->count([]));
+-    }
+-}
+Index: templates/films/new.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'base.html.twig' %}\n\n{% block title %}New Films{% endblock %}\n\n{% block body %}\n    <h1>Create new Films</h1>\n\n    {{ include('films/_form.html.twig') }}\n\n    <a href=\"{{ path('app_films_index') }}\">back to list</a>\n{% endblock %}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/films/new.html.twig b/templates/films/new.html.twig
+--- a/templates/films/new.html.twig	(revision 624b1a92e26654221492ddf1f5bb3c04ddab6ca8)
++++ b/templates/films/new.html.twig	(date 1729945658446)
+@@ -1,11 +1,0 @@
+-{% extends 'base.html.twig' %}
+-
+-{% block title %}New Films{% endblock %}
+-
+-{% block body %}
+-    <h1>Create new Films</h1>
+-
+-    {{ include('films/_form.html.twig') }}
+-
+-    <a href="{{ path('app_films_index') }}">back to list</a>
+-{% endblock %}
+Index: templates/films/edit.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'base.html.twig' %}\n\n{% block title %}Edit Films{% endblock %}\n\n{% block body %}\n    <h1>Edit Films</h1>\n\n    {{ include('films/_form.html.twig', {'button_label': 'Update'}) }}\n\n    <a href=\"{{ path('app_films_index') }}\">back to list</a>\n\n    {{ include('films/_delete_form.html.twig') }}\n{% endblock %}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/films/edit.html.twig b/templates/films/edit.html.twig
+--- a/templates/films/edit.html.twig	(revision 624b1a92e26654221492ddf1f5bb3c04ddab6ca8)
++++ b/templates/films/edit.html.twig	(date 1729945658451)
+@@ -1,13 +1,0 @@
+-{% extends 'base.html.twig' %}
+-
+-{% block title %}Edit Films{% endblock %}
+-
+-{% block body %}
+-    <h1>Edit Films</h1>
+-
+-    {{ include('films/_form.html.twig', {'button_label': 'Update'}) }}
+-
+-    <a href="{{ path('app_films_index') }}">back to list</a>
+-
+-    {{ include('films/_delete_form.html.twig') }}
+-{% endblock %}
+Index: templates/films/show.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'base.html.twig' %}\n\n{% block title %}Films{% endblock %}\n\n{% block body %}\n    <h1>Films</h1>\n\n    <table class=\"table\">\n        <tbody>\n            <tr>\n                <th>Id</th>\n                <td>{{ film.id }}</td>\n            </tr>\n            <tr>\n                <th>Titre</th>\n                <td>{{ film.titre }}</td>\n            </tr>\n            <tr>\n                <th>Description</th>\n                <td>{{ film.description }}</td>\n            </tr>\n            <tr>\n                <th>Affiche</th>\n                <td>{{ film.affiche }}</td>\n            </tr>\n            <tr>\n                <th>AgeMinimum</th>\n                <td>{{ film.ageMinimum }}</td>\n            </tr>\n            <tr>\n                <th>CoupDeCoeur</th>\n                <td>{{ film.coupDeCoeur ? 'Yes' : 'No' }}</td>\n            </tr>\n            <tr>\n                <th>Note</th>\n                <td>{{ film.note }}</td>\n            </tr>\n            <tr>\n                <th>Qualite</th>\n                <td>{{ film.qualite }}</td>\n            </tr>\n        </tbody>\n    </table>\n\n    <a href=\"{{ path('app_films_index') }}\">back to list</a>\n\n    <a href=\"{{ path('app_films_edit', {'id': film.id}) }}\">edit</a>\n\n    {{ include('films/_delete_form.html.twig') }}\n{% endblock %}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/films/show.html.twig b/templates/films/show.html.twig
+--- a/templates/films/show.html.twig	(revision 624b1a92e26654221492ddf1f5bb3c04ddab6ca8)
++++ b/templates/films/show.html.twig	(date 1729945658439)
+@@ -1,50 +1,0 @@
+-{% extends 'base.html.twig' %}
+-
+-{% block title %}Films{% endblock %}
+-
+-{% block body %}
+-    <h1>Films</h1>
+-
+-    <table class="table">
+-        <tbody>
+-            <tr>
+-                <th>Id</th>
+-                <td>{{ film.id }}</td>
+-            </tr>
+-            <tr>
+-                <th>Titre</th>
+-                <td>{{ film.titre }}</td>
+-            </tr>
+-            <tr>
+-                <th>Description</th>
+-                <td>{{ film.description }}</td>
+-            </tr>
+-            <tr>
+-                <th>Affiche</th>
+-                <td>{{ film.affiche }}</td>
+-            </tr>
+-            <tr>
+-                <th>AgeMinimum</th>
+-                <td>{{ film.ageMinimum }}</td>
+-            </tr>
+-            <tr>
+-                <th>CoupDeCoeur</th>
+-                <td>{{ film.coupDeCoeur ? 'Yes' : 'No' }}</td>
+-            </tr>
+-            <tr>
+-                <th>Note</th>
+-                <td>{{ film.note }}</td>
+-            </tr>
+-            <tr>
+-                <th>Qualite</th>
+-                <td>{{ film.qualite }}</td>
+-            </tr>
+-        </tbody>
+-    </table>
+-
+-    <a href="{{ path('app_films_index') }}">back to list</a>
+-
+-    <a href="{{ path('app_films_edit', {'id': film.id}) }}">edit</a>
+-
+-    {{ include('films/_delete_form.html.twig') }}
+-{% endblock %}
+Index: templates/films/index.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'base.html.twig' %}\n\n{% block title %}Films index{% endblock %}\n\n{% block body %}\n    <h1>Films index</h1>\n\n    <table class=\"table\">\n        <thead>\n            <tr>\n                <th>Id</th>\n                <th>Titre</th>\n                <th>Description</th>\n                <th>Affiche</th>\n                <th>AgeMinimum</th>\n                <th>CoupDeCoeur</th>\n                <th>Note</th>\n                <th>Qualite</th>\n                <th>actions</th>\n            </tr>\n        </thead>\n        <tbody>\n        {% for film in films %}\n            <tr>\n                <td>{{ film.id }}</td>\n                <td>{{ film.titre }}</td>\n                <td>{{ film.description }}</td>\n                <td>{{ film.affiche }}</td>\n                <td>{{ film.ageMinimum }}</td>\n                <td>{{ film.coupDeCoeur ? 'Yes' : 'No' }}</td>\n                <td>{{ film.note }}</td>\n                <td>{{ film.qualite }}</td>\n                <td>\n                    <a href=\"{{ path('app_films_show', {'id': film.id}) }}\" class=\"btn btn-primary m-lg-3\">Voir</a>\n                </td>\n            </tr>\n        {% else %}\n            <tr>\n                <td colspan=\"9\">no records found</td>\n            </tr>\n        {% endfor %}\n        </tbody>\n    </table>\n\n{% endblock %}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/films/index.html.twig b/templates/films/index.html.twig
+--- a/templates/films/index.html.twig	(revision 624b1a92e26654221492ddf1f5bb3c04ddab6ca8)
++++ b/templates/films/index.html.twig	(date 1729945658442)
+@@ -1,45 +1,0 @@
+-{% extends 'base.html.twig' %}
+-
+-{% block title %}Films index{% endblock %}
+-
+-{% block body %}
+-    <h1>Films index</h1>
+-
+-    <table class="table">
+-        <thead>
+-            <tr>
+-                <th>Id</th>
+-                <th>Titre</th>
+-                <th>Description</th>
+-                <th>Affiche</th>
+-                <th>AgeMinimum</th>
+-                <th>CoupDeCoeur</th>
+-                <th>Note</th>
+-                <th>Qualite</th>
+-                <th>actions</th>
+-            </tr>
+-        </thead>
+-        <tbody>
+-        {% for film in films %}
+-            <tr>
+-                <td>{{ film.id }}</td>
+-                <td>{{ film.titre }}</td>
+-                <td>{{ film.description }}</td>
+-                <td>{{ film.affiche }}</td>
+-                <td>{{ film.ageMinimum }}</td>
+-                <td>{{ film.coupDeCoeur ? 'Yes' : 'No' }}</td>
+-                <td>{{ film.note }}</td>
+-                <td>{{ film.qualite }}</td>
+-                <td>
+-                    <a href="{{ path('app_films_show', {'id': film.id}) }}" class="btn btn-primary m-lg-3">Voir</a>
+-                </td>
+-            </tr>
+-        {% else %}
+-            <tr>
+-                <td colspan="9">no records found</td>
+-            </tr>
+-        {% endfor %}
+-        </tbody>
+-    </table>
+-
+-{% endblock %}
+Index: templates/reservations/_delete_form.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><form method=\"post\" action=\"{{ path('app_reservations_delete', {'id': reservation.id}) }}\" onsubmit=\"return confirm('Etes-vous sur d\\'annuler votre reservation?');\">\n    <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ reservation.id) }}\">\n    <button class=\"btn btn-danger m-lg-3\">Supprimer</button>\n</form>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/reservations/_delete_form.html.twig b/templates/reservations/_delete_form.html.twig
+--- a/templates/reservations/_delete_form.html.twig	(revision 624b1a92e26654221492ddf1f5bb3c04ddab6ca8)
++++ b/templates/reservations/_delete_form.html.twig	(date 1729945658431)
+@@ -1,4 +1,0 @@
+-<form method="post" action="{{ path('app_reservations_delete', {'id': reservation.id}) }}" onsubmit="return confirm('Etes-vous sur d\'annuler votre reservation?');">
+-    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ reservation.id) }}">
+-    <button class="btn btn-danger m-lg-3">Supprimer</button>
+-</form>
+Index: templates/reservations/show.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'base.html.twig' %}\n\n{% block title %}Reservations{% endblock %}\n\n{% block body %}\n    <h1>Reservations</h1>\n\n    <table class=\"table\">\n        <tbody>\n            <tr>\n                <th>Id</th>\n                <td>{{ reservation.id }}</td>\n            </tr>\n            <tr>\n                <th>NombrePlaces</th>\n                <td>{{ reservation.nombrePlaces }}</td>\n            </tr>\n            <tr>\n                <th>TypePMR</th>\n                <td>{{ reservation.typePMR ? 'Yes' : 'No' }}</td>\n            </tr>\n            <tr>\n                <th>PrixTotal</th>\n                <td>{{ reservation.prixTotal }}</td>\n            </tr>\n        </tbody>\n    </table>\n\n    <a href=\"{{ path('app_reservations_index') }}\">Retour à la liste</a>\n{% endblock %}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/reservations/show.html.twig b/templates/reservations/show.html.twig
+--- a/templates/reservations/show.html.twig	(revision 624b1a92e26654221492ddf1f5bb3c04ddab6ca8)
++++ b/templates/reservations/show.html.twig	(date 1729945658435)
+@@ -1,30 +1,0 @@
+-{% extends 'base.html.twig' %}
+-
+-{% block title %}Reservations{% endblock %}
+-
+-{% block body %}
+-    <h1>Reservations</h1>
+-
+-    <table class="table">
+-        <tbody>
+-            <tr>
+-                <th>Id</th>
+-                <td>{{ reservation.id }}</td>
+-            </tr>
+-            <tr>
+-                <th>NombrePlaces</th>
+-                <td>{{ reservation.nombrePlaces }}</td>
+-            </tr>
+-            <tr>
+-                <th>TypePMR</th>
+-                <td>{{ reservation.typePMR ? 'Yes' : 'No' }}</td>
+-            </tr>
+-            <tr>
+-                <th>PrixTotal</th>
+-                <td>{{ reservation.prixTotal }}</td>
+-            </tr>
+-        </tbody>
+-    </table>
+-
+-    <a href="{{ path('app_reservations_index') }}">Retour à la liste</a>
+-{% endblock %}
+Index: src/Form/ReservationsType.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nnamespace App\\Form;\n\nuse App\\Entity\\Cinemas;\nuse App\\Entity\\Films;\nuse App\\Entity\\Reservations;\nuse App\\Entity\\Seance;\nuse Symfony\\Bridge\\Doctrine\\Form\\Type\\EntityType;\nuse Symfony\\Component\\Form\\AbstractType;\nuse Symfony\\Component\\Form\\FormBuilderInterface;\nuse Symfony\\Component\\OptionsResolver\\OptionsResolver;\n\nclass ReservationsType extends AbstractType\n{\n    public function buildForm(FormBuilderInterface $builder, array $options): void\n    {\n        $builder\n            ->add('nombrePlaces')\n            ->add('typePMR')\n            ->add('prixTotal')\n            ->add('cinemas', EntityType::class, [\n                'class' => Cinemas::class,\n                'choice_label' => 'id',\n            ])\n            ->add('films', EntityType::class, [\n                'class' => Films::class,\n                'choice_label' => 'id',\n            ])\n            ->add('seances', EntityType::class, [\n                'class' => Seance::class,\n                'choice_label' => 'id',\n            ])\n        ;\n    }\n\n    public function configureOptions(OptionsResolver $resolver): void\n    {\n        $resolver->setDefaults([\n            'data_class' => Reservations::class,\n        ]);\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Form/ReservationsType.php b/src/Form/ReservationsType.php
+--- a/src/Form/ReservationsType.php	(revision 624b1a92e26654221492ddf1f5bb3c04ddab6ca8)
++++ b/src/Form/ReservationsType.php	(date 1729945658471)
+@@ -1,43 +1,0 @@
+-<?php
+-
+-namespace App\Form;
+-
+-use App\Entity\Cinemas;
+-use App\Entity\Films;
+-use App\Entity\Reservations;
+-use App\Entity\Seance;
+-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+-use Symfony\Component\Form\AbstractType;
+-use Symfony\Component\Form\FormBuilderInterface;
+-use Symfony\Component\OptionsResolver\OptionsResolver;
+-
+-class ReservationsType extends AbstractType
+-{
+-    public function buildForm(FormBuilderInterface $builder, array $options): void
+-    {
+-        $builder
+-            ->add('nombrePlaces')
+-            ->add('typePMR')
+-            ->add('prixTotal')
+-            ->add('cinemas', EntityType::class, [
+-                'class' => Cinemas::class,
+-                'choice_label' => 'id',
+-            ])
+-            ->add('films', EntityType::class, [
+-                'class' => Films::class,
+-                'choice_label' => 'id',
+-            ])
+-            ->add('seances', EntityType::class, [
+-                'class' => Seance::class,
+-                'choice_label' => 'id',
+-            ])
+-        ;
+-    }
+-
+-    public function configureOptions(OptionsResolver $resolver): void
+-    {
+-        $resolver->setDefaults([
+-            'data_class' => Reservations::class,
+-        ]);
+-    }
+-}
+Index: src/Form/FilmsType.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nnamespace App\\Form;\n\nuse App\\Entity\\Cinemas;\nuse App\\Entity\\Films;\nuse Symfony\\Bridge\\Doctrine\\Form\\Type\\EntityType;\nuse Symfony\\Component\\Form\\AbstractType;\nuse Symfony\\Component\\Form\\FormBuilderInterface;\nuse Symfony\\Component\\OptionsResolver\\OptionsResolver;\n\nclass FilmsType extends AbstractType\n{\n    public function buildForm(FormBuilderInterface $builder, array $options): void\n    {\n        $builder\n            ->add('titre')\n            ->add('description')\n            ->add('affiche')\n            ->add('ageMinimum')\n            ->add('coupDeCoeur')\n            ->add('note')\n            ->add('qualite')\n            ->add('cinemas', EntityType::class, [\n                'class' => Cinemas::class,\n                'choice_label' => 'id',\n                'multiple' => true,\n            ])\n        ;\n    }\n\n    public function configureOptions(OptionsResolver $resolver): void\n    {\n        $resolver->setDefaults([\n            'data_class' => Films::class,\n        ]);\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Form/FilmsType.php b/src/Form/FilmsType.php
+--- a/src/Form/FilmsType.php	(revision 624b1a92e26654221492ddf1f5bb3c04ddab6ca8)
++++ b/src/Form/FilmsType.php	(date 1729945658473)
+@@ -1,38 +1,0 @@
+-<?php
+-
+-namespace App\Form;
+-
+-use App\Entity\Cinemas;
+-use App\Entity\Films;
+-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+-use Symfony\Component\Form\AbstractType;
+-use Symfony\Component\Form\FormBuilderInterface;
+-use Symfony\Component\OptionsResolver\OptionsResolver;
+-
+-class FilmsType extends AbstractType
+-{
+-    public function buildForm(FormBuilderInterface $builder, array $options): void
+-    {
+-        $builder
+-            ->add('titre')
+-            ->add('description')
+-            ->add('affiche')
+-            ->add('ageMinimum')
+-            ->add('coupDeCoeur')
+-            ->add('note')
+-            ->add('qualite')
+-            ->add('cinemas', EntityType::class, [
+-                'class' => Cinemas::class,
+-                'choice_label' => 'id',
+-                'multiple' => true,
+-            ])
+-        ;
+-    }
+-
+-    public function configureOptions(OptionsResolver $resolver): void
+-    {
+-        $resolver->setDefaults([
+-            'data_class' => Films::class,
+-        ]);
+-    }
+-}
+Index: src/Controller/ReservationsController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nnamespace App\\Controller;\n\nuse App\\Entity\\Reservations;\nuse App\\Form\\ReservationsType;\nuse App\\Repository\\ReservationsRepository;\nuse Doctrine\\ORM\\EntityManagerInterface;\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\nuse Symfony\\Component\\HttpFoundation\\Request;\nuse Symfony\\Component\\HttpFoundation\\Response;\nuse Symfony\\Component\\Routing\\Attribute\\Route;\n\n#[Route('/reservations')]\nfinal class ReservationsController extends AbstractController\n{\n    #[Route(name: 'app_reservations_index', methods: ['GET'])]\n    public function index(ReservationsRepository $reservationsRepository): Response\n    {\n        return $this->render('reservations/index.html.twig', [\n            'reservations' => $reservationsRepository->findAll(),\n        ]);\n    }\n\n    #[Route('/new', name: 'app_reservations_new', methods: ['GET', 'POST'])]\n    public function new(Request $request, EntityManagerInterface $entityManager): Response\n    {\n        $reservation = new Reservations();\n        $form = $this->createForm(ReservationsType::class, $reservation);\n        $form->handleRequest($request);\n\n        if ($form->isSubmitted() && $form->isValid()) {\n            $entityManager->persist($reservation);\n            $entityManager->flush();\n        }\n\n        return $this->render('reservations/new.html.twig', [\n            'reservation' => $reservation,\n            'form' => $form,\n        ]);\n    }\n\n    #[Route('/{id}', name: 'app_reservations_show', methods: ['GET'])]\n    public function show(Reservations $reservation): Response\n    {\n        return $this->render('reservations/show.html.twig', [\n            'reservation' => $reservation,\n        ]);\n    }\n\n    #[Route('/{id}/edit', name: 'app_reservations_edit', methods: ['GET', 'POST'])]\n    public function edit(Request $request, Reservations $reservation, EntityManagerInterface $entityManager): Response\n    {\n        $form = $this->createForm(ReservationsType::class, $reservation);\n        $form->handleRequest($request);\n\n        if ($form->isSubmitted() && $form->isValid()) {\n            $entityManager->flush();\n\n            return $this->redirectToRoute('app_reservations_index', [], Response::HTTP_SEE_OTHER);\n        }\n\n        return $this->render('reservations/edit.html.twig', [\n            'reservation' => $reservation,\n            'form' => $form,\n        ]);\n    }\n\n    #[Route('/{id}', name: 'app_reservations_delete', methods: ['POST'])]\n    public function delete(Request $request, Reservations $reservation, EntityManagerInterface $entityManager): Response\n    {\n        if ($this->isCsrfTokenValid('delete'.$reservation->getId(), $request->getPayload()->getString('_token'))) {\n            $entityManager->remove($reservation);\n            $entityManager->flush();\n        }\n\n        return $this->redirectToRoute('app_reservations_index', [], Response::HTTP_SEE_OTHER);\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Controller/ReservationsController.php b/src/Controller/ReservationsController.php
+--- a/src/Controller/ReservationsController.php	(revision 624b1a92e26654221492ddf1f5bb3c04ddab6ca8)
++++ b/src/Controller/ReservationsController.php	(date 1729945658462)
+@@ -1,79 +1,0 @@
+-<?php
+-
+-namespace App\Controller;
+-
+-use App\Entity\Reservations;
+-use App\Form\ReservationsType;
+-use App\Repository\ReservationsRepository;
+-use Doctrine\ORM\EntityManagerInterface;
+-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+-use Symfony\Component\HttpFoundation\Request;
+-use Symfony\Component\HttpFoundation\Response;
+-use Symfony\Component\Routing\Attribute\Route;
+-
+-#[Route('/reservations')]
+-final class ReservationsController extends AbstractController
+-{
+-    #[Route(name: 'app_reservations_index', methods: ['GET'])]
+-    public function index(ReservationsRepository $reservationsRepository): Response
+-    {
+-        return $this->render('reservations/index.html.twig', [
+-            'reservations' => $reservationsRepository->findAll(),
+-        ]);
+-    }
+-
+-    #[Route('/new', name: 'app_reservations_new', methods: ['GET', 'POST'])]
+-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+-    {
+-        $reservation = new Reservations();
+-        $form = $this->createForm(ReservationsType::class, $reservation);
+-        $form->handleRequest($request);
+-
+-        if ($form->isSubmitted() && $form->isValid()) {
+-            $entityManager->persist($reservation);
+-            $entityManager->flush();
+-        }
+-
+-        return $this->render('reservations/new.html.twig', [
+-            'reservation' => $reservation,
+-            'form' => $form,
+-        ]);
+-    }
+-
+-    #[Route('/{id}', name: 'app_reservations_show', methods: ['GET'])]
+-    public function show(Reservations $reservation): Response
+-    {
+-        return $this->render('reservations/show.html.twig', [
+-            'reservation' => $reservation,
+-        ]);
+-    }
+-
+-    #[Route('/{id}/edit', name: 'app_reservations_edit', methods: ['GET', 'POST'])]
+-    public function edit(Request $request, Reservations $reservation, EntityManagerInterface $entityManager): Response
+-    {
+-        $form = $this->createForm(ReservationsType::class, $reservation);
+-        $form->handleRequest($request);
+-
+-        if ($form->isSubmitted() && $form->isValid()) {
+-            $entityManager->flush();
+-
+-            return $this->redirectToRoute('app_reservations_index', [], Response::HTTP_SEE_OTHER);
+-        }
+-
+-        return $this->render('reservations/edit.html.twig', [
+-            'reservation' => $reservation,
+-            'form' => $form,
+-        ]);
+-    }
+-
+-    #[Route('/{id}', name: 'app_reservations_delete', methods: ['POST'])]
+-    public function delete(Request $request, Reservations $reservation, EntityManagerInterface $entityManager): Response
+-    {
+-        if ($this->isCsrfTokenValid('delete'.$reservation->getId(), $request->getPayload()->getString('_token'))) {
+-            $entityManager->remove($reservation);
+-            $entityManager->flush();
+-        }
+-
+-        return $this->redirectToRoute('app_reservations_index', [], Response::HTTP_SEE_OTHER);
+-    }
+-}
+Index: templates/reservations/edit.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'base.html.twig' %}\n\n{% block title %}Edit Reservations{% endblock %}\n\n{% block body %}\n    <h1>Edit Reservations</h1>\n\n    <form method=\"post\" action=\"{{ path('app_reservations_edit', {'id': reservation.id}) }}\" onsubmit=\"return confirm('Valider la modification de votre reservation?');\">\n        {{ form_widget(form) }}\n        <button class=\"btn\">Valider</button>\n    </form>\n\n\n    <a href=\"{{ path('app_reservations_index') }}\">Retour à la liste</a>\n\n{% endblock %}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/reservations/edit.html.twig b/templates/reservations/edit.html.twig
+--- a/templates/reservations/edit.html.twig	(revision 624b1a92e26654221492ddf1f5bb3c04ddab6ca8)
++++ b/templates/reservations/edit.html.twig	(date 1729945658423)
+@@ -1,16 +1,0 @@
+-{% extends 'base.html.twig' %}
+-
+-{% block title %}Edit Reservations{% endblock %}
+-
+-{% block body %}
+-    <h1>Edit Reservations</h1>
+-
+-    <form method="post" action="{{ path('app_reservations_edit', {'id': reservation.id}) }}" onsubmit="return confirm('Valider la modification de votre reservation?');">
+-        {{ form_widget(form) }}
+-        <button class="btn">Valider</button>
+-    </form>
+-
+-
+-    <a href="{{ path('app_reservations_index') }}">Retour à la liste</a>
+-
+-{% endblock %}
+Index: templates/reservations/index.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'base.html.twig' %}\n\n{% block title %}Reservations index{% endblock %}\n\n{% block body %}\n    <h1>Vos réservations</h1>\n\n    <table class=\"table\">\n        <thead>\n            <tr>\n                <th>Places</th>\n                <th>Type PMR ?</th>\n                <th>Prix Total</th>\n            </tr>\n        </thead>\n        <tbody>\n        {% for reservation in reservations %}\n            <tr>\n                <td>{{ reservation.nombrePlaces }}</td>\n                <td>{{ reservation.typePMR ? 'Oui' : 'Non' }}</td>\n                <td>{{ reservation.prixTotal }}</td>\n                <td class=\"d-flex\">\n                    <a href=\"{{ path('app_reservations_show', {'id': reservation.id}) }}\" class=\"btn btn-primary m-lg-3 \">Voir</a>\n                    <a href=\"{{ path('app_reservations_edit', {'id': reservation.id}) }}\" class=\"btn btn-secondary m-lg-3 \">Modifier</a>\n                    {{ include('reservations/_delete_form.html.twig') }}\n                </td>\n            </tr>\n        {% else %}\n            <tr>\n                <td colspan=\"5\">no records found</td>\n            </tr>\n        {% endfor %}\n        </tbody>\n    </table>\n{% endblock %}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/reservations/index.html.twig b/templates/reservations/index.html.twig
+--- a/templates/reservations/index.html.twig	(revision 624b1a92e26654221492ddf1f5bb3c04ddab6ca8)
++++ b/templates/reservations/index.html.twig	(date 1729945658428)
+@@ -1,35 +1,0 @@
+-{% extends 'base.html.twig' %}
+-
+-{% block title %}Reservations index{% endblock %}
+-
+-{% block body %}
+-    <h1>Vos réservations</h1>
+-
+-    <table class="table">
+-        <thead>
+-            <tr>
+-                <th>Places</th>
+-                <th>Type PMR ?</th>
+-                <th>Prix Total</th>
+-            </tr>
+-        </thead>
+-        <tbody>
+-        {% for reservation in reservations %}
+-            <tr>
+-                <td>{{ reservation.nombrePlaces }}</td>
+-                <td>{{ reservation.typePMR ? 'Oui' : 'Non' }}</td>
+-                <td>{{ reservation.prixTotal }}</td>
+-                <td class="d-flex">
+-                    <a href="{{ path('app_reservations_show', {'id': reservation.id}) }}" class="btn btn-primary m-lg-3 ">Voir</a>
+-                    <a href="{{ path('app_reservations_edit', {'id': reservation.id}) }}" class="btn btn-secondary m-lg-3 ">Modifier</a>
+-                    {{ include('reservations/_delete_form.html.twig') }}
+-                </td>
+-            </tr>
+-        {% else %}
+-            <tr>
+-                <td colspan="5">no records found</td>
+-            </tr>
+-        {% endfor %}
+-        </tbody>
+-    </table>
+-{% endblock %}
+Index: templates/reservations/_form.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{{ form_start(form) }}\n    {{ form_widget(form) }}\n    <button class=\"btn\">{{ button_label|default('Save') }}</button>\n{{ form_end(form) }}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/reservations/_form.html.twig b/templates/reservations/_form.html.twig
+--- a/templates/reservations/_form.html.twig	(revision 624b1a92e26654221492ddf1f5bb3c04ddab6ca8)
++++ b/templates/reservations/_form.html.twig	(date 1729945658414)
+@@ -1,4 +1,0 @@
+-{{ form_start(form) }}
+-    {{ form_widget(form) }}
+-    <button class="btn">{{ button_label|default('Save') }}</button>
+-{{ form_end(form) }}
+Index: templates/reservations/new.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'base.html.twig' %}\n\n{% block title %}New Reservations{% endblock %}\n\n{% block body %}\n    <h1>Create new Reservations</h1>\n\n    {{ include('reservations/_form.html.twig') }}\n\n    <a href=\"{{ path('app_reservations_index') }}\">back to list</a>\n{% endblock %}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/reservations/new.html.twig b/templates/reservations/new.html.twig
+--- a/templates/reservations/new.html.twig	(revision 624b1a92e26654221492ddf1f5bb3c04ddab6ca8)
++++ b/templates/reservations/new.html.twig	(date 1729945658419)
+@@ -1,11 +1,0 @@
+-{% extends 'base.html.twig' %}
+-
+-{% block title %}New Reservations{% endblock %}
+-
+-{% block body %}
+-    <h1>Create new Reservations</h1>
+-
+-    {{ include('reservations/_form.html.twig') }}
+-
+-    <a href="{{ path('app_reservations_index') }}">back to list</a>
+-{% endblock %}
