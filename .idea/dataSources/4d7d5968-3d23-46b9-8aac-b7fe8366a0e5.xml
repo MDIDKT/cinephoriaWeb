@@ -834,7 +834,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Charset>utf8mb4</Charset>
     </collation>
     <schema id="224" parent="1" name="Admin_Cinephoria">
-      <LastIntrospectionLocalTimestamp>2024-10-09.17:41:49</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-10-27.17:14:59</LastIntrospectionLocalTimestamp>
       <CollationName>utf8_general_ci</CollationName>
     </schema>
     <schema id="225" parent="1" name="AppECF">
@@ -958,309 +958,368 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <column id="263" parent="256" name="id">
-      <AutoIncrement>5</AutoIncrement>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <column id="264" parent="256" name="nom">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="265" parent="256" name="ville">
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="266" parent="256" name="adresse">
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-      <StoredType>longtext|0s</StoredType>
-    </column>
-    <index id="267" parent="256" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="268" parent="256" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="269" parent="257" name="version">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>varchar(191)|0s</StoredType>
-    </column>
-    <column id="270" parent="257" name="executed_at">
-      <Position>2</Position>
-      <StoredType>datetime|0s</StoredType>
-    </column>
-    <column id="271" parent="257" name="execution_time">
-      <Position>3</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <index id="272" parent="257" name="PRIMARY">
-      <ColNames>version</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="273" parent="257" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="274" parent="258" name="id">
-      <AutoIncrement>5</AutoIncrement>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <column id="275" parent="258" name="titre">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="276" parent="258" name="description">
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>longtext|0s</StoredType>
-    </column>
-    <column id="277" parent="258" name="affiche">
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="278" parent="258" name="age_minimum">
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <column id="279" parent="258" name="coup_de_coeur">
-      <NotNull>1</NotNull>
-      <Position>6</Position>
-      <StoredType>tinyint(1)|0s</StoredType>
-    </column>
-    <column id="280" parent="258" name="note">
-      <NotNull>1</NotNull>
-      <Position>7</Position>
-      <StoredType>double|0s</StoredType>
-    </column>
-    <column id="281" parent="258" name="qualite">
-      <NotNull>1</NotNull>
-      <Position>8</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <index id="282" parent="258" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="283" parent="258" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="284" parent="259" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>bigint(20)|0s</StoredType>
-    </column>
-    <column id="285" parent="259" name="body">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>longtext|0s</StoredType>
-    </column>
-    <column id="286" parent="259" name="headers">
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>longtext|0s</StoredType>
-    </column>
-    <column id="287" parent="259" name="queue_name">
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-      <StoredType>varchar(190)|0s</StoredType>
-    </column>
-    <column id="288" parent="259" name="created_at">
-      <Comment>(DC2Type:datetime_immutable)</Comment>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-      <StoredType>datetime|0s</StoredType>
-    </column>
-    <column id="289" parent="259" name="available_at">
-      <Comment>(DC2Type:datetime_immutable)</Comment>
-      <NotNull>1</NotNull>
-      <Position>6</Position>
-      <StoredType>datetime|0s</StoredType>
-    </column>
-    <column id="290" parent="259" name="delivered_at">
-      <Comment>(DC2Type:datetime_immutable)</Comment>
-      <Position>7</Position>
-      <StoredType>datetime|0s</StoredType>
-    </column>
-    <index id="291" parent="259" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="292" parent="259" name="IDX_75EA56E0FB7336F0">
-      <ColNames>queue_name</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="293" parent="259" name="IDX_75EA56E0E3BD61CE">
-      <ColNames>available_at</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="294" parent="259" name="IDX_75EA56E016BA31DB">
-      <ColNames>delivered_at</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="295" parent="259" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="296" parent="260" name="id">
-      <AutoIncrement>3</AutoIncrement>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <column id="297" parent="260" name="cinemas_id">
-      <Position>2</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <column id="298" parent="260" name="films_id">
-      <Position>3</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <column id="299" parent="260" name="seances_id">
-      <Position>4</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <column id="300" parent="260" name="nombre_places">
-      <Position>5</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <column id="301" parent="260" name="type_pmr">
-      <NotNull>1</NotNull>
-      <Position>6</Position>
-      <StoredType>tinyint(1)|0s</StoredType>
-    </column>
-    <column id="302" parent="260" name="prix_total">
-      <NotNull>1</NotNull>
-      <Position>7</Position>
-      <StoredType>double|0s</StoredType>
-    </column>
-    <foreign-key id="303" parent="260" name="FK_4DA239C5C76018">
-      <ColNames>cinemas_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>cinemas</RefTableName>
-      <RefTableParentName>admin_cinephoria</RefTableParentName>
-    </foreign-key>
-    <foreign-key id="304" parent="260" name="FK_4DA239939610EE">
-      <ColNames>films_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>films</RefTableName>
-      <RefTableParentName>admin_cinephoria</RefTableParentName>
-    </foreign-key>
-    <foreign-key id="305" parent="260" name="FK_4DA23910F09302">
-      <ColNames>seances_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>seance</RefTableName>
-      <RefTableParentName>admin_cinephoria</RefTableParentName>
-    </foreign-key>
-    <index id="306" parent="260" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="307" parent="260" name="IDX_4DA239C5C76018">
-      <ColNames>cinemas_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="308" parent="260" name="IDX_4DA239939610EE">
-      <ColNames>films_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="309" parent="260" name="IDX_4DA23910F09302">
-      <ColNames>seances_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="310" parent="260" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="311" parent="261" name="id">
-      <AutoIncrement>3</AutoIncrement>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <column id="312" parent="261" name="numero_salle">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <column id="313" parent="261" name="nombre_siege">
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <column id="314" parent="261" name="nombre_siege_pmr">
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <index id="315" parent="261" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="316" parent="261" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="317" parent="262" name="id">
+    <table id="263" parent="224" name="user">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <column id="264" parent="256" name="id">
       <AutoIncrement>4</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="318" parent="262" name="film_id">
+    <column id="265" parent="256" name="nom">
+      <NotNull>1</NotNull>
       <Position>2</Position>
-      <StoredType>int(11)|0s</StoredType>
+      <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="319" parent="262" name="heure_debut">
-      <Comment>(DC2Type:datetime_immutable)</Comment>
+    <column id="266" parent="256" name="ville">
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StoredType>datetime|0s</StoredType>
+      <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <foreign-key id="320" parent="262" name="FK_DF7DFD0E567F5183">
-      <ColNames>film_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>films</RefTableName>
-      <RefTableParentName>admin_cinephoria</RefTableParentName>
-    </foreign-key>
-    <index id="321" parent="262" name="PRIMARY">
+    <column id="267" parent="256" name="adresse">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>longtext|0s</StoredType>
+    </column>
+    <index id="268" parent="256" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="322" parent="262" name="IDX_DF7DFD0E567F5183">
-      <ColNames>film_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="323" parent="262" name="PRIMARY">
+    <key id="269" parent="256" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="270" parent="257" name="version">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>varchar(191)|0s</StoredType>
+    </column>
+    <column id="271" parent="257" name="executed_at">
+      <Position>2</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="272" parent="257" name="execution_time">
+      <Position>3</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <index id="273" parent="257" name="PRIMARY">
+      <ColNames>version</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="274" parent="257" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="275" parent="258" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="276" parent="258" name="cinemas_id">
+      <Position>2</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="277" parent="258" name="titre">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="278" parent="258" name="description">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>longtext|0s</StoredType>
+    </column>
+    <column id="279" parent="258" name="age_minimum">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="280" parent="258" name="coup_de_coeur">
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StoredType>tinyint(1)|0s</StoredType>
+    </column>
+    <column id="281" parent="258" name="note">
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StoredType>double|0s</StoredType>
+    </column>
+    <column id="282" parent="258" name="qualite">
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <foreign-key id="283" parent="258" name="FK_CEECCA51C5C76018">
+      <ColNames>cinemas_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>cinemas</RefTableName>
+      <RefTableParentName>admin_cinephoria</RefTableParentName>
+    </foreign-key>
+    <index id="284" parent="258" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="285" parent="258" name="IDX_CEECCA51C5C76018">
+      <ColNames>cinemas_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="286" parent="258" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="287" parent="259" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>bigint(20)|0s</StoredType>
+    </column>
+    <column id="288" parent="259" name="body">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>longtext|0s</StoredType>
+    </column>
+    <column id="289" parent="259" name="headers">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>longtext|0s</StoredType>
+    </column>
+    <column id="290" parent="259" name="queue_name">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>varchar(190)|0s</StoredType>
+    </column>
+    <column id="291" parent="259" name="created_at">
+      <Comment>(DC2Type:datetime_immutable)</Comment>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="292" parent="259" name="available_at">
+      <Comment>(DC2Type:datetime_immutable)</Comment>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="293" parent="259" name="delivered_at">
+      <Comment>(DC2Type:datetime_immutable)</Comment>
+      <Position>7</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <index id="294" parent="259" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="295" parent="259" name="IDX_75EA56E0FB7336F0">
+      <ColNames>queue_name</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="296" parent="259" name="IDX_75EA56E0E3BD61CE">
+      <ColNames>available_at</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="297" parent="259" name="IDX_75EA56E016BA31DB">
+      <ColNames>delivered_at</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="298" parent="259" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="299" parent="260" name="id">
+      <AutoIncrement>5</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="300" parent="260" name="cinemas_id">
+      <Position>2</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="301" parent="260" name="seances_id">
+      <Position>3</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="302" parent="260" name="nombre_places">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="303" parent="260" name="type_pmr">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>tinyint(1)|0s</StoredType>
+    </column>
+    <column id="304" parent="260" name="prix_total">
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StoredType>double|0s</StoredType>
+    </column>
+    <column id="305" parent="260" name="films_id">
+      <Position>7</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <foreign-key id="306" parent="260" name="FK_4DA239C5C76018">
+      <ColNames>cinemas_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>cinemas</RefTableName>
+      <RefTableParentName>admin_cinephoria</RefTableParentName>
+    </foreign-key>
+    <foreign-key id="307" parent="260" name="FK_4DA23910F09302">
+      <ColNames>seances_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>seance</RefTableName>
+      <RefTableParentName>admin_cinephoria</RefTableParentName>
+    </foreign-key>
+    <foreign-key id="308" parent="260" name="FK_4DA239939610EE">
+      <ColNames>films_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>films</RefTableName>
+      <RefTableParentName>admin_cinephoria</RefTableParentName>
+    </foreign-key>
+    <index id="309" parent="260" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="310" parent="260" name="IDX_4DA239C5C76018">
+      <ColNames>cinemas_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="311" parent="260" name="IDX_4DA23910F09302">
+      <ColNames>seances_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="312" parent="260" name="IDX_4DA239939610EE">
+      <ColNames>films_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="313" parent="260" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="314" parent="261" name="id">
+      <AutoIncrement>2</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="315" parent="261" name="numero_salle">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="316" parent="261" name="nombre_siege">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="317" parent="261" name="nombre_siege_pmr">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <index id="318" parent="261" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="319" parent="261" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="320" parent="262" name="id">
+      <AutoIncrement>2</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="321" parent="262" name="heure_debut">
+      <Comment>(DC2Type:datetime_immutable)</Comment>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="322" parent="262" name="films_id">
+      <Position>3</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <foreign-key id="323" parent="262" name="FK_DF7DFD0E939610EE">
+      <ColNames>films_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>films</RefTableName>
+      <RefTableParentName>admin_cinephoria</RefTableParentName>
+    </foreign-key>
+    <index id="324" parent="262" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="325" parent="262" name="IDX_DF7DFD0E939610EE">
+      <ColNames>films_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="326" parent="262" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="327" parent="263" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="328" parent="263" name="email">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(180)|0s</StoredType>
+    </column>
+    <column id="329" parent="263" name="roles">
+      <Comment>(DC2Type:json)</Comment>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>longtext|0s</StoredType>
+    </column>
+    <column id="330" parent="263" name="password">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="331" parent="263" name="is_verified">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>tinyint(1)|0s</StoredType>
+    </column>
+    <index id="332" parent="263" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="333" parent="263" name="UNIQ_IDENTIFIER_EMAIL">
+      <ColNames>email</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="334" parent="263" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="335" parent="263" name="UNIQ_IDENTIFIER_EMAIL">
+      <UnderlyingIndexName>UNIQ_IDENTIFIER_EMAIL</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

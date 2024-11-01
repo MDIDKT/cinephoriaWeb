@@ -33,7 +33,7 @@ final class FilmsController extends AbstractController
             $entityManager->persist($film);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_films_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_films_show', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('films/new.html.twig', [
@@ -43,8 +43,15 @@ final class FilmsController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_films_show', methods: ['GET'])]
-    public function show(Films $film): Response
+    public function show(EntityManagerInterface $entityManager, int $id): Response
     {
+        $film = $entityManager->getRepository(Films::class)->find($id);
+
+        if (!$film) {
+            throw $this->createNotFoundException('Le film avec cet identifiant n\'existe pas.');
+            throw $this->NotFoundException('Film introuvable');
+        }
+
         return $this->render('films/show.html.twig', [
             'film' => $film,
         ]);
@@ -68,14 +75,22 @@ final class FilmsController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_films_delete', methods: ['POST'])]
-    public function delete(Request $request, Films $film, EntityManagerInterface $entityManager): Response
+    #[Route('/films/delete/{id}', name: 'app_films_delete', methods: ['POST'])]
+    public function delete(int $id, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$film->getId(), $request->getPayload()->getString('_token'))) {
-            $entityManager->remove($film);
-            $entityManager->flush();
+        // Récupérer le film via son ID
+        $film = $entityManager->getRepository(Films::class)->find($id);
+        dump ($id);
+
+        // Vérifier si le film existe
+        if (!$film) {
+            throw $this->createNotFoundException('Film introuvable');
         }
 
-        return $this->redirectToRoute('app_films_index', [], Response::HTTP_SEE_OTHER);
+            // Supprimer le film
+            $entityManager->remove($film);
+            $entityManager->flush();
+        // Rediriger vers la liste des films
+        return $this->redirectToRoute('app_films_index');
     }
 }

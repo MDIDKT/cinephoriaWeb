@@ -1,4 +1,4 @@
-<?php /** @noinspection ALL */
+<?php
 
 namespace App\Repository;
 
@@ -15,7 +15,6 @@ class FilmsRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Films::class);
     }
-
 
     //    /**
     //     * @return Films[] Returns an array of Films objects

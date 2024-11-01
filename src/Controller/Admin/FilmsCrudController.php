@@ -28,7 +28,6 @@ class FilmsCrudController extends AbstractCrudController
             TextField::new('description'),
             TextareaField::new('imageFile')
                 ->setFormType(VichImageType::class)
-                ->setFormType(VichImageType::class)
                 ->setLabel('Affiche du film'),
             IntegerField::new ('ageMinimum'),
             BooleanField::new ('coupDeCoeur'),

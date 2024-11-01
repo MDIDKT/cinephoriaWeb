@@ -4,20 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="remise en place de webpack car il n'étatit plus vu" />
+    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="mise a jour des branch" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" requirePlatformReqs="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="DEV_Authentification" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="DEV" />
+        <entry key="$PROJECT_DIR$" value="DEV_Authentification" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,24 +40,24 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="DEV" />
+                    <option name="lastUsedInstant" value="1730150397" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="DEV_Authentification" />
+                    <option name="lastUsedInstant" value="1730150323" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="DEV_Reservations" />
+                    <option name="lastUsedInstant" value="1729946384" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="DEV_VichUploader" />
                     <option name="lastUsedInstant" value="1729707783" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="DEV_Correctif" />
                     <option name="lastUsedInstant" value="1729666933" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="DEV_Tailwind" />
-                    <option name="lastUsedInstant" value="1729019836" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="DEV_AdminCrud" />
-                    <option name="lastUsedInstant" value="1729019530" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1728233487" />
                   </RecentBranch>
                 </list>
               </option>
@@ -213,6 +216,9 @@
       <path value="$PROJECT_DIR$/vendor/jms/metadata" />
     </include_path>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
@@ -225,27 +231,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "PHPUnit.Main.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "DEV__VichUploader",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;PHPUnit.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;DEV&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/vendor/@symfony/stimulus-bridge" />
@@ -262,8 +268,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PS-242.23339.16" />
-        <option value="bundled-php-predefined-a98d8de5180a-90914f2295cb-com.jetbrains.php.sharedIndexes-PS-242.23339.16" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PS-242.23726.107" />
+        <option value="bundled-php-predefined-a98d8de5180a-90914f2295cb-com.jetbrains.php.sharedIndexes-PS-242.23726.107" />
       </set>
     </attachedChunks>
   </component>
@@ -287,6 +293,7 @@
       <workItem from="1728805121688" duration="2683000" />
       <workItem from="1728807862701" duration="9527000" />
       <workItem from="1729021333775" duration="1923000" />
+      <workItem from="1729950676363" duration="24738000" />
     </task>
     <task id="LOCAL-00001" summary="Creation du CRUD cineme, film, seance et salle.&#10;Corriger l'affichage de la colone Films et salles">
       <option name="closed" value="true" />
@@ -368,18 +375,105 @@
       <option name="project" value="LOCAL" />
       <updated>1729671148554</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="correction de la logique de reservation">
+      <option name="closed" value="true" />
+      <created>1729957719134</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1729957719135</updated>
+    </task>
+    <task id="LOCAL-00012" summary="validation de la reservation">
+      <option name="closed" value="true" />
+      <created>1730053477761</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1730053477761</updated>
+    </task>
+    <task id="LOCAL-00013" summary="ajout de la logique de calcul du prix total">
+      <option name="closed" value="true" />
+      <created>1730054148991</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1730054148991</updated>
+    </task>
+    <task id="LOCAL-00014" summary="ajout de l'authentification user et admin">
+      <option name="closed" value="true" />
+      <created>1730149827922</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1730149827922</updated>
+    </task>
+    <task id="LOCAL-00015" summary="mise a jour des branch">
+      <option name="closed" value="true" />
+      <created>1730150258582</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1730150258582</updated>
+    </task>
+    <task id="LOCAL-00016" summary="mise a jour des branch">
+      <option name="closed" value="true" />
+      <created>1730150521763</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1730150521763</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+        <option value="GitHub.CommitStatus" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/DEV_VichUploader" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/DEV" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -394,7 +488,12 @@
     <MESSAGE value="mise en forme de la la landing page avec navbar" />
     <MESSAGE value="remise en place de webpack car il n'étatit plus vu" />
     <MESSAGE value="creation de la branche DEV à partir de DEV_Correctif" />
-    <option name="LAST_COMMIT_MESSAGE" value="creation de la branche DEV à partir de DEV_Correctif" />
+    <MESSAGE value="correction de la logique de reservation" />
+    <MESSAGE value="validation de la reservation" />
+    <MESSAGE value="ajout de la logique de calcul du prix total" />
+    <MESSAGE value="ajout de l'authentification user et admin" />
+    <MESSAGE value="mise a jour des branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="mise a jour des branch" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

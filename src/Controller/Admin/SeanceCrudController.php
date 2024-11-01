@@ -23,7 +23,7 @@ class SeanceCrudController extends AbstractCrudController
     {
         return [
             DateTimeField::new ('HeureDebut'),
-            AssociationField::new ('film'),
+            AssociationField::new ('films'),
         ];
     }
 

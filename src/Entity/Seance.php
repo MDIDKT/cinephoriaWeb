@@ -17,15 +17,14 @@ class Seance
 
     #[ORM\Column]
     private ?\DateTimeImmutable $HeureDebut = null;
-
-    #[ORM\ManyToOne(inversedBy: 'seances')]
-    private ?Films $film = null;
-
     /**
      * @var Collection<int, Reservations>
      */
     #[ORM\OneToMany(targetEntity: Reservations::class, mappedBy: 'seances')]
     private Collection $reservations;
+
+    #[ORM\ManyToOne(inversedBy: 'seances')]
+    private ?Films $films = null;
 
     public function __construct()
     {
@@ -48,19 +47,6 @@ class Seance
 
         return $this;
     }
-
-    public function getFilm(): ?Films
-    {
-        return $this->film;
-    }
-
-    public function setFilm(?Films $film): static
-    {
-        $this->film = $film;
-
-        return $this;
-    }
-
     /**
      * @return Collection<int, Reservations>
      */
@@ -94,5 +80,17 @@ class Seance
     public function __toString(): string
     {
         return $this->getHeureDebut()->format('H:i');
+    }
+
+    public function getFilms(): ?Films
+    {
+        return $this->films;
+    }
+
+    public function setFilms(?Films $films): static
+    {
+        $this->films = $films;
+
+        return $this;
     }
 }

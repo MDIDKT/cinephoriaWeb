@@ -25,20 +25,6 @@ class Films
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-/*    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $affiche = null;*/
-
-    #[Vich\UploadableField(mapping: 'affiche', fileNameProperty: 'imageName', size: 'imageSize')]
-    private ?File $imageFile = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?string $imageName = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?int $imageSize = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?\DateTimeImmutable $updatedAt = null;
     #[ORM\Column]
     private ?int $ageMinimum = null;
 
@@ -48,16 +34,13 @@ class Films
     #[ORM\Column]
     private ?float $note = null;
 
-    /**
-     * @var Collection<int, Cinemas>
-     */
-    #[ORM\ManyToMany(targetEntity: Cinemas::class, mappedBy: 'film')]
-    private Collection $cinemas;
+    #[ORM\ManyToOne(inversedBy: 'films')]
+    private ?Cinemas $cinemas = null;
 
     /**
      * @var Collection<int, Seance>
      */
-    #[ORM\OneToMany(targetEntity: Seance::class, mappedBy: 'film')]
+    #[ORM\OneToMany(targetEntity: Seance::class, mappedBy: 'films')]
     private Collection $seances;
 
     #[ORM\Column(length: 255)]
@@ -69,10 +52,17 @@ class Films
     #[ORM\OneToMany(targetEntity: Reservations::class, mappedBy: 'films')]
     private Collection $reservations;
 
+    #[Vich\UploadableField(mapping: 'affiche', fileNameProperty: 'imageName', size: 'imageSize')]
+    private ?File $imageFile = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?string $imageName = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $imageSize = null;
 
     public function __construct()
     {
-        $this->cinemas = new ArrayCollection();
         $this->seances = new ArrayCollection();
         $this->reservations = new ArrayCollection();
     }
@@ -105,18 +95,6 @@ class Films
 
         return $this;
     }
-/*
-    public function getAffiche(): ?string
-    {
-        return $this->affiche;
-    }
-
-    public function setAffiche(string $affiche): static
-    {
-        $this->affiche = $affiche;
-
-        return $this;
-    }*/
 
     public function getAgeMinimum(): ?int
     {
@@ -154,29 +132,14 @@ class Films
         return $this;
     }
 
-    /**
-     * @return Collection<int, Cinemas>
-     */
-    public function getCinemas(): Collection
+    public function getCinemas(): ?Cinemas
     {
         return $this->cinemas;
     }
 
-    public function addCinema(Cinemas $cinema): static
+    public function setCinemas(?Cinemas $cinemas): static
     {
-        if (!$this->cinemas->contains($cinema)) {
-            $this->cinemas->add($cinema);
-            $cinema->addFilm($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCinema(Cinemas $cinema): static
-    {
-        if ($this->cinemas->removeElement($cinema)) {
-            $cinema->removeFilm($this);
-        }
+        $this->cinemas = $cinemas;
 
         return $this;
     }
@@ -193,7 +156,7 @@ class Films
     {
         if (!$this->seances->contains($seance)) {
             $this->seances->add($seance);
-            $seance->setFilm($this);
+            $seance->setFilms($this);
         }
 
         return $this;
@@ -203,8 +166,8 @@ class Films
     {
         if ($this->seances->removeElement($seance)) {
             // set the owning side to null (unless already changed)
-            if ($seance->getFilm() === $this) {
-                $seance->setFilm(null);
+            if ($seance->getFilms() === $this) {
+                $seance->setFilms(null);
             }
         }
 
@@ -221,11 +184,6 @@ class Films
         $this->qualite = $qualite;
 
         return $this;
-    }
-
-    public function __toString(): string
-    {
-        return $this->titre;
     }
 
     /**
@@ -257,40 +215,39 @@ class Films
 
         return $this;
     }
-    public function setImageFile(?File $imageFile = null): void
-    {
-        $this->imageFile = $imageFile;
 
-        if (null !== $imageFile) {
-            // It is required that at least one field changes if you are using doctrine
-            // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new \DateTimeImmutable();
-        }
-    }
-
-    public function getImageFile(): ?File
+    public function getImageFile (): ?File
     {
         return $this->imageFile;
     }
 
-    public function setImageName(?string $imageName): void
+    public function setImageFile (?File $imageFile): void
     {
-        $this->imageName = $imageName;
+        $this->imageFile = $imageFile;
     }
 
-    public function getImageName(): ?string
+    public function getImageName (): ?string
     {
         return $this->imageName;
     }
 
-    public function setImageSize(?int $imageSize): void
+    public function setImageName (?string $imageName): void
     {
-        $this->imageSize = $imageSize;
+        $this->imageName = $imageName;
     }
 
-    public function getImageSize(): ?int
+    public function getImageSize (): ?int
     {
         return $this->imageSize;
     }
 
+    public function setImageSize (?int $imageSize): void
+    {
+        $this->imageSize = $imageSize;
+    }
+
+    public function __toString(): string
+    {
+        return $this->titre;
+    }
 }
