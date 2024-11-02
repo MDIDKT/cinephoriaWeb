@@ -19,7 +19,7 @@ class AvisRepository extends ServiceEntityRepository
         /**
          * @return Avis[] Returns an array of Avis objects
          */
-        public function findByExampleField($value): array
+/*        public function findByExampleField($value): array
         {
             return $this->createQueryBuilder('a')
                 ->andWhere('a.exampleField = :val')
@@ -29,7 +29,7 @@ class AvisRepository extends ServiceEntityRepository
                 ->getQuery()
                 ->getResult()
             ;
-        }
+        }*/
 
     //    public function findOneBySomeField($value): ?Avis
     //    {

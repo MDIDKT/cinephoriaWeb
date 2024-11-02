@@ -46,7 +46,7 @@ final class AvisController extends AbstractController
     public function show(Avis $avis): Response
     {
         return $this->render('avis/show.html.twig', [
-            'avi' => $avis,
+            'avis' => $avis,
         ]);
     }
 
@@ -65,6 +65,7 @@ final class AvisController extends AbstractController
         return $this->render('avis/edit.html.twig', [
             'avis' => $avis,
             'form' => $form,
+            'film' => $avis->getFilm(),
         ]);
     }
 
@@ -78,4 +79,5 @@ final class AvisController extends AbstractController
 
         return $this->redirectToRoute('app_avis_index', [], Response::HTTP_SEE_OTHER);
     }
+
 }

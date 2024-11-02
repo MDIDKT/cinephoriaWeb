@@ -24,7 +24,9 @@
                 <h3 class="text-xl font-semibold text-blue-700">Avis</h3>
                 <ul class="list-disc list-inside text-gray-700">
                     {% for avis in film.avis %}
-                        <li>{{ avis.commentaire }}</li>
+                        <li>{{ avis.commentaire }} : note {{ avis.note }}</li>
+                    {% else %}
+                        <li>Aucun avis trouvé</li>
                     {% endfor %}
                 </ul>
             </div>
@@ -33,9 +35,9 @@
 
 
 
-    <a href="{{ path('app_films_index') }}" class="text-blue-500 hover:text-blue-700">back to list</a>
+    <a href="{{ path('app_films_index') }}" class="text-blue-500 hover:text-blue-700">Retourà la liste</a>
 
-    <a href="{{ path('app_films_edit', {'id': film.id}) }}" class="text-blue-500 hover:text-blue-700 btn btn primary">edit</a>
+    <a href="{{ path('app_films_edit', {'id': film.id}) }}" class="text-blue-500 hover:text-blue-700 btn btn primary">Modifier</a>
 
     {{ include('films/_delete_form.html.twig') }}
 {% endblock %}

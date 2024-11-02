@@ -52,8 +52,14 @@ final class FilmsController extends AbstractController
             throw $this->NotFoundException('Film introuvable');
         }
 
+
+        $avisApprouves = array_filter($film->getAvis()->toArray(), function($avis) {
+            return $avis->isApprouve();
+        });
+
         return $this->render('films/show.html.twig', [
             'film' => $film,
+            'avis' => $avisApprouves
         ]);
     }
 
