@@ -16,6 +16,7 @@ class HomeController extends AbstractController
         $films = $filmsRepository->findAll();
         return $this->render('home/index.html.twig', [
             'films' => $films,
+            'filmsLast' => $filmsRepository->find3LastFilms(),
         ]);
     }
 

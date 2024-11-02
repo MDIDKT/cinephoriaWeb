@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="mise en page de quelque page avec taiwind css">
+    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="correction de la logique d'approuve des avis">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AvisController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AvisController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/FilmsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FilmsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/AvisType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AvisType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/AvisRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/AvisRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/avis/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/avis/_delete_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/avis/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/avis/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/avis/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/avis/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/employee/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/employee/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/films/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/films/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/FilmsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FilmsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/SallesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SallesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/_Partials/_cards.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_Partials/_cards.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/_Partials/_carousel.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_Partials/_carousel.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/_Partials/_hero.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_Partials/_hero.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -309,7 +306,7 @@
       <workItem from="1729021333775" duration="1923000" />
       <workItem from="1729950676363" duration="24738000" />
       <workItem from="1730495630627" duration="7645000" />
-      <workItem from="1730503297634" duration="9616000" />
+      <workItem from="1730503297634" duration="15573000" />
     </task>
     <task id="LOCAL-00001" summary="Creation du CRUD cineme, film, seance et salle.&#10;Corriger l'affichage de la colone Films et salles">
       <option name="closed" value="true" />
@@ -455,7 +452,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730506113215</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="correction de la logique d'approuve des avis">
+      <option name="closed" value="true" />
+      <created>1730532795562</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1730532795562</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +533,8 @@
     <MESSAGE value="mise a jour de la BDD" />
     <MESSAGE value="Supprime Cinephoria_Admin.zip pour éviter les erreurs de taille" />
     <MESSAGE value="mise en page de quelque page avec taiwind css" />
-    <option name="LAST_COMMIT_MESSAGE" value="mise en page de quelque page avec taiwind css" />
+    <MESSAGE value="correction de la logique d'approuve des avis" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction de la logique d'approuve des avis" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
