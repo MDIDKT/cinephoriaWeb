@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ma page{% endblock %}
+
+{% block body %}
+
+    <div class="hero bg-base-500 min-h-screen flex  ">
+        <div class="hero-content text-center">
+            <div class="max-w-md">
+                <h1 class="text-5xl font-bold">Ma page Utilisateur</h1>
+                <p class="py-6">Bienvenue sur votre espace utilisateur.</p>
+                <p class="py-6">Vous pouvez consulter vos réservations, effectuer une nouvelle réservation ou consulter la liste des films.</p>
+
+                <div class="py-6">
+                    <p class="mb-2">Vous pouvez consulter vos réservations en cliquant sur le lien ci-dessous.</p>
+                    <a href="{{ path('app_reservations_index') }}" class="btn btn-primary bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Vos réservations</a>
+                </div>
+
+                <div class="py-6">
+                    <p class="mb-2">Vous pouvez également effectuer une nouvelle réservation en cliquant sur le lien ci-dessous.</p>
+                    <a href="{{ path('app_reservations_new') }}" class="btn btn-primary bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Nouvelle réservation</a>
+                </div>
+
+                <div class="py-6">
+                    <p class="mb-2">Vous pouvez consulter la liste des films en cliquant sur le lien ci-dessous.</p>
+                    <a href="{{ path('app_films_index') }}" class="btn btn-primary bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Films</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

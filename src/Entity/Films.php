@@ -61,10 +61,17 @@ class Films
     #[ORM\Column(nullable: true)]
     private ?int $imageSize = null;
 
+    /**
+     * @var Collection<int, Avis>
+     */
+    #[ORM\OneToMany(targetEntity: Avis::class, mappedBy: 'film')]
+    private Collection $avis;
+
     public function __construct()
     {
         $this->seances = new ArrayCollection();
         $this->reservations = new ArrayCollection();
+        $this->avis = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -249,5 +256,35 @@ class Films
     public function __toString(): string
     {
         return $this->titre;
+    }
+
+    /**
+     * @return Collection<int, Avis>
+     */
+    public function getAvis(): Collection
+    {
+        return $this->avis;
+    }
+
+    public function addAvi(Avis $avi): static
+    {
+        if (!$this->avis->contains($avi)) {
+            $this->avis->add($avi);
+            $avi->setFilm($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAvi(Avis $avi): static
+    {
+        if ($this->avis->removeElement($avi)) {
+            // set the owning side to null (unless already changed)
+            if ($avi->getFilm() === $this) {
+                $avi->setFilm(null);
+            }
+        }
+
+        return $this;
     }
 }
