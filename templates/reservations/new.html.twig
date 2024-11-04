@@ -3,9 +3,10 @@
 {% block title %}New Reservations{% endblock %}
 
 {% block body %}
-    <h1>Create new Reservations</h1>
+    <h1 class="text-2xl font-bold mb-4">Nouvelle réservation</h1>
+    <div class="bg-gray-200 p-6 rounded-lg mx-auto" style="max-width: 600px;">
+        {{ include('reservations/_form.html.twig') }}
+    </div>
 
-    {{ include('reservations/_form.html.twig') }}
-
-    <a href="{{ path('app_reservations_index') }}">back to list</a>
+    <a href="{{ path('app_reservations_index') }}" class="text-blue-500 hover:underline">Retour</a>
 {% endblock %}

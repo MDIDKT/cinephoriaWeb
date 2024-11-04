@@ -57,15 +57,15 @@ class Seance
 
     public function addReservation(Reservations $reservation): static
     {
-        if (!$this->reservations->contains($reservation)) {
-            $this->reservations->add($reservation);
-            $reservation->setSeances($this);
+        if (!$this->reservations->contains ($reservation)) {
+            $this->reservations->add ($reservation);
+            $reservation->setSeances ($this);
         }
 
         return $this;
     }
 
-    public function removeReservation(Reservations $reservation): static
+    public function removeReservation (Reservations $reservation): static
     {
         if ($this->reservations->removeElement($reservation)) {
             // set the owning side to null (unless already changed)

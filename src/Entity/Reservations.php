@@ -30,85 +30,91 @@ class Reservations
     #[ORM\ManyToOne(inversedBy: 'reservations')]
     private ?Films $films = null;
 
-    public function __construct()
+    public function __construct ()
     {
-        $this->prixTotal = $this->getNombrePlaces() * 8;
+        $this->prixTotal = $this->getNombrePlaces () * 8;
     }
-    public function getId(): ?int
+
+    public function getId (): ?int
     {
         return $this->id;
     }
 
-    public function getCinemas(): ?Cinemas
+    public function getCinemas (): ?Cinemas
     {
         return $this->cinemas;
     }
 
-    public function setCinemas(?Cinemas $cinemas): static
+    public function setCinemas (?Cinemas $cinemas): static
     {
         $this->cinemas = $cinemas;
 
         return $this;
     }
 
-    public function getSeances(): ?Seance
+    public function getSeances (): ?Seance
     {
         return $this->seances;
     }
 
-    public function setSeances(?Seance $seances): static
+    public function setSeances (?Seance $seances): static
     {
         $this->seances = $seances;
 
         return $this;
     }
 
-    public function getNombrePlaces(): ?int
+    public function getNombrePlaces (): ?int
     {
         return $this->nombrePlaces;
     }
 
-    public function setNombrePlaces(int $nombrePlaces): static
+    public function setNombrePlaces (int $nombrePlaces): static
     {
         $this->nombrePlaces = $nombrePlaces;
 
         return $this;
     }
 
-    public function isTypePMR(): ?bool
+    public function isTypePMR (): ?bool
     {
         return $this->typePMR;
     }
 
-    public function setTypePMR(bool $typePMR): static
+    public function setTypePMR (bool $typePMR): static
     {
         $this->typePMR = $typePMR;
 
         return $this;
     }
 
-    public function getPrixTotal(): ?float
+    public function getPrixTotal (): ?float
     {
-        return $this->prixTotal = $this->getNombrePlaces() * 8 + $this->isTypePMR ($this->typePMR*5/100);
+        return $this->prixTotal = $this->getNombrePlaces () * 8 + $this->isTypePMR ($this->typePMR * 5 / 100);
     }
 
-    public function setPrixTotal(float $prixTotal): static
+    public function setPrixTotal (float $prixTotal): static
     {
         $this->prixTotal = $prixTotal;
 
         return $this;
     }
 
-    public function getFilms(): ?Films
+    public function getFilms (): ?Films
     {
         return $this->films;
     }
 
-    public function setFilms(?Films $films): static
+    public function setFilms (?Films $films): static
     {
         $this->films = $films;
 
         return $this;
+    }
+
+    public function __toString (): string
+    {
+        return $this->getNombrePlaces ();
     }
 
 }

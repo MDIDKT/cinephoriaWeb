@@ -248,6 +248,10 @@ class Films
         return $this->imageSize;
     }
 
+    /**
+     * @param int|null $imageSize
+     * @return void
+     */
     public function setImageSize (?int $imageSize): void
     {
         $this->imageSize = $imageSize;

@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Form;
 
 use App\Entity\Cinemas;
@@ -13,30 +14,39 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ReservationsType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
+    public function buildForm (FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nombrePlaces')
-            ->add('typePMR')
-            ->add('prixTotal')
-            ->add('cinemas', EntityType::class, [
+            ->add ('cinemas', EntityType::class, [
                 'class' => Cinemas::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom',
             ])
-            ->add('films', EntityType::class, [
+            ->add ('films', EntityType::class, [
                 'class' => Films::class,
-                'choice_label' => 'id',
+                'choice_label' => 'titre',
             ])
-            ->add('seances', EntityType::class, [
+            ->add('nombrePlaces', null, [
+                'attr' => ['class' => 'form-input mt-1 block w-full']
+            ])
+            ->add('typePMR', null, [
+                'attr' => ['class' => 'form-checkbox mt-1 block']
+            ])
+            ->add('prixTotal', null, [
+                'attr' => ['class' => 'form-input mt-1 block w-full']
+            ])
+
+/*            ->add ('seances', EntityType::class, [
                 'class' => Seance::class,
-                'choice_label' => 'id',
-            ])
-        ;
+                'choice_label' => function(Seance $seance) {
+                    return $seance->getHeureDebut ()->format ('Y-m-d H:i:s');
+                },
+                'multiple' => true,
+            ])*/;
     }
 
-    public function configureOptions(OptionsResolver $resolver): void
+    public function configureOptions (OptionsResolver $resolver): void
     {
-        $resolver->setDefaults([
+        $resolver->setDefaults ([
             'data_class' => Reservations::class,
         ]);
     }
