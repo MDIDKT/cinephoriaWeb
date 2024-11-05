@@ -4,23 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="ajout d'un carroussel sur la page d'accueil">
-      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_2024,_14_27_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_2024__14_27__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_10_2024,_21_25_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_10_2024__21_25__Changes_1.xml" beforeDir="false" />
+    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="merge de la partie user, ajout de api platform">
+      <change afterPath="$PROJECT_DIR$/assets/controllers/react/controllers/Component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ReservationsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReservationsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Films.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Films.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Reservations.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Reservations.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Seance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Seance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ReservationsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ReservationsType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/films/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/films/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reservations/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reservations/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reservations/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reservations/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reservations/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reservations/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reservations/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reservations/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/nelmio_cors.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/nelmio_cors.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/importmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/importmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qodana.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Avis.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Avis.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/about/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,15 +36,17 @@
   </component>
   <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="DEV_Authentification" />
+    <option name="BRANCH" value="DEV_EspaceUser" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="DEV" />
+        <entry key="$PROJECT_DIR$" value="DEV_API" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -62,8 +66,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="DEV_ReactJS" />
+                    <option name="lastUsedInstant" value="1730822472" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="DEV_API" />
+                    <option name="lastUsedInstant" value="1730817571" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="DEV_EspaceUser" />
-                    <option name="lastUsedInstant" value="1730484612" />
+                    <option name="lastUsedInstant" value="1730817543" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="DEV" />
@@ -232,6 +244,25 @@
       <path value="$PROJECT_DIR$/vendor/symfonycasts/verify-email-bundle" />
       <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
       <path value="$PROJECT_DIR$/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/vendor/willdurand/negotiation" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/documentation" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/doctrine-common" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/serializer" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/validator" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/state" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/openapi" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/doctrine-orm" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/symfony" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/jsonld" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/http-cache" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/metadata" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/hydra" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/json-schema" />
+      <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/lexik/jwt-authentication-bundle" />
     </include_path>
   </component>
   <component name="ProblemsViewState">
@@ -256,7 +287,7 @@
     "PHPUnit.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "DEV__EspaceUser",
+    "git-widget-placeholder": "DEV__ReactJS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
@@ -265,6 +296,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "Errors",
+    "ts.external.directory.path": "/Applications/PhpStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -273,11 +305,6 @@
     ]
   }
 }]]></component>
-  <component name="QodanaReportsService">
-    <option name="descriptions">
-      <ReportDescription localRun="true" path="/private/var/folders/6s/hdr06gc94cx5kc2vh_901y_w0000gn/T/qodana_output/qodana.sarif.json" reportGuid="092a0b6b-9468-4a23-9e27-d313fc3dc56a" reportId="Cinephoria_Admin/qodana/2024-11-04" />
-    </option>
-  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/vendor/@symfony/stimulus-bridge" />
@@ -296,6 +323,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.Cinephoria_Admin" />
+        <item itemvalue="PHPUnit.Cinephoria_Admin" />
         <item itemvalue="PHPUnit.Cinephoria_Admin" />
       </list>
     </recent_temporary>
@@ -333,6 +362,8 @@
       <workItem from="1730503297634" duration="15851000" />
       <workItem from="1730705584633" duration="683000" />
       <workItem from="1730707084536" duration="7345000" />
+      <workItem from="1730814358139" duration="2178000" />
+      <workItem from="1730816739241" duration="8789000" />
     </task>
     <task id="LOCAL-00001" summary="Creation du CRUD cineme, film, seance et salle.&#10;Corriger l'affichage de la colone Films et salles">
       <option name="closed" value="true" />
