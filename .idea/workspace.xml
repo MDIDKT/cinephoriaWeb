@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="ajout du MCD">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_11_2024,_10_57_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_11_2024__10_57__Changes_.xml" beforeDir="false" />
+    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="modification d'un film">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/FilmsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FilmsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/FilmsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FilmsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/_Partials/_cards2.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/_Partials/_carousel.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_Partials/_carousel.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/_Partials/_navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_Partials/_navbar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/films/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/films/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,24 +58,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="DEV_ReactJS" />
-                    <option name="lastUsedInstant" value="1730822472" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="DEV_API" />
-                    <option name="lastUsedInstant" value="1730817571" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="DEV_EspaceUser" />
-                    <option name="lastUsedInstant" value="1730817543" />
+                    <option name="branchName" value="DEV_ReviewCode" />
+                    <option name="lastUsedInstant" value="1731146715" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="DEV" />
                     <option name="lastUsedInstant" value="1730150114" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="DEV_Authentification" />
-                    <option name="lastUsedInstant" value="1730150042" />
                   </RecentBranch>
                 </list>
               </option>
@@ -274,7 +267,7 @@
     "PHPUnit.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "DEV",
+    "git-widget-placeholder": "DEV__ReviewCode",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
@@ -282,7 +275,7 @@
     "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "terminal",
+    "settings.editor.selected.configurable": "preferences.sourceCode",
     "ts.external.directory.path": "/Applications/PhpStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   },
@@ -299,7 +292,7 @@
       <recent name="$PROJECT_DIR$/assets/vendor" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.Cinephoria_Admin">
+  <component name="RunManager" selected="PHPUnit.Main">
     <configuration name="Cinephoria_Admin" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" directory="$PROJECT_DIR$" />
       <method v="2" />
@@ -353,6 +346,9 @@
       <workItem from="1730816739241" duration="8789000" />
       <workItem from="1731140138130" duration="110000" />
       <workItem from="1731140577088" duration="3626000" />
+      <workItem from="1731145735124" duration="4705000" />
+      <workItem from="1731150881252" duration="8000" />
+      <workItem from="1731150905151" duration="1973000" />
     </task>
     <task id="LOCAL-00001" summary="Creation du CRUD cineme, film, seance et salle.&#10;Corriger l'affichage de la colone Films et salles">
       <option name="closed" value="true" />
@@ -530,7 +526,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731017916907</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="modification d'un film">
+      <option name="closed" value="true" />
+      <created>1731146264363</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1731146264363</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +578,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="DEV_EspaceUser" />
+                        <option value="DEV_API" />
                       </list>
                     </value>
                   </entry>
@@ -606,7 +610,24 @@
     <MESSAGE value="correction de la logique d'approuve des avis" />
     <MESSAGE value="ajout d'un carroussel sur la page d'accueil" />
     <MESSAGE value="ajout du MCD" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout du MCD" />
+    <MESSAGE value="modification d'un film" />
+    <option name="LAST_COMMIT_MESSAGE" value="modification d'un film" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/templates/home/index.html.twig</url>
+          <line>18</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/templates/films/index.html.twig</url>
+          <line>9</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

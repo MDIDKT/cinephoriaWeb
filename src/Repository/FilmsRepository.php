@@ -11,9 +11,9 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class FilmsRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    public function __construct (ManagerRegistry $registry)
     {
-        parent::__construct($registry, Films::class);
+        parent::__construct ($registry, Films::class);
     }
 
     //    /**
@@ -41,13 +41,12 @@ class FilmsRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    public function find3LastFilms()
+    public function find3LastFilms ()
     {
-        return $this->createQueryBuilder('f')
-            ->orderBy('f.id', 'DESC')
-            ->setMaxResults(3)
-            ->getQuery()
-            ->getResult()
-        ;
+        return $this->createQueryBuilder ('f')
+            ->orderBy ('f.id', 'DESC')
+            ->setMaxResults (3)
+            ->getQuery ()
+            ->getResult ();
     }
 }
