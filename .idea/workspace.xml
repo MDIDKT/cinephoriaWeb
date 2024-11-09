@@ -5,16 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="modification d'un film">
+      <change afterPath="$PROJECT_DIR$/tests/entity/EntityTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d7d5968-3d23-46b9-8aac-b7fe8366a0e5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4d7d5968-3d23-46b9-8aac-b7fe8366a0e5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5058475f-d6e4-45d0-9d16-63954344bdb6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5058475f-d6e4-45d0-9d16-63954344bdb6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/FilmsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FilmsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/FilmsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FilmsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/_Partials/_cards2.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241027170259.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241027171428.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241027171842.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241027202516.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241027202716.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241101090615.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241101090829.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241101212649.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241106215809.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241107203347.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/_Partials/_carousel.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_Partials/_carousel.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/_Partials/_navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_Partials/_navbar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/films/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/films/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/_Partials/_hero.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_Partials/_hero.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/RegistrationControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/RegistrationControllerTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +48,12 @@
     </execution>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="DEV_EspaceUser" />
+    <option name="BRANCH" value="DEV_ReviewCode" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="DEV_API" />
+        <entry key="$PROJECT_DIR$" value="DEV_test" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,11 +74,15 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="DEV_ReviewCode" />
-                    <option name="lastUsedInstant" value="1731146715" />
+                    <option name="lastUsedInstant" value="1731162471" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="DEV_test" />
+                    <option name="lastUsedInstant" value="1731153713" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="DEV" />
-                    <option name="lastUsedInstant" value="1730150114" />
+                    <option name="lastUsedInstant" value="1731153293" />
                   </RecentBranch>
                 </list>
               </option>
@@ -243,6 +262,9 @@
       <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
       <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
       <path value="$PROJECT_DIR$/vendor/lexik/jwt-authentication-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
     </include_path>
   </component>
   <component name="ProblemsViewState">
@@ -275,7 +297,7 @@
     "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode",
+    "settings.editor.selected.configurable": "terminal",
     "ts.external.directory.path": "/Applications/PhpStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   },
@@ -303,6 +325,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.Cinephoria_Admin" />
+        <item itemvalue="PHPUnit.Cinephoria_Admin" />
         <item itemvalue="PHPUnit.Cinephoria_Admin" />
         <item itemvalue="PHPUnit.Cinephoria_Admin" />
         <item itemvalue="PHPUnit.Cinephoria_Admin" />

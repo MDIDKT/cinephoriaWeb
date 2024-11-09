@@ -9,6 +9,43 @@
 
                 </p>
             </div>
-{#        </div>#}
     </div>
+{#    <div class="container mx-auto max-w-10xl px-3 py-5">
+        <div class="flex flex-col-reverse justify-center lg:flex-row items-center gap-5 py-5">
+            <div class="w-full xl:w-28 lg:w-1/2">
+                {% include '_partials/_carousel.html.twig' %}
+            </div>
+            <div class="w-full lg:w-1/2">
+                <h1 class="text-5xl font-bold text-gray-900 leading-tight mb-3">Responsive left-aligned hero with image</h1>
+                <p class="text-lg text-gray-600 mb-6">
+                    Quickly design and customize responsive mobile-first sites with Tailwind CSS, the world’s most popular utility-first framework, featuring responsive design, extensive prebuilt components, and a powerful ecosystem.
+                </p>
+                <div class="flex flex-col md:flex-row gap-2">
+                    <button type="button" class="bg-blue-600 text-white font-semibold text-lg py-2 px-4 rounded-lg hover:bg-blue-700">
+                        Primary
+                    </button>
+                    <button type="button" class="bg-transparent border border-gray-400 text-gray-600 font-semibold text-lg py-2 px-4 rounded-lg hover:bg-gray-200">
+                        Default
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>#}
+    <div class="container mx-auto max-w-7xl px-3 py-5">
+        <div class="w-full flex flex-col-reverse justify-center lg:flex-row items-center gap-5 py-5">
+            <!-- Agrandissement de l'image avec une largeur proportionnelle en grand écran -->
+            <div class="w-full xl:w-3/5 lg:w-2/3">
+                {% include '_partials/_carousel.html.twig' %}
+            </div>
+            <!-- Réduction de la largeur de la section texte -->
+            <div class="w-full lg:w-3/6">
+                <h1 class="text-5xl font-bold text-gray-900 leading-tight mb-3">Responsive left-aligned hero with image</h1>
+                <p class="text-lg text-gray-600 mb-6">
+                    Quickly design and customize responsive mobile-first sites with Tailwind CSS, the world’s most popular utility-first framework, featuring responsive design, extensive prebuilt components, and a powerful ecosystem.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
 </section>
