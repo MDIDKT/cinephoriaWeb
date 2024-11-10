@@ -154,4 +154,12 @@ class Seance
 
         return $this;
     }
+
+    public function getPlacesDisponibles(): int
+    {
+        $nombrePlacesReserves = count($this->getReservations());
+        $nombrePlacesTotales = $this->getSalle()->getNombreSiege();
+
+        return $nombrePlacesTotales - $nombrePlacesReserves;
+    }
 }

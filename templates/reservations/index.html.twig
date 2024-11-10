@@ -3,35 +3,39 @@
 {% block title %}Reservations index{% endblock %}
 
 {% block body %}
-    <h1>Vos réservations</h1>
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Places</th>
-            <th>Type PMR ?</th>
-            <th>Prix Total</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for reservation in reservations %}
-            <tr>
-                <td>{{ reservation.nombrePlaces }}</td>
-                <td>{{ reservation.typePMR ? 'Oui' : 'Non' }}</td>
-                <td>{{ reservation.prixTotal }}</td>
-                <td class="d-flex">
-                    <a href="{{ path('app_reservations_show', {'id': reservation.id}) }}"
-                       class="btn btn-primary m-lg-3 ">Voir</a>
-                    <a href="{{ path('app_reservations_edit', {'id': reservation.id}) }}"
-                       class="btn btn-secondary m-lg-3 ">Modifier</a>
-                    {{ include('reservations/_delete_form.html.twig') }}
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="max-w-4xl bg-gray-200 p-6 rounded-lg">
+            <h1 class="text-2xl font-bold mb-4 text-center">Vos réservations</h1>
+            <table class="min-w-full bg-white shadow-md rounded-lg">
+                <thead class="bg-white border-b">
+                <tr>
+                    <th class="py-2 px-4 text-left">Places</th>
+                    <th class="py-2 px-4 text-left">Prix Total</th>
+                    <th class="py-2 px-4 text-left">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for reservation in reservations %}
+                    <tr class="border-b border-gray-300">
+                        <td class="py-2 px-4">{{ reservation.nombrePlaces }}</td>
+                        <td class="py-2 px-4">{{ reservation.prixTotal }}</td>
+                        <td class="py-2 px-4 flex space-x-4">
+                            <a href="{{ path('app_reservations_show', {'id': reservation.id}) }}"
+                               class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Voir</a>
+                            <a href="{{ path('app_reservations_edit', {'id': reservation.id}) }}"
+                               class="bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600">Modifier</a>
+                            {{ include('reservations/_delete_form.html.twig', { 'btn_classes': 'bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600' }) }}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3" class="py-2 px-4 text-center">Aucune réservations</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 {% endblock %}

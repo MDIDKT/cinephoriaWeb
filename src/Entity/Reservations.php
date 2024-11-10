@@ -92,21 +92,10 @@ class Reservations
         return $this;
     }
 
-    public function isTypePMR (): ?bool
-    {
-        return $this->typePMR;
-    }
-
-    public function setTypePMR (bool $typePMR): static
-    {
-        $this->typePMR = $typePMR;
-
-        return $this;
-    }
 
     public function getPrixTotal (): ?float
     {
-        return $this->prixTotal = $this->getNombrePlaces () * 8 + $this->isTypePMR ($this->typePMR * 5 / 100);
+        return $this->prixTotal;
     }
 
     public function setPrixTotal (float $prixTotal): static
@@ -196,6 +185,20 @@ class Reservations
         $this->date = $date;
 
         return $this;
+    }
+
+    // Ajoute cette méthode dans ton entité Reservation
+
+    public function calculprixTotal(): float
+    {
+        $prixParPlace = 8.0;
+        if ($this->getSeances()->getQualite() === '3D') {
+            $prixParPlace = 8.0;
+        }elseif ( $this->getSeances()->getQualite() === '4K'){
+            $prixParPlace = 12.0;
+        }
+
+        return $prixParPlace * $this->getNombrePlaces();
     }
 
 

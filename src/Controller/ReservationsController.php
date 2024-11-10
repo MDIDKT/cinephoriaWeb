@@ -2,10 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Films;
 use App\Entity\Reservations;
 use App\Form\ReservationsType;
 use App\Form\SeanceType;
 use App\Repository\ReservationsRepository;
+use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,16 +30,29 @@ final class ReservationsController extends AbstractController
     public function new (Request $request, EntityManagerInterface $entityManager): Response
     {
         $reservation = new Reservations();
+        $reservation->setDate (new DateTime());
         $form = $this->createForm (ReservationsType::class, $reservation);
         $form->handleRequest ($request);
 
-        if ($form->isSubmitted () && $form->isValid ()) {
-            $entityManager->persist ($reservation);
-            $entityManager->flush ();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $seance = $reservation->getSeances();
+            $placesDemandees = $reservation->getNombrePlaces();
 
-            return $this->redirectToRoute ('app_reservations_index', [], Response::HTTP_SEE_OTHER);
+            // Vérification du nombre de places disponibles
+            if ($placesDemandees > $seance->getPlacesDisponibles()) {
+                $this->addFlash('error', 'Il n\'y a pas assez de places disponibles pour cette séance.');
+                return $this->redirectToRoute('app_reservations_new');
+            }
+
+            // Calcul du prix total
+            $reservation->setPrixTotal($reservation->calculprixTotal());
+            $entityManager->persist($reservation);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_reservations_index', [], Response::HTTP_SEE_OTHER);
         }
-        return $this->render ('reservations/new.html.twig', [
+
+        return $this->render('reservations/new.html.twig', [
             'reservation' => $reservation,
             'form' => $form,
         ]);
@@ -47,8 +62,11 @@ final class ReservationsController extends AbstractController
     #[Route('/{id}', name: 'app_reservations_show', methods: ['GET'])]
     public function show (Reservations $reservation): Response
     {
+        $films = $reservation->getFilms ();
+
         return $this->render ('reservations/show.html.twig', [
             'reservation' => $reservation,
+            'films' => $films,
         ]);
     }
 

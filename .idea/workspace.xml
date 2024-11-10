@@ -74,7 +74,7 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="DEV_ReviewCode" />
-                    <option name="lastUsedInstant" value="1731162471" />
+                    <option name="lastUsedInstant" value="1731242092" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="DEV_test" />
@@ -297,13 +297,18 @@
     "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "terminal",
+    "settings.editor.selected.configurable": "reference.idesettings.emmet.xml",
     "ts.external.directory.path": "/Applications/PhpStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
       "mysql"
+    ],
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "module",
+      "repository"
     ]
   }
 }]]></component>
@@ -314,9 +319,9 @@
       <recent name="$PROJECT_DIR$/assets/vendor" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.Main">
+  <component name="RunManager" selected="PHPUnit.Cinephoria_Admin">
     <configuration name="Cinephoria_Admin" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" directory="$PROJECT_DIR$" />
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" directory="$PROJECT_DIR$" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -342,6 +347,9 @@
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>$PROJECT_DIR$/../.subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="" />
@@ -373,6 +381,7 @@
       <workItem from="1731145735124" duration="4705000" />
       <workItem from="1731150881252" duration="8000" />
       <workItem from="1731150905151" duration="1973000" />
+      <workItem from="1731241372633" duration="19167000" />
     </task>
     <task id="LOCAL-00001" summary="Creation du CRUD cineme, film, seance et salle.&#10;Corriger l'affichage de la colone Films et salles">
       <option name="closed" value="true" />
@@ -649,6 +658,16 @@
           <url>file://$PROJECT_DIR$/templates/films/index.html.twig</url>
           <line>9</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Entity/Employes.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Controller/ReservationsController.php</url>
+          <line>39</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
