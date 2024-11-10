@@ -28,6 +28,9 @@ class Avis
     #[ORM\ManyToOne(inversedBy: 'avis')]
     private ?Films $film = null;
 
+    #[ORM\ManyToOne(inversedBy: 'avis')]
+    private ?User $user = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -77,6 +80,18 @@ class Avis
     public function setFilm(?Films $film): static
     {
         $this->film = $film;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }

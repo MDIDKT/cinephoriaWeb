@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\SeanceRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: SeanceRepository::class)]
@@ -25,6 +26,18 @@ class Seance
 
     #[ORM\ManyToOne(inversedBy: 'seances')]
     private ?Films $films = null;
+
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $heureFin = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $qualite = null;
+
+    #[ORM\ManyToOne(inversedBy: 'seances')]
+    private ?Salles $salle = null;
+
+    #[ORM\ManyToOne(inversedBy: 'seance')]
+    private ?Cinemas $cinemas = null;
 
     public function __construct()
     {
@@ -90,6 +103,54 @@ class Seance
     public function setFilms(?Films $films): static
     {
         $this->films = $films;
+
+        return $this;
+    }
+
+    public function getHeureFin(): ?\DateTimeInterface
+    {
+        return $this->heureFin;
+    }
+
+    public function setHeureFin(?\DateTimeInterface $heureFin): static
+    {
+        $this->heureFin = $heureFin;
+
+        return $this;
+    }
+
+    public function getQualite(): ?string
+    {
+        return $this->qualite;
+    }
+
+    public function setQualite(?string $qualite): static
+    {
+        $this->qualite = $qualite;
+
+        return $this;
+    }
+
+    public function getSalle(): ?Salles
+    {
+        return $this->salle;
+    }
+
+    public function setSalle(?Salles $salle): static
+    {
+        $this->salle = $salle;
+
+        return $this;
+    }
+
+    public function getCinemas(): ?Cinemas
+    {
+        return $this->cinemas;
+    }
+
+    public function setCinemas(?Cinemas $cinemas): static
+    {
+        $this->cinemas = $cinemas;
 
         return $this;
     }

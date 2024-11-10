@@ -26,68 +26,70 @@ class Cinemas
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $adresse = null;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $horaire = null;
 
     /**
-     * @var Collection<int, Reservations>
+     * @var Collection<int, Seance>
      */
-    #[ORM\OneToMany(targetEntity: Reservations::class, mappedBy: 'cinemas')]
-    private Collection $reservations;
+    #[ORM\OneToMany(targetEntity: Seance::class, mappedBy: 'cinemas')]
+    private Collection $seance;
 
     /**
      * @var Collection<int, Films>
      */
-    #[ORM\OneToMany(targetEntity: Films::class, mappedBy: 'cinemas')]
-    private Collection $films;
+    #[ORM\ManyToMany(targetEntity: Films::class, inversedBy: 'cinemas')]
+    private Collection $film;
 
 
-    public function __construct()
+    public function __construct ()
     {
-        $this->reservations = new ArrayCollection();
-        $this->films = new ArrayCollection();
+        $this->seance = new ArrayCollection();
+        $this->film = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getId (): ?int
     {
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function getNom (): ?string
     {
         return $this->nom;
     }
 
-    public function setNom(string $nom): static
+    public function setNom (string $nom): static
     {
         $this->nom = $nom;
 
         return $this;
     }
 
-    public function getVille(): ?string
+    public function getVille (): ?string
     {
         return $this->ville;
     }
 
-    public function setVille(string $ville): static
+    public function setVille (string $ville): static
     {
         $this->ville = $ville;
 
         return $this;
     }
 
-    public function getAdresse(): ?string
+    public function getAdresse (): ?string
     {
         return $this->adresse;
     }
 
-    public function setAdresse(string $adresse): static
+    public function setAdresse (string $adresse): static
     {
         $this->adresse = $adresse;
 
         return $this;
     }
 
-    public function __toString(): string
+    public function __toString (): string
     {
         return $this->nom;
     }
@@ -97,46 +99,63 @@ class Cinemas
 
     }
 
-    /**
-     * @return Collection<int, Reservations>
-     */
-    public function getReservations(): Collection
+    public function getHoraire (): ?string
     {
-        return $this->reservations;
+        return $this->horaire;
     }
 
-    public function addReservation(Reservations $reservation): static
+    public function setHoraire (?string $horaire): static
     {
-        if (!$this->reservations->contains($reservation)) {
-            $this->reservations->add($reservation);
-            $reservation->setCinemas($this);
+        $this->horaire = $horaire;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Seance>
+     */
+    public function getSeance (): Collection
+    {
+        return $this->seance;
+    }
+
+    public function addSeance (Seance $seance): static
+    {
+        if (!$this->seance->contains ($seance)) {
+            $this->seance->add ($seance);
+            $seance->setCinemas ($this);
         }
 
         return $this;
     }
 
-    public function removeReservation(Reservations $reservation): static
+    public function removeSeance (Seance $seance): static
     {
-        if ($this->reservations->removeElement($reservation)) {
+        if ($this->seance->removeElement ($seance)) {
             // set the owning side to null (unless already changed)
-            if ($reservation->getCinemas() === $this) {
-                $reservation->setCinemas(null);
+            if ($seance->getCinemas () === $this) {
+                $seance->setCinemas (null);
             }
         }
 
         return $this;
     }
 
-    public function addFilm (Films $param)
-    {
-    }
-
     /**
      * @return Collection<int, Films>
      */
-    public function getFilms(): Collection
+    public function getFilm(): Collection
     {
-        return $this->films;
+        return $this->film;
+    }
+
+    public function addFilm(Films $film): static
+    {
+        if (!$this->film->contains($film)) {
+            $this->film->add($film);
+        }
+
+        return $this;
     }
 
 }

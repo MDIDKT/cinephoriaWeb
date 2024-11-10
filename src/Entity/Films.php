@@ -36,21 +36,12 @@ class Films
     #[ORM\Column]
     private ?float $note = null;
 
-    #[ORM\ManyToOne(inversedBy: 'films')]
-    private ?Cinemas $cinemas = null;
-
-    /**
-     * @var Collection<int, Seance>
-     */
     #[ORM\OneToMany(targetEntity: Seance::class, mappedBy: 'films')]
     private Collection $seances;
 
     #[ORM\Column(length: 255)]
     private ?string $qualite = null;
 
-    /**
-     * @var Collection<int, Reservations>
-     */
     #[ORM\OneToMany(targetEntity: Reservations::class, mappedBy: 'films')]
     private Collection $reservations;
 
@@ -63,163 +54,143 @@ class Films
     #[ORM\Column(nullable: true)]
     private ?int $imageSize = null;
 
-    /**
-     * @var Collection<int, Avis>
-     */
     #[ORM\OneToMany(targetEntity: Avis::class, mappedBy: 'film')]
     private Collection $avis;
 
-    public function __construct()
+    /**
+     * @var Collection<int, Cinemas>
+     */
+    #[ORM\ManyToMany(targetEntity: Cinemas::class, mappedBy: 'film')]
+    private Collection $cinemas;
+
+    public function __construct ()
     {
         $this->seances = new ArrayCollection();
         $this->reservations = new ArrayCollection();
         $this->avis = new ArrayCollection();
+        $this->cinemas = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getId (): ?int
     {
         return $this->id;
     }
 
-    public function getTitre(): ?string
+    public function getTitre (): ?string
     {
         return $this->titre;
     }
 
-    public function setTitre(string $titre): static
+    public function setTitre (string $titre): static
     {
         $this->titre = $titre;
 
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getDescription (): ?string
     {
         return $this->description;
     }
 
-    public function setDescription(string $description): static
+    public function setDescription (string $description): static
     {
         $this->description = $description;
 
         return $this;
     }
 
-    public function getAgeMinimum(): ?int
+    public function getAgeMinimum (): ?int
     {
         return $this->ageMinimum;
     }
 
-    public function setAgeMinimum(int $ageMinimum): static
+    public function setAgeMinimum (int $ageMinimum): static
     {
         $this->ageMinimum = $ageMinimum;
 
         return $this;
     }
 
-    public function isCoupDeCoeur(): ?bool
+    public function isCoupDeCoeur (): ?bool
     {
         return $this->coupDeCoeur;
     }
 
-    public function setCoupDeCoeur(bool $coupDeCoeur): static
+    public function setCoupDeCoeur (bool $coupDeCoeur): static
     {
         $this->coupDeCoeur = $coupDeCoeur;
 
         return $this;
     }
 
-    public function getNote(): ?float
+    public function getNote (): ?float
     {
         return $this->note;
     }
 
-    public function setNote(float $note): static
+    public function setNote (float $note): static
     {
         $this->note = $note;
 
         return $this;
     }
 
-    public function getCinemas(): ?Cinemas
-    {
-        return $this->cinemas;
-    }
-
-    public function setCinemas(?Cinemas $cinemas): static
-    {
-        $this->cinemas = $cinemas;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Seance>
-     */
-    public function getSeances(): Collection
+    public function getSeances (): Collection
     {
         return $this->seances;
     }
 
-    public function addSeance(Seance $seance): static
+    public function addSeance (Seance $seance): static
     {
-        if (!$this->seances->contains($seance)) {
-            $this->seances->add($seance);
-            $seance->setFilms($this);
+        if (!$this->seances->contains ($seance)) {
+            $this->seances->add ($seance);
+            $seance->setFilms ($this);
         }
 
         return $this;
     }
 
-    public function removeSeance(Seance $seance): static
+    public function removeSeance (Seance $seance): static
     {
-        if ($this->seances->removeElement($seance)) {
-            // set the owning side to null (unless already changed)
-            if ($seance->getFilms() === $this) {
-                $seance->setFilms(null);
-            }
+        if ($this->seances->removeElement ($seance) && $seance->getFilms () === $this) {
+            $seance->setFilms (null);
         }
 
         return $this;
     }
 
-    public function getQualite(): ?string
+    public function getQualite (): ?string
     {
         return $this->qualite;
     }
 
-    public function setQualite(string $qualite): static
+    public function setQualite (string $qualite): static
     {
         $this->qualite = $qualite;
 
         return $this;
     }
 
-    /**
-     * @return Collection<int, Reservations>
-     */
-    public function getReservations(): Collection
+    public function getReservations (): Collection
     {
         return $this->reservations;
     }
 
-    public function addReservation(Reservations $reservation): static
+    public function addReservation (Reservations $reservation): static
     {
-        if (!$this->reservations->contains($reservation)) {
-            $this->reservations->add($reservation);
-            $reservation->setFilms($this);
+        if (!$this->reservations->contains ($reservation)) {
+            $this->reservations->add ($reservation);
+            $reservation->setFilms ($this);
         }
 
         return $this;
     }
 
-    public function removeReservation(Reservations $reservation): static
+    public function removeReservation (Reservations $reservation): static
     {
-        if ($this->reservations->removeElement($reservation)) {
-            // set the owning side to null (unless already changed)
-            if ($reservation->getFilms() === $this) {
-                $reservation->setFilms(null);
-            }
+        if ($this->reservations->removeElement ($reservation) && $reservation->getFilms () === $this) {
+            $reservation->setFilms (null);
         }
 
         return $this;
@@ -250,45 +221,62 @@ class Films
         return $this->imageSize;
     }
 
-    /**
-     * @param int|null $imageSize
-     * @return void
-     */
     public function setImageSize (?int $imageSize): void
     {
         $this->imageSize = $imageSize;
     }
 
-    public function __toString(): string
+    public function __toString (): string
     {
         return $this->titre;
     }
 
-    /**
-     * @return Collection<int, Avis>
-     */
-    public function getAvis(): Collection
+    public function getAvis (): Collection
     {
         return $this->avis;
     }
 
-    public function addAvi(Avis $avi): static
+    public function addAvis (Avis $avis): static
     {
-        if (!$this->avis->contains($avi)) {
-            $this->avis->add($avi);
-            $avi->setFilm($this);
+        if (!$this->avis->contains ($avis)) {
+            $this->avis->add ($avis);
+            $avis->setFilm ($this);
         }
 
         return $this;
     }
 
-    public function removeAvi(Avis $avi): static
+    public function removeAvis (Avis $avis): static
     {
-        if ($this->avis->removeElement($avi)) {
-            // set the owning side to null (unless already changed)
-            if ($avi->getFilm() === $this) {
-                $avi->setFilm(null);
-            }
+        if ($this->avis->removeElement ($avis) && $avis->getFilm () === $this) {
+            $avis->setFilm (null);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Cinemas>
+     */
+    public function getCinemas(): Collection
+    {
+        return $this->cinemas;
+    }
+
+    public function addCinema(Cinemas $cinema): static
+    {
+        if (!$this->cinemas->contains($cinema)) {
+            $this->cinemas->add($cinema);
+            $cinema->addFilm($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCinema(Cinemas $cinema): static
+    {
+        if ($this->cinemas->removeElement($cinema)) {
+            $cinema->removeFilm($this);
         }
 
         return $this;
