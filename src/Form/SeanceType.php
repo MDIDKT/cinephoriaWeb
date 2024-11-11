@@ -35,7 +35,7 @@ class SeanceType extends AbstractType
                 'class' => Cinemas::class,
                 'choice_label' => 'nom'
             ])
-            ->add ('qualite', ChoiceType::class,[
+            ->add ('qualite', ChoiceType::class, [
                 'choices' => [
                     '4K' => '4K',
                     '3D' => '3D'

@@ -12,23 +12,23 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 
 class ReservationsCrudController extends AbstractCrudController
 {
-    public static function getEntityFqcn(): string
+    public static function getEntityFqcn (): string
     {
         return Reservations::class;
     }
 
-    public function configureFields(string $pageName): iterable
+    public function configureFields (string $pageName): iterable
     {
         return [
-            AssociationField::new('cinemas'),
-            AssociationField::new('films'),
-            AssociationField::new('seances'),
-            IntegerField::new('nombrePlaces'),
-            BooleanField::new('typePMR'),
-            MoneyField::new('prixTotal')
-                ->setCurrency('EUR')
-                ->setStoredAsCents(false)
-                ->setCustomOption('storedAsCents', false)
+            AssociationField::new ('cinemas'),
+            AssociationField::new ('films'),
+            AssociationField::new ('seances'),
+            IntegerField::new ('nombrePlaces'),
+            BooleanField::new ('typePMR'),
+            MoneyField::new ('prixTotal')
+                ->setCurrency ('EUR')
+                ->setStoredAsCents (false)
+                ->setCustomOption ('storedAsCents', false)
                 /*->setFormTypeOption('mapped', false)*/
                 ->setFormTypeOption ('disabled', true)
 

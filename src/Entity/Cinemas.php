@@ -144,15 +144,15 @@ class Cinemas
     /**
      * @return Collection<int, Films>
      */
-    public function getFilm(): Collection
+    public function getFilm (): Collection
     {
         return $this->film;
     }
 
-    public function addFilm(Films $film): static
+    public function addFilm (Films $film): static
     {
-        if (!$this->film->contains($film)) {
-            $this->film->add($film);
+        if (!$this->film->contains ($film)) {
+            $this->film->add ($film);
         }
 
         return $this;

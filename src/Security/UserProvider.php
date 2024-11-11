@@ -13,33 +13,33 @@ class UserProvider implements UserProviderInterface
 {
     private EntityManagerInterface $entityManager;
 
-    public function __construct(EntityManagerInterface $entityManager)
+    public function __construct (EntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
     }
 
     // Nouvelle méthode à ajouter pour respecter l'interface
-    public function loadUserByIdentifier(string $identifier): UserInterface
+    public function loadUserByIdentifier (string $identifier): UserInterface
     {
-        $user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $identifier]);
+        $user = $this->entityManager->getRepository (User::class)->findOneBy (['email' => $identifier]);
 
         if (!$user) {
-            throw new UsernameNotFoundException(sprintf('User "%s" not found.', $identifier));
+            throw new UsernameNotFoundException(sprintf ('User "%s" not found.', $identifier));
         }
 
         return $user;
     }
 
-    public function refreshUser(UserInterface $user): UserInterface
+    public function refreshUser (UserInterface $user): UserInterface
     {
         if (!$user instanceof User) {
-            throw new UnsupportedUserException(sprintf('Instances of "%s" are not supported.', get_class($user)));
+            throw new UnsupportedUserException(sprintf ('Instances of "%s" are not supported.', get_class ($user)));
         }
 
-        return $this->entityManager->getRepository(User::class)->find($user->getId());
+        return $this->entityManager->getRepository (User::class)->find ($user->getId ());
     }
 
-    public function supportsClass(string $class): bool
+    public function supportsClass (string $class): bool
     {
         return User::class === $class;
     }

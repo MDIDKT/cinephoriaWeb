@@ -39,23 +39,23 @@ class Salles
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $typeQualite = null;
 
-    public function __construct()
+    public function __construct ()
     {
         $this->incidents = new ArrayCollection();
         $this->seances = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getId (): ?int
     {
         return $this->id;
     }
 
-    public function getNumeroSalle(): ?int
+    public function getNumeroSalle (): ?int
     {
         return $this->numeroSalle;
     }
 
-    public function setNumeroSalle(int $numeroSalle): static
+    public function setNumeroSalle (int $numeroSalle): static
     {
         $this->numeroSalle = $numeroSalle;
 
@@ -63,24 +63,24 @@ class Salles
     }
 
 
-    public function getNombreSiege(): ?int
+    public function getNombreSiege (): ?int
     {
         return $this->nombreSiege;
     }
 
-    public function setNombreSiege(int $nombreSiege): static
+    public function setNombreSiege (int $nombreSiege): static
     {
         $this->nombreSiege = $nombreSiege;
 
         return $this;
     }
 
-    public function getNombreSiegePMR(): ?int
+    public function getNombreSiegePMR (): ?int
     {
         return $this->nombreSiegePMR;
     }
 
-    public function setNombreSiegePMR(int $nombreSiegePMR): static
+    public function setNombreSiegePMR (int $nombreSiegePMR): static
     {
         $this->nombreSiegePMR = $nombreSiegePMR;
 
@@ -90,27 +90,27 @@ class Salles
     /**
      * @return Collection<int, Incidents>
      */
-    public function getIncidents(): Collection
+    public function getIncidents (): Collection
     {
         return $this->incidents;
     }
 
-    public function addIncident(Incidents $incident): static
+    public function addIncident (Incidents $incident): static
     {
-        if (!$this->incidents->contains($incident)) {
-            $this->incidents->add($incident);
-            $incident->setSalle($this);
+        if (!$this->incidents->contains ($incident)) {
+            $this->incidents->add ($incident);
+            $incident->setSalle ($this);
         }
 
         return $this;
     }
 
-    public function removeIncident(Incidents $incident): static
+    public function removeIncident (Incidents $incident): static
     {
-        if ($this->incidents->removeElement($incident)) {
+        if ($this->incidents->removeElement ($incident)) {
             // set the owning side to null (unless already changed)
-            if ($incident->getSalle() === $this) {
-                $incident->setSalle(null);
+            if ($incident->getSalle () === $this) {
+                $incident->setSalle (null);
             }
         }
 
@@ -120,39 +120,39 @@ class Salles
     /**
      * @return Collection<int, Seance>
      */
-    public function getSeances(): Collection
+    public function getSeances (): Collection
     {
         return $this->seances;
     }
 
-    public function addSeance(Seance $seance): static
+    public function addSeance (Seance $seance): static
     {
-        if (!$this->seances->contains($seance)) {
-            $this->seances->add($seance);
-            $seance->setSalle($this);
+        if (!$this->seances->contains ($seance)) {
+            $this->seances->add ($seance);
+            $seance->setSalle ($this);
         }
 
         return $this;
     }
 
-    public function removeSeance(Seance $seance): static
+    public function removeSeance (Seance $seance): static
     {
-        if ($this->seances->removeElement($seance)) {
+        if ($this->seances->removeElement ($seance)) {
             // set the owning side to null (unless already changed)
-            if ($seance->getSalle() === $this) {
-                $seance->setSalle(null);
+            if ($seance->getSalle () === $this) {
+                $seance->setSalle (null);
             }
         }
 
         return $this;
     }
 
-    public function getTypeQualite(): ?string
+    public function getTypeQualite (): ?string
     {
         return $this->typeQualite;
     }
 
-    public function setTypeQualite(?string $typeQualite): static
+    public function setTypeQualite (?string $typeQualite): static
     {
         $this->typeQualite = $typeQualite;
 

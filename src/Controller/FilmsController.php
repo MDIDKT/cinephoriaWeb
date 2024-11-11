@@ -43,7 +43,7 @@ final class FilmsController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_films_show', methods: ['GET'])]
-    public function show(EntityManagerInterface $entityManager, int $id): Response
+    public function show (EntityManagerInterface $entityManager, int $id): Response
     {
         $film = $entityManager->getRepository (Films::class)->find ($id);
 
@@ -53,7 +53,7 @@ final class FilmsController extends AbstractController
 
 
         $avisApprouves = array_filter ($film->getAvis ()->toArray (), function($avis) {
-            return $avis->isApprouve();
+            return $avis->isApprouve ();
         });
 
         return $this->render ('films/show.html.twig', [
@@ -63,7 +63,7 @@ final class FilmsController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_films_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Films $film, EntityManagerInterface $entityManager): Response
+    public function edit (Request $request, Films $film, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm (FilmsType::class, $film);
         $form->handleRequest ($request);
@@ -89,7 +89,7 @@ final class FilmsController extends AbstractController
 
         // Vérifier si le film existe
         if (!$film) {
-            throw $this->createNotFoundException('Film introuvable');
+            throw $this->createNotFoundException ('Film introuvable');
         }
 
         // Supprimer le film

@@ -1,58 +1,58 @@
 security:
-    # Configuration des password hashers
-    password_hashers:
-        App\Entity\User:
-            algorithm: auto
-        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
-            algorithm: auto
+  # Configuration des password hashers
+  password_hashers:
+    App\Entity\User:
+      algorithm: auto
+    Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
+      algorithm: auto
 
-    # Chargement des utilisateurs
-    providers:
-        app_user_provider:
-            entity:
-                class: App\Entity\User
-                property: email
+  # Chargement des utilisateurs
+  providers:
+    app_user_provider:
+      entity:
+        class: App\Entity\User
+        property: email
 
-    # Définition des firewalls
-    firewalls:
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
+  # Définition des firewalls
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
 
-        main:
-            pattern: ^/
-            entry_point: form_login # Ou App\Security\AppAuthenticator selon ton choix
-            lazy: true
-            provider: app_user_provider
-            custom_authenticators:
-                - App\Security\AppAuthenticator # Définition de l'authenticator personnalisé
-            form_login:
-                login_path: app_login
-                check_path: app_login
-                enable_csrf: true
-            logout:
-                path: app_logout
+    main:
+      pattern: ^/
+      entry_point: form_login # Ou App\Security\AppAuthenticator selon ton choix
+      lazy: true
+      provider: app_user_provider
+      custom_authenticators:
+        - App\Security\AppAuthenticator # Définition de l'authenticator personnalisé
+      form_login:
+        login_path: app_login
+        check_path: app_login
+        enable_csrf: true
+      logout:
+        path: app_logout
 
-            remember_me:
-                secret: '%kernel.secret%'
-                lifetime: 604800
-                path: /
-                always_remember_me: true
-                # redirection après déconnexion, si nécessaire
-                # target: app_any_route
+      remember_me:
+        secret: '%kernel.secret%'
+        lifetime: 604800
+        path: /
+        always_remember_me: true
+        # redirection après déconnexion, si nécessaire
+        # target: app_any_route
 
-    # Contrôle d'accès
-    access_control:
-        - { path: ^/admin, roles: ROLE_ADMIN }
-        #- { path: ^/profile, roles: ROLE_USER }
-        - {path: ^/reservations, roles: ROLE_USER}
+  # Contrôle d'accès
+  access_control:
+    - { path: ^/admin, roles: ROLE_ADMIN }
+    #- { path: ^/profile, roles: ROLE_USER }
+    - { path: ^/reservations, roles: ROLE_USER }
 
 # Configuration pour l'environnement de test
 when@test:
-    security:
-        password_hashers:
-            Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
-                algorithm: auto
-                cost: 4 # Valeur minimale pour bcrypt
-                time_cost: 3 # Valeur minimale pour argon
-                memory_cost: 10 # Valeur minimale pour argon
+  security:
+    password_hashers:
+      Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
+        algorithm: auto
+        cost: 4 # Valeur minimale pour bcrypt
+        time_cost: 3 # Valeur minimale pour argon
+        memory_cost: 10 # Valeur minimale pour argon

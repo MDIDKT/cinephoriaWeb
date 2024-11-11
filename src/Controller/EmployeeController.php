@@ -9,9 +9,9 @@ use Symfony\Component\Routing\Attribute\Route;
 class EmployeeController extends AbstractController
 {
     #[Route('/employee', name: 'app_employee')]
-    public function index(): Response
+    public function index (): Response
     {
-        return $this->render('employee/index.html.twig', [
+        return $this->render ('employee/index.html.twig', [
             'controller_name' => 'EmployeeController',
         ]);
     }

@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class AboutController extends AbstractController
 {
-    #[Route('/about', methods: ['GET']) ]
+    #[Route('/about', methods: ['GET'])]
     public function index (): Response
     {
         return $this->render ('about/index.html.twig');

@@ -58,68 +58,68 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $prenom = null;
 
-    public function __construct()
+    public function __construct ()
     {
         $this->reservations = new ArrayCollection();
         $this->avis = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getId (): ?int
     {
         return $this->id;
     }
 
-    public function getEmail(): ?string
+    public function getEmail (): ?string
     {
         return $this->email;
     }
 
-    public function setEmail(string $email): static
+    public function setEmail (string $email): static
     {
         $this->email = $email;
         return $this;
     }
 
-    public function getUserIdentifier(): string
+    public function getUserIdentifier (): string
     {
-        return (string) $this->email;
+        return (string)$this->email;
     }
 
-    public function getRoles(): array
+    public function getRoles (): array
     {
         $roles = $this->roles;
         $roles[] = 'ROLE_USER';
-        return array_unique($roles);
+        return array_unique ($roles);
     }
 
-    public function setRoles(array $roles): static
+    public function setRoles (array $roles): static
     {
         $this->roles = $roles;
         return $this;
     }
 
-    public function getPassword(): ?string
+    public function getPassword (): ?string
     {
         return $this->password;
     }
 
-    public function setPassword(string $password): static
+    public function setPassword (string $password): static
     {
         $this->password = $password;
         return $this;
     }
 
-    public function eraseCredentials(): void
+    public function eraseCredentials (): void
     {
         // Clear temporary or sensitive data
     }
 
-    public function isVerified(): bool
+    public function isVerified (): bool
     {
         return $this->isVerified;
     }
 
-    public function setVerified(bool $isVerified): static
+    public function setVerified (bool $isVerified): static
     {
         $this->isVerified = $isVerified;
         return $this;
@@ -128,27 +128,27 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @return Collection<int, Reservations>
      */
-    public function getReservations(): Collection
+    public function getReservations (): Collection
     {
         return $this->reservations;
     }
 
-    public function addReservation(Reservations $reservation): static
+    public function addReservation (Reservations $reservation): static
     {
-        if (!$this->reservations->contains($reservation)) {
-            $this->reservations->add($reservation);
-            $reservation->setUser($this);
+        if (!$this->reservations->contains ($reservation)) {
+            $this->reservations->add ($reservation);
+            $reservation->setUser ($this);
         }
 
         return $this;
     }
 
-    public function removeReservation(Reservations $reservation): static
+    public function removeReservation (Reservations $reservation): static
     {
-        if ($this->reservations->removeElement($reservation)) {
+        if ($this->reservations->removeElement ($reservation)) {
             // set the owning side to null (unless already changed)
-            if ($reservation->getUser() === $this) {
-                $reservation->setUser(null);
+            if ($reservation->getUser () === $this) {
+                $reservation->setUser (null);
             }
         }
 
@@ -158,51 +158,51 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @return Collection<int, Avis>
      */
-    public function getAvis(): Collection
+    public function getAvis (): Collection
     {
         return $this->avis;
     }
 
-    public function addAvi(Avis $avi): static
+    public function addAvi (Avis $avi): static
     {
-        if (!$this->avis->contains($avi)) {
-            $this->avis->add($avi);
-            $avi->setUser($this);
+        if (!$this->avis->contains ($avi)) {
+            $this->avis->add ($avi);
+            $avi->setUser ($this);
         }
 
         return $this;
     }
 
-    public function removeAvi(Avis $avi): static
+    public function removeAvi (Avis $avi): static
     {
-        if ($this->avis->removeElement($avi)) {
+        if ($this->avis->removeElement ($avi)) {
             // set the owning side to null (unless already changed)
-            if ($avi->getUser() === $this) {
-                $avi->setUser(null);
+            if ($avi->getUser () === $this) {
+                $avi->setUser (null);
             }
         }
 
         return $this;
     }
 
-    public function getNom(): ?string
+    public function getNom (): ?string
     {
         return $this->nom;
     }
 
-    public function setNom(string $nom): static
+    public function setNom (string $nom): static
     {
         $this->nom = $nom;
 
         return $this;
     }
 
-    public function getPrenom(): ?string
+    public function getPrenom (): ?string
     {
         return $this->prenom;
     }
 
-    public function setPrenom(string $prenom): static
+    public function setPrenom (string $prenom): static
     {
         $this->prenom = $prenom;
 

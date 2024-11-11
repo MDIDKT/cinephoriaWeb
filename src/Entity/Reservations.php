@@ -125,62 +125,63 @@ class Reservations
     /**
      * @return Collection<int, Sieges>
      */
-    public function getSieges(): Collection
+    public function getSieges (): Collection
     {
         return $this->sieges;
     }
 
-    public function addSiege(Sieges $siege): static
+    public function addSiege (Sieges $siege): static
     {
-        if (!$this->sieges->contains($siege)) {
-            $this->sieges->add($siege);
-            $siege->setReservation($this);
+        if (!$this->sieges->contains ($siege)) {
+            $this->sieges->add ($siege);
+            $siege->setReservation ($this);
         }
 
         return $this;
     }
 
-    public function removeSiege(Sieges $siege): static
+    public function removeSiege (Sieges $siege): static
     {
-        if ($this->sieges->removeElement($siege)) {
+        if ($this->sieges->removeElement ($siege)) {
             // set the owning side to null (unless already changed)
-            if ($siege->getReservation() === $this) {
-                $siege->setReservation(null);
+            if ($siege->getReservation () === $this) {
+                $siege->setReservation (null);
             }
         }
 
         return $this;
     }
 
-    public function getStatus(): ?string
+    public function getStatus (): ?string
     {
         return $this->status;
     }
 
-    public function setStatus(?string $status): static
+    public function setStatus (?string $status): static
     {
         $this->status = $status;
 
         return $this;
     }
-    public function getUser(): ?User
+
+    public function getUser (): ?User
     {
         return $this->user;
     }
 
-    public function setUser(?User $user): static
+    public function setUser (?User $user): static
     {
         $this->user = $user;
 
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDate (): ?\DateTimeInterface
     {
         return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $date): static
+    public function setDate (\DateTimeInterface $date): static
     {
         $this->date = $date;
 
@@ -189,16 +190,16 @@ class Reservations
 
     // Ajoute cette méthode dans ton entité Reservation
 
-    public function calculprixTotal(): float
+    public function calculprixTotal (): float
     {
         $prixParPlace = 8.0;
-        if ($this->getSeances()->getQualite() === '3D') {
+        if ($this->getSeances ()->getQualite () === '3D') {
             $prixParPlace = 8.0;
-        }elseif ( $this->getSeances()->getQualite() === '4K'){
+        } elseif ($this->getSeances ()->getQualite () === '4K') {
             $prixParPlace = 12.0;
         }
 
-        return $prixParPlace * $this->getNombrePlaces();
+        return $prixParPlace * $this->getNombrePlaces ();
     }
 
 

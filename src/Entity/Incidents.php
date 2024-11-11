@@ -26,53 +26,53 @@ class Incidents
     #[ORM\ManyToOne(inversedBy: 'incident')]
     private ?Employes $employes = null;
 
-    public function getId(): ?int
+    public function getId (): ?int
     {
         return $this->id;
     }
 
-    public function getDescription(): ?string
+    public function getDescription (): ?string
     {
         return $this->description;
     }
 
-    public function setDescription(?string $description): static
+    public function setDescription (?string $description): static
     {
         $this->description = $description;
 
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDate (): ?\DateTimeInterface
     {
         return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $date): static
+    public function setDate (\DateTimeInterface $date): static
     {
         $this->date = $date;
 
         return $this;
     }
 
-    public function getSalle(): ?Salles
+    public function getSalle (): ?Salles
     {
         return $this->salle;
     }
 
-    public function setSalle(?Salles $salle): static
+    public function setSalle (?Salles $salle): static
     {
         $this->salle = $salle;
 
         return $this;
     }
 
-    public function getEmployes(): ?Employes
+    public function getEmployes (): ?Employes
     {
         return $this->employes;
     }
 
-    public function setEmployes(?Employes $employes): static
+    public function setEmployes (?Employes $employes): static
     {
         $this->employes = $employes;
 

@@ -11,24 +11,24 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 
 class ResetPasswordType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
+    public function buildForm (FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('plainPassword', PasswordType::class, [
+            ->add ('plainPassword', PasswordType::class, [
                 'label' => 'Nouveau mot de passe',
                 'mapped' => false,
-                'constraints'=>
-                [
-                    new NotBlank([
-                        'message' => 'Veuillez entrer un mot de passe',
-                    ]),
-                    new Length([
-                        'min' => 6,
-                        'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères',
-                        // max length allowed by Symfony for security reasons
-                        'max' => 4096,
-                    ]),
-                ],
+                'constraints' =>
+                    [
+                        new NotBlank([
+                            'message' => 'Veuillez entrer un mot de passe',
+                        ]),
+                        new Length([
+                            'min' => 6,
+                            'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères',
+                            // max length allowed by Symfony for security reasons
+                            'max' => 4096,
+                        ]),
+                    ],
                 'attr' => [
                     'autocomplete' => 'new-password',
                 ],
@@ -36,9 +36,9 @@ class ResetPasswordType extends AbstractType
 
     }
 
-    public function configureOptions(OptionsResolver $resolver): void
+    public function configureOptions (OptionsResolver $resolver): void
     {
-        $resolver->setDefaults([
+        $resolver->setDefaults ([
             // Configure your form options here
         ]);
     }

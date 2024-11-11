@@ -16,7 +16,7 @@ class Employes extends User
     #[ORM\OneToMany(targetEntity: Incidents::class, mappedBy: 'employes')]
     private Collection $incident;
 
-    public function __construct()
+    public function __construct ()
     {
         $this->incident = new ArrayCollection();
     }
@@ -24,27 +24,27 @@ class Employes extends User
     /**
      * @return Collection<int, Incidents>
      */
-    public function getIncident(): Collection
+    public function getIncident (): Collection
     {
         return $this->incident;
     }
 
-    public function addIncident(Incidents $incident): static
+    public function addIncident (Incidents $incident): static
     {
-        if (!$this->incident->contains($incident)) {
-            $this->incident->add($incident);
-            $incident->setEmployes($this);
+        if (!$this->incident->contains ($incident)) {
+            $this->incident->add ($incident);
+            $incident->setEmployes ($this);
         }
 
         return $this;
     }
 
-    public function removeIncident(Incidents $incident): static
+    public function removeIncident (Incidents $incident): static
     {
-        if ($this->incident->removeElement($incident)) {
+        if ($this->incident->removeElement ($incident)) {
             // set the owning side to null (unless already changed)
-            if ($incident->getEmployes() === $this) {
-                $incident->setEmployes(null);
+            if ($incident->getEmployes () === $this) {
+                $incident->setEmployes (null);
             }
         }
 

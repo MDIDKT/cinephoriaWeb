@@ -13,35 +13,34 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 class AvisType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
+    public function buildForm (FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('commentaire', TextareaType::class, [
+            ->add ('commentaire', TextareaType::class, [
                 'label' => 'Commentaire',
                 'required' => false,
             ])
-            ->add('note', null, [
+            ->add ('note', null, [
                 'attr' => [
                     'min' => 0,
                     'max' => 5,
                 ],
                 'disabled' => true,
             ])
-            ->add('approuve', CheckboxType::class, [
+            ->add ('approuve', CheckboxType::class, [
                 'label' => 'Approuvé',
                 'required' => false,
             ])
-            ->add('film', EntityType::class, [
+            ->add ('film', EntityType::class, [
                 'class' => Films::class,
                 'choice_label' => 'titre',
                 'disabled' => true,
-            ])
-        ;
+            ]);
     }
 
-    public function configureOptions(OptionsResolver $resolver): void
+    public function configureOptions (OptionsResolver $resolver): void
     {
-        $resolver->setDefaults([
+        $resolver->setDefaults ([
             'data_class' => Avis::class,
         ]);
     }

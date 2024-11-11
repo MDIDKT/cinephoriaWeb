@@ -13,18 +13,18 @@ use SebastianBergmann\CodeCoverage\Report\Text;
 
 class SallesCrudController extends AbstractCrudController
 {
-    public static function getEntityFqcn(): string
+    public static function getEntityFqcn (): string
     {
         return Salles::class;
     }
 
 
-    public function configureFields(string $pageName): iterable
+    public function configureFields (string $pageName): iterable
     {
         return [
-            IntegerField::new('numeroSalle'),
-            IntegerField::new('nombreSiege'),
-            IntegerField::new('nombreSiegePMR'),
+            IntegerField::new ('numeroSalle'),
+            IntegerField::new ('nombreSiege'),
+            IntegerField::new ('nombreSiegePMR'),
         ];
     }
 

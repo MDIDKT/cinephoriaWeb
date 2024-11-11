@@ -14,17 +14,17 @@ use SebastianBergmann\CodeCoverage\Report\Text;
 
 class CinemasCrudController extends AbstractCrudController
 {
-    public static function getEntityFqcn(): string
+    public static function getEntityFqcn (): string
     {
         return Cinemas::class;
     }
 
-    public function configureFields(string $pageName): iterable
+    public function configureFields (string $pageName): iterable
     {
         return [
-            TextField::new('nom', 'Cinéma'),
+            TextField::new ('nom', 'Cinéma'),
             TextField::new ('ville', 'Villes'),
-            TextField::new('adresse', 'Adresses'),
+            TextField::new ('adresse', 'Adresses'),
         ];
     }
 

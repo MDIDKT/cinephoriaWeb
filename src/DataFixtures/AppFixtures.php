@@ -15,12 +15,11 @@ use Faker\Factory;
 
 class AppFixtures extends Fixture
 {
-    public function load(ObjectManager $manager): void
+    public function load (ObjectManager $manager): void
     {
         // $product = new Product();
         // $manager->persist($product);
-        $faker = Factory::create('fr_FR');
-
+        $faker = Factory::create ('fr_FR');
 
 
         for ($i = 0; $i < 10; $i++) {
@@ -29,16 +28,16 @@ class AppFixtures extends Fixture
             $cinema->setVille ($faker->city ());
             $manager->persist ($cinema);
         }
-        for ($i = 0; $i < 10; $i++){
+        for ($i = 0; $i < 10; $i++) {
             $user = new User();
-            $user->setEmail($faker->email);
-            $user->setRoles(['ROLE_utilisateur']);
-            $user->setPassword($faker->password);
-            $manager->persist($user);
+            $user->setEmail ($faker->email);
+            $user->setRoles (['ROLE_utilisateur']);
+            $user->setPassword ($faker->password);
+            $manager->persist ($user);
 
         }
 
 
-        $manager->flush();
+        $manager->flush ();
     }
 }

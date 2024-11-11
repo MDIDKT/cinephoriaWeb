@@ -15,42 +15,42 @@ class ResetPasswordController extends AbstractController
 {
     #[Route('/reset/password', name: 'app_reset_password')]
     public function resetPassword (
-        string $token,
-        Request $request,
+        string                      $token,
+        Request                     $request,
         UserPasswordHasherInterface $passwordHasher,
-        EntityManagerInterface $entityManager
+        EntityManagerInterface      $entityManager
     ): Response
     {
-        $user = $entityManager->getRepository(Entity::class)->findOneBy([
+        $user = $entityManager->getRepository (Entity::class)->findOneBy ([
             'resetToken' => $token,
         ]);
         if (!$user) {
-            $this->addFlash('error', 'Token Inconnu');
-            return $this->redirectToRoute('app_login');
+            $this->addFlash ('error', 'Token Inconnu');
+            return $this->redirectToRoute ('app_login');
         }
-        $form = $this->createForm(ResetPasswordType::class);
-        $form->handleRequest($request);
+        $form = $this->createForm (ResetPasswordType::class);
+        $form->handleRequest ($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted () && $form->isValid ()) {
             // Récupération du nouveau mot de passe
-            $newPassword = $form->get('plainPassword')->getData();
+            $newPassword = $form->get ('plainPassword')->getData ();
 
             // Hashage du mot de passe
-            $hashedPassword = $passwordHasher->hashPassword($user, $newPassword);
-            $user->setPassword($hashedPassword);
+            $hashedPassword = $passwordHasher->hashPassword ($user, $newPassword);
+            $user->setPassword ($hashedPassword);
 
             // Suppression du token de réinitialisation pour des raisons de sécurité
-            $user->setResetToken(null);
+            $user->setResetToken (null);
 
             // Sauvegarder les modifications en base de données
-            $entityManager->flush();
+            $entityManager->flush ();
 
             // Message de succès et redirection
-            $this->addFlash('success', 'Votre mot de passe a bien été réinitialisé.');
-            return $this->redirectToRoute('app_login');
-    }
-        return $this->render('reset_password/index.html.twig', [
-            'resetPasswordForm' => $form->createView(),
+            $this->addFlash ('success', 'Votre mot de passe a bien été réinitialisé.');
+            return $this->redirectToRoute ('app_login');
+        }
+        return $this->render ('reset_password/index.html.twig', [
+            'resetPasswordForm' => $form->createView (),
         ]);
     }
 }

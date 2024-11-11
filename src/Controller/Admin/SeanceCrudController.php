@@ -13,13 +13,13 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class SeanceCrudController extends AbstractCrudController
 {
-    public static function getEntityFqcn(): string
+    public static function getEntityFqcn (): string
     {
         return Seance::class;
     }
 
 
-    public function configureFields(string $pageName): iterable
+    public function configureFields (string $pageName): iterable
     {
         return [
             DateTimeField::new ('HeureDebut'),

@@ -15,20 +15,20 @@ use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class FilmsCrudController extends AbstractCrudController
 {
-    public static function getEntityFqcn(): string
+    public static function getEntityFqcn (): string
     {
         return Films::class;
     }
 
 
-    public function configureFields(string $pageName): iterable
+    public function configureFields (string $pageName): iterable
     {
         return [
-            TextField::new('titre'),
-            TextField::new('description'),
-            TextareaField::new('imageFile')
-                ->setFormType(VichImageType::class)
-                ->setLabel('Affiche du film'),
+            TextField::new ('titre'),
+            TextField::new ('description'),
+            TextareaField::new ('imageFile')
+                ->setFormType (VichImageType::class)
+                ->setLabel ('Affiche du film'),
             IntegerField::new ('ageMinimum'),
             BooleanField::new ('coupDeCoeur'),
             IntegerField::new ('note'),

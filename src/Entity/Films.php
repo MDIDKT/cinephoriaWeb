@@ -258,25 +258,25 @@ class Films
     /**
      * @return Collection<int, Cinemas>
      */
-    public function getCinemas(): Collection
+    public function getCinemas (): Collection
     {
         return $this->cinemas;
     }
 
-    public function addCinema(Cinemas $cinema): static
+    public function addCinema (Cinemas $cinema): static
     {
-        if (!$this->cinemas->contains($cinema)) {
-            $this->cinemas->add($cinema);
-            $cinema->addFilm($this);
+        if (!$this->cinemas->contains ($cinema)) {
+            $this->cinemas->add ($cinema);
+            $cinema->addFilm ($this);
         }
 
         return $this;
     }
 
-    public function removeCinema(Cinemas $cinema): static
+    public function removeCinema (Cinemas $cinema): static
     {
-        if ($this->cinemas->removeElement($cinema)) {
-            $cinema->removeFilm($this);
+        if ($this->cinemas->removeElement ($cinema)) {
+            $cinema->removeFilm ($this);
         }
 
         return $this;

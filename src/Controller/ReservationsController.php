@@ -2,10 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Films;
 use App\Entity\Reservations;
 use App\Form\ReservationsType;
-use App\Form\SeanceType;
 use App\Repository\ReservationsRepository;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
@@ -19,83 +17,84 @@ use Symfony\Component\Routing\Attribute\Route;
 final class ReservationsController extends AbstractController
 {
     #[Route('/index', name: 'app_reservations_index', methods: ['GET'])]
-    public function index (ReservationsRepository $reservationsRepository): Response
+    public function index(ReservationsRepository $reservationsRepository): Response
     {
-        return $this->render ('reservations/index.html.twig', [
-            'reservations' => $reservationsRepository->findAll (),
+        return $this->render('reservations/index.html.twig', [
+            'reservations' => $reservationsRepository->findAll(),
         ]);
     }
 
     #[Route('/new', name: 'app_reservations_new', methods: ['GET', 'POST'])]
-    public function new (Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $reservation = new Reservations();
-        $reservation->setDate (new DateTime());
-        $form = $this->createForm (ReservationsType::class, $reservation);
-        $form->handleRequest ($request);
+        $reservation->setDate(new DateTime());
+        $form = $this->createForm(ReservationsType::class, $reservation);
+        $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $seance = $reservation->getSeances();
-            $placesDemandees = $reservation->getNombrePlaces();
-
-            // Vérification du nombre de places disponibles
-            if ($placesDemandees > $seance->getPlacesDisponibles()) {
-                $this->addFlash('error', 'Il n\'y a pas assez de places disponibles pour cette séance.');
-                return $this->redirectToRoute('app_reservations_new');
-            }
-
-            // Calcul du prix total
-            $reservation->setPrixTotal($reservation->calculprixTotal());
-            $entityManager->persist($reservation);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('app_reservations_index', [], Response::HTTP_SEE_OTHER);
+            return $this->processReservation($reservation, $entityManager);
         }
 
         return $this->render('reservations/new.html.twig', [
             'reservation' => $reservation,
             'form' => $form,
         ]);
+    }
 
+    private function processReservation(Reservations $reservation, EntityManagerInterface $entityManager): Response
+    {
+        $seance = $reservation->getSeances();
+        $requestedSeats = $reservation->getNombrePlaces();
+
+        // Vérification du nombre de places disponibles
+        if ($requestedSeats > $seance->getPlacesDisponibles()) {
+            $this->addFlash('error', 'Il n\'y a pas assez de places disponibles pour cette séance.');
+            return $this->redirectToRoute('app_reservations_new');
+        }
+
+        // Calcul du prix total
+        $reservation->setPrixTotal($reservation->calculprixTotal());
+        $entityManager->persist($reservation);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('app_reservations_index', [], Response::HTTP_SEE_OTHER);
     }
 
     #[Route('/{id}', name: 'app_reservations_show', methods: ['GET'])]
-    public function show (Reservations $reservation): Response
+    public function show(Reservations $reservation): Response
     {
-        $films = $reservation->getFilms ();
-
-        return $this->render ('reservations/show.html.twig', [
+        return $this->render('reservations/show.html.twig', [
             'reservation' => $reservation,
-            'films' => $films,
+            'films' => $reservation->getFilms(),
         ]);
     }
 
     #[Route('/{id}/edit', name: 'app_reservations_edit', methods: ['GET', 'POST'])]
-    public function edit (Request $request, Reservations $reservation, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, Reservations $reservation, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm (ReservationsType::class, $reservation);
-        $form->handleRequest ($request);
+        $form = $this->createForm(ReservationsType::class, $reservation);
+        $form->handleRequest($request);
 
-        if ($form->isSubmitted () && $form->isValid ()) {
-            $entityManager->flush ();
-
-            return $this->redirectToRoute ('app_reservations_index', [], Response::HTTP_SEE_OTHER);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->flush();
+            return $this->redirectToRoute('app_reservations_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render ('reservations/edit.html.twig', [
+        return $this->render('reservations/edit.html.twig', [
             'reservation' => $reservation,
             'form' => $form,
         ]);
     }
 
     #[Route('/{id}', name: 'app_reservations_delete', methods: ['POST'])]
-    public function delete (Request $request, Reservations $reservation, EntityManagerInterface $entityManager): Response
+    public function delete(Request $request, Reservations $reservation, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid ('delete' . $reservation->getId (), $request->getPayload ()->getString ('_token'))) {
-            $entityManager->remove ($reservation);
-            $entityManager->flush ();
+        if ($this->isCsrfTokenValid('delete' . $reservation->getId(), $request->getPayload()->getString('_token'))) {
+            $entityManager->remove($reservation);
+            $entityManager->flush();
         }
 
-        return $this->redirectToRoute ('app_reservations_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_reservations_index', [], Response::HTTP_SEE_OTHER);
     }
 }

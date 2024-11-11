@@ -15,39 +15,39 @@ final class FilmsControllerTest extends WebTestCase
     private EntityRepository $repository;
     private string $path = '/films/';
 
-    protected function setUp(): void
+    protected function setUp (): void
     {
-        $this->client = static::createClient();
-        $this->manager = static::getContainer()->get('doctrine')->getManager();
-        $this->repository = $this->manager->getRepository(Films::class);
+        $this->client = static::createClient ();
+        $this->manager = static::getContainer ()->get ('doctrine')->getManager ();
+        $this->repository = $this->manager->getRepository (Films::class);
 
-        foreach ($this->repository->findAll() as $object) {
-            $this->manager->remove($object);
+        foreach ($this->repository->findAll () as $object) {
+            $this->manager->remove ($object);
         }
 
-        $this->manager->flush();
+        $this->manager->flush ();
     }
 
-    public function testIndex(): void
+    public function testIndex (): void
     {
-        $this->client->followRedirects();
-        $crawler = $this->client->request('GET', $this->path);
+        $this->client->followRedirects ();
+        $crawler = $this->client->request ('GET', $this->path);
 
-        self::assertResponseStatusCodeSame(200);
-        self::assertPageTitleContains('Film index');
+        self::assertResponseStatusCodeSame (200);
+        self::assertPageTitleContains ('Film index');
 
         // Use the $crawler to perform additional assertions e.g.
         // self::assertSame('Some text on the page', $crawler->filter('.p')->first());
     }
 
-    public function testNew(): void
+    public function testNew (): void
     {
-        $this->markTestIncomplete();
-        $this->client->request('GET', sprintf('%snew', $this->path));
+        $this->markTestIncomplete ();
+        $this->client->request ('GET', sprintf ('%snew', $this->path));
 
-        self::assertResponseStatusCodeSame(200);
+        self::assertResponseStatusCodeSame (200);
 
-        $this->client->submitForm('Save', [
+        $this->client->submitForm ('Save', [
             'film[titre]' => 'Testing',
             'film[description]' => 'Testing',
             'film[affiche]' => 'Testing',
@@ -58,54 +58,54 @@ final class FilmsControllerTest extends WebTestCase
             'film[cinemas]' => 'Testing',
         ]);
 
-        self::assertResponseRedirects($this->path);
+        self::assertResponseRedirects ($this->path);
 
-        self::assertSame(1, $this->repository->count([]));
+        self::assertSame (1, $this->repository->count ([]));
     }
 
-    public function testShow(): void
+    public function testShow (): void
     {
-        $this->markTestIncomplete();
+        $this->markTestIncomplete ();
         $fixture = new Films();
-        $fixture->setTitre('My Title');
-        $fixture->setDescription('My Title');
-        $fixture->setAffiche('My Title');
-        $fixture->setAgeMinimum('My Title');
-        $fixture->setCoupDeCoeur('My Title');
-        $fixture->setNote('My Title');
-        $fixture->setQualite('My Title');
-        $fixture->setCinemas('My Title');
+        $fixture->setTitre ('My Title');
+        $fixture->setDescription ('My Title');
+        $fixture->setAffiche ('My Title');
+        $fixture->setAgeMinimum ('My Title');
+        $fixture->setCoupDeCoeur ('My Title');
+        $fixture->setNote ('My Title');
+        $fixture->setQualite ('My Title');
+        $fixture->setCinemas ('My Title');
 
-        $this->manager->persist($fixture);
-        $this->manager->flush();
+        $this->manager->persist ($fixture);
+        $this->manager->flush ();
 
-        $this->client->request('GET', sprintf('%s%s', $this->path, $fixture->getId()));
+        $this->client->request ('GET', sprintf ('%s%s', $this->path, $fixture->getId ()));
 
-        self::assertResponseStatusCodeSame(200);
-        self::assertPageTitleContains('Film');
+        self::assertResponseStatusCodeSame (200);
+        self::assertPageTitleContains ('Film');
 
         // Use assertions to check that the properties are properly displayed.
     }
 
-    public function testEdit(): void
+    public function testEdit (): void
     {
-        $this->markTestIncomplete();
+        $this->markTestIncomplete ();
         $fixture = new Films();
-        $fixture->setTitre('Value');
-        $fixture->setDescription('Value');
-        $fixture->setAffiche('Value');
-        $fixture->setAgeMinimum('Value');
-        $fixture->setCoupDeCoeur('Value');
-        $fixture->setNote('Value');
-        $fixture->setQualite('Value');
-        $fixture->setCinemas('Value');
+        $fixture->setTitre ('Value');
+        $fixture->setDescription ('Value');
+        $fixture->setAffiche ('Value');
+        $fixture->setAgeMinimum ('Value');
+        $fixture->setCoupDeCoeur ('Value');
+        $fixture->setNote ('Value');
+        $fixture->setQualite ('Value');
+        $fixture->setCinemas ('Value');
 
-        $this->manager->persist($fixture);
-        $this->manager->flush();
+        $this->manager->persist ($fixture);
+        $this->manager->flush ();
 
-        $this->client->request('GET', sprintf('%s%s/edit', $this->path, $fixture->getId()));
+        $this->client->request ('GET', sprintf ('%s%s/edit', $this->path, $fixture->getId ()));
 
-        $this->client->submitForm('Update', [
+        $this->client->submitForm ('Update', [
             'film[titre]' => 'Something New',
             'film[description]' => 'Something New',
             'film[affiche]' => 'Something New',
@@ -116,40 +116,40 @@ final class FilmsControllerTest extends WebTestCase
             'film[cinemas]' => 'Something New',
         ]);
 
-        self::assertResponseRedirects('/films/');
+        self::assertResponseRedirects ('/films/');
 
-        $fixture = $this->repository->findAll();
+        $fixture = $this->repository->findAll ();
 
-        self::assertSame('Something New', $fixture[0]->getTitre());
-        self::assertSame('Something New', $fixture[0]->getDescription());
-        self::assertSame('Something New', $fixture[0]->getAffiche());
-        self::assertSame('Something New', $fixture[0]->getAgeMinimum());
-        self::assertSame('Something New', $fixture[0]->getCoupDeCoeur());
-        self::assertSame('Something New', $fixture[0]->getNote());
-        self::assertSame('Something New', $fixture[0]->getQualite());
-        self::assertSame('Something New', $fixture[0]->getCinemas());
+        self::assertSame ('Something New', $fixture[0]->getTitre ());
+        self::assertSame ('Something New', $fixture[0]->getDescription ());
+        self::assertSame ('Something New', $fixture[0]->getAffiche ());
+        self::assertSame ('Something New', $fixture[0]->getAgeMinimum ());
+        self::assertSame ('Something New', $fixture[0]->getCoupDeCoeur ());
+        self::assertSame ('Something New', $fixture[0]->getNote ());
+        self::assertSame ('Something New', $fixture[0]->getQualite ());
+        self::assertSame ('Something New', $fixture[0]->getCinemas ());
     }
 
-    public function testRemove(): void
+    public function testRemove (): void
     {
-        $this->markTestIncomplete();
+        $this->markTestIncomplete ();
         $fixture = new Films();
-        $fixture->setTitre('Value');
-        $fixture->setDescription('Value');
-        $fixture->setAffiche('Value');
-        $fixture->setAgeMinimum('Value');
-        $fixture->setCoupDeCoeur('Value');
-        $fixture->setNote('Value');
-        $fixture->setQualite('Value');
-        $fixture->setCinemas('Value');
+        $fixture->setTitre ('Value');
+        $fixture->setDescription ('Value');
+        $fixture->setAffiche ('Value');
+        $fixture->setAgeMinimum ('Value');
+        $fixture->setCoupDeCoeur ('Value');
+        $fixture->setNote ('Value');
+        $fixture->setQualite ('Value');
+        $fixture->setCinemas ('Value');
 
-        $this->manager->persist($fixture);
-        $this->manager->flush();
+        $this->manager->persist ($fixture);
+        $this->manager->flush ();
 
-        $this->client->request('GET', sprintf('%s%s', $this->path, $fixture->getId()));
-        $this->client->submitForm('Delete');
+        $this->client->request ('GET', sprintf ('%s%s', $this->path, $fixture->getId ()));
+        $this->client->submitForm ('Delete');
 
-        self::assertResponseRedirects('/films/');
-        self::assertSame(0, $this->repository->count([]));
+        self::assertResponseRedirects ('/films/');
+        self::assertSame (0, $this->repository->count ([]));
     }
 }
