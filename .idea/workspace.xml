@@ -5,31 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="modification d'un film">
-      <change afterPath="$PROJECT_DIR$/tests/entity/EntityTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d7d5968-3d23-46b9-8aac-b7fe8366a0e5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4d7d5968-3d23-46b9-8aac-b7fe8366a0e5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5058475f-d6e4-45d0-9d16-63954344bdb6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5058475f-d6e4-45d0-9d16-63954344bdb6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20241027170259.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20241027171428.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20241027171842.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20241027202516.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20241027202716.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20241101090615.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20241101090829.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20241101212649.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20241106215809.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20241107203347.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/_Partials/_carousel.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_Partials/_carousel.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/_Partials/_hero.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_Partials/_hero.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/RegistrationControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/RegistrationControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/avis/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/avis/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/films/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/films/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/films/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/films/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/seance/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/seance/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/seance/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/seance/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,36 +264,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "PHPUnit.Cinephoria_Admin.executor": "Run",
-    "PHPUnit.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "DEV__ReviewCode",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.idesettings.emmet.xml",
-    "ts.external.directory.path": "/Applications/PhpStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;PHPUnit.Cinephoria_Admin.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;DEV__ReviewCode&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.idesettings.emmet.xml&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/PhpStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "GitStage.ChangesTree.GroupingKeys": [
-      "directory",
-      "module",
-      "repository"
+    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;module&quot;,
+      &quot;repository&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/vendor/@symfony/stimulus-bridge" />
@@ -649,16 +631,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/templates/home/index.html.twig</url>
-          <line>18</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/templates/films/index.html.twig</url>
-          <line>9</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Entity/Employes.php</url>
           <line>4</line>
