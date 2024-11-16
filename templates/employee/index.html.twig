@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Avis{% endblock %}
+
+{% block body %}
+    <div class="hero bg-base-500 min-h-screen flex  ">
+        <div class="hero-content text-center">
+            <div class="max-w-md">
+                <h1 class="text-5xl font-bold">Les Avis</h1>
+                <p class="py-6">Bienvenue sur votre espace employé.</p>
+                <p class="py-6">Vous pouvez consulter les avis des utilisateurs, les valider ou les supprimer.</p>
+                <table>
+                    <td>
+                        <a href="{{ path('app_avis_index') }}" class="btn btn-primary bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Les Avis</a>
+                    </td>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
