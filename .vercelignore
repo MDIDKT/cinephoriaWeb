@@ -1,0 +1,8 @@
+   node_modules
+   vendor
+   .git
+   .idea
+   tests
+   .env
+   .vercel
+   .DS_Store
