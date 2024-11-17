@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="merge de DEV vers main">
+    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="ajout de heroku">
+      <change beforePath="$PROJECT_DIR$/.idea/Cinephoria_Admin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Cinephoria_Admin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +22,7 @@
       <option value="directory" />
     </option>
   </component>
-  <component name="ComposerSettings" requirePlatformReqs="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable path="composer" />
@@ -33,6 +37,7 @@
         <entry key="$PROJECT_DIR$" value="DEV_test" />
       </map>
     </option>
+    <option name="RECENT_COMMON_BRANCH" value="main" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -216,6 +221,36 @@
       <path value="$PROJECT_DIR$/vendor/willdurand/negotiation" />
       <path value="$PROJECT_DIR$/vendor/symfony/mailgun-mailer" />
       <path value="$PROJECT_DIR$/vendor/api-platform/core" />
+      <path value="$PROJECT_DIR$/vendor/easycorp/easyadmin-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/uid" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-uuid" />
+      <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfonycasts/verify-email-bundle" />
+      <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
+      <path value="$PROJECT_DIR$/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/documentation" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/doctrine-common" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/serializer" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/validator" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/state" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/openapi" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/doctrine-orm" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/symfony" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/jsonld" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/http-cache" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/metadata" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/hydra" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/json-schema" />
+      <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/lexik/jwt-authentication-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/vendor/clubdrei/php-dev-server" />
+      <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
     </include_path>
   </component>
   <component name="ProblemsViewState">
@@ -544,7 +579,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731742464477</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="ajout de heroku">
+      <option name="closed" value="true" />
+      <created>1731843121308</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1731843121308</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -624,7 +667,8 @@
     <MESSAGE value="mise en page des seances" />
     <MESSAGE value="correction de l'affichage du FilmCrud et ReservationCrud" />
     <MESSAGE value="merge de DEV vers main" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge de DEV vers main" />
+    <MESSAGE value="ajout de heroku" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout de heroku" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

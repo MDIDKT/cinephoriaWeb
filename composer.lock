@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8074055bd4dd67980998ed90d4b3ef95",
+    "content-hash": "f5b6ccdd643d577e23c8cdf2bd01cb11",
     "packages": [
         {
             "name": "api-platform/core",
@@ -2697,6 +2697,32 @@
                 "source": "https://github.com/php-fig/log/tree/3.0.2"
             },
             "time": "2024-09-11T13:17:53+00:00"
+        },
+        {
+            "name": "symfony/apache-pack",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/apache-pack.git",
+                "reference": "3aa5818d73ad2551281fc58a75afd9ca82622e6c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/apache-pack/zipball/3aa5818d73ad2551281fc58a75afd9ca82622e6c",
+                "reference": "3aa5818d73ad2551281fc58a75afd9ca82622e6c",
+                "shasum": ""
+            },
+            "type": "symfony-pack",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A pack for Apache support in Symfony",
+            "support": {
+                "issues": "https://github.com/symfony/apache-pack/issues",
+                "source": "https://github.com/symfony/apache-pack/tree/master"
+            },
+            "time": "2017-12-12T01:46:35+00:00"
         },
         {
             "name": "symfony/asset",
@@ -8774,6 +8800,56 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "clubdrei/php-dev-server",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clubdrei/php-dev-server.git",
+                "reference": "c8b6a3d3dce68b79c77c7c10b70339aa21149e62"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clubdrei/php-dev-server/zipball/c8b6a3d3dce68b79c77c7c10b70339aa21149e62",
+                "reference": "c8b6a3d3dce68b79c77c7c10b70339aa21149e62",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=5.6"
+            },
+            "bin": [
+                "bin/php-dev-server"
+            ],
+            "type": "library",
+            "extra": {
+                "clubdrei/php-dev-server": {
+                    "port": "32400",
+                    "webDirectory": "public"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "C3\\PhpDevServer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "clubdrei.com Medienagentur OG",
+                    "email": "office@clubdrei.com"
+                }
+            ],
+            "description": "Wrapper around symfony/cli for easier install with composer",
+            "support": {
+                "issues": "https://github.com/clubdrei/php-dev-server/issues",
+                "source": "https://github.com/clubdrei/php-dev-server/tree/master"
+            },
+            "time": "2019-11-23T09:45:02+00:00"
+        },
         {
             "name": "masterminds/html5",
             "version": "2.9.0",
