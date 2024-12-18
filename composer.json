@@ -98,12 +98,10 @@
             "@auto-scripts"
         ],
         "compile": [
-            "php bin/console doctrine:migration:migrate"
+            "php bin/console doctrine:migrations:diff || true",
+            "if [ -f migrations/*.php ]; then php bin/console doctrine:migration:migrate --no-interaction; else echo 'No migrations to execute.'; fi"
         ]
     },
-    "compile": [
-        "php bin/console doctrine:migrations:migrate"
-    ],
     "conflict": {
         "symfony/symfony": "*"
     },
