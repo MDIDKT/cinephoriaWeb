@@ -1,80 +1,59 @@
 const Encore = require('@symfony/webpack-encore');
 
-// Manually configure the runtime environment if not already configured yet by the "encore" command.
-// It's useful when you use tools that rely on webpack.config.js file.
+// Configure l'environnement runtime si ce n'est pas déjà fait
 if (!Encore.isRuntimeEnvironmentConfigured()) {
     Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
 }
 
 Encore
-    // directory where compiled assets will be stored
+    // Répertoire où les assets compilés seront sauvegardés
     .setOutputPath('public/build/')
-    // public path used by the web server to access the output path
+    // Chemin public utilisé par le serveur pour accéder aux fichiers compilés
     .setPublicPath('/build')
-    // only needed for CDN's or sub-directory deploy
-    //.setManifestKeyPrefix('build/')
+    // Active le loader PostCSS
     .enablePostCssLoader()
 
     /*
-     * ENTRY CONFIG
-     *
-     * Each entry will result in one JavaScript file (e.g. app.js)
-     * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
+     * Configurer les entrées (entrypoints)
+     * Chaque point d’entrée produira un fichier JavaScript et un fichier CSS (si CSS est importé)
      */
     .addEntry('app', './assets/app.js')
-    .addEntry('another', './assets/another.js')
+    // Vous pouvez ajouter d'autres entrées ici si nécessaire
+    // .addEntry('another', './assets/another.js')
 
-    // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
+    // Active le bridge Symfony UX Stimulus (utilisé dans assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
 
-    // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
+    // Permet de diviser les fichiers en plus petits morceaux (optimisation Webpack)
     .splitEntryChunks()
 
-    // will require an extra script tag for runtime.js
-    // but, you probably want this, unless you're building a single-page app
+    // Active le fichier runtime.js (utile sauf pour les applications à page unique)
     .enableSingleRuntimeChunk()
 
     /*
-     * FEATURE CONFIG
-     *
-     * Enable & configure other features below. For a full
-     * list of features, see:
-     * https://symfony.com/doc/current/frontend.html#adding-more-features
+     * Fonctionnalités supplémentaires (voir Symfony Webpack Encore Doc)
      */
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
     .enableSourceMaps(!Encore.isProduction())
-    // enables hashed filenames (e.g. app.abc123.css)
-    .enableVersioning(Encore.isProduction())
+    .enableVersioning(Encore.isProduction()) // Active les noms de fichiers hashés en production
 
+    // Configurations Babel
     .configureBabel((config) => {
         config.plugins.push('@babel/plugin-transform-class-properties');
     })
-
-    // enables @babel/preset-env polyfills
     .configureBabelPresetEnv((config) => {
         config.useBuiltIns = 'usage';
         config.corejs = 3;
     })
 
-    // enables Sass/SCSS support
-    //.enableSassLoader()
-
-    // uncomment if you use TypeScript
-    //.enableTypeScriptLoader()
-
-    // uncomment if you use React
+    // Active React (si nécessaire)
     .enableReactPreset()
-// uncomment to get integrity="..." attributes on your script & link tags
-// requires WebpackEncoreBundle 1.4 or higher
-//.enableIntegrityHashes(Encore.isProduction())
 
-// uncomment if you're having problems with a jQuery plugin
-//.autoProvidejQuery()
-
+    // Active le plugin `manifest.json` par défaut (aucune configuration nécessaire)
     .configureManifestPlugin((options) => {
-        options.fileName = 'entrypoints.json';
-    })
+        options.fileName = 'manifest.json'; // Assurez-vous que ce fichier est généré comme attendu
+    });
 ;
 
 module.exports = Encore.getWebpackConfig();
