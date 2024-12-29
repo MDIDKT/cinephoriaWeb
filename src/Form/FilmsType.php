@@ -12,12 +12,16 @@ use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class FilmsType extends AbstractType
 {
-    public function buildForm (FormBuilderInterface $builder, array $options): void
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add ('titre')
-            ->add ('description')
-            ->add ('imageFile', VichFileType::class, [
+            ->add('titre', null, [
+                'label' => 'Titre du film',
+            ])
+            ->add('description', null, [
+                'label' => 'Description',
+            ])
+            ->add('imageFile', VichFileType::class, [
                 'required' => false,
                 'allow_delete' => true,
                 'download_uri' => true,
@@ -25,27 +29,31 @@ class FilmsType extends AbstractType
                 'asset_helper' => true,
                 'delete_label' => 'Supprimer',
             ])
-            ->add ('ageMinimum')
-            ->add ('coupDeCoeur')
-            ->add ('note')
-            ->add ('qualite')
-            /*            ->add('Cinemas', EntityType::class, [
-                            'class' => Cinemas::class,
-                            'choice_label' => 'nom',
-                            'multiple' => true,
-                        ])*/
-
-            /*            ->add('cinemas', EntityType::class, [
-                            'class' => Cinemas::class,
-                            'choice_label' => 'id',
-                            'multiple' => true,
-                        ])*/
-        ;
+            ->add('ageMinimum', null, [
+                'label' => 'Âge minimum',
+            ])
+            ->add('coupDeCoeur', null, [
+                'label' => 'Coup de coeur',
+            ])
+            ->add('note', null, [
+                'label' => 'Note',
+            ])
+            ->add('qualite', null, [
+                'label' => 'Qualité vidéo',
+            ])
+            ->add('cinemas', EntityType::class, [
+                'class' => Cinemas::class,
+                'choice_label' => 'nom', // Remplacez 'nom' par l'attribut à afficher dans le formulaire
+                'multiple' => true, // Permet de sélectionner plusieurs cinémas
+                'expanded' => false, // Utilisez 'true' pour afficher sous forme de cases à cocher
+                'label' => 'Cinémas associés',
+                'required' => false,
+            ]);
     }
 
-    public function configureOptions (OptionsResolver $resolver): void
+    public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults ([
+        $resolver->setDefaults([
             'data_class' => Films::class,
         ]);
     }

@@ -45,47 +45,47 @@ class Reservations
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
-    public function __construct ()
+    public function __construct()
     {
-        $this->prixTotal = $this->getNombrePlaces () * 8;
+        $this->prixTotal = $this->getNombrePlaces() * 8;
         $this->sieges = new ArrayCollection();
     }
 
-    public function getId (): ?int
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getCinemas (): ?Cinemas
+    public function getCinemas(): ?Cinemas
     {
         return $this->cinemas;
     }
 
-    public function setCinemas (?Cinemas $cinemas): static
+    public function setCinemas(?Cinemas $cinemas): static
     {
         $this->cinemas = $cinemas;
 
         return $this;
     }
 
-    public function getSeances (): ?Seance
+    public function getSeances(): ?Seance
     {
         return $this->seances;
     }
 
-    public function setSeances (?Seance $seances): static
+    public function setSeances(?Seance $seances): static
     {
         $this->seances = $seances;
 
         return $this;
     }
 
-    public function getNombrePlaces (): ?int
+    public function getNombrePlaces(): ?int
     {
         return $this->nombrePlaces;
     }
 
-    public function setNombrePlaces (int $nombrePlaces): static
+    public function setNombrePlaces(int $nombrePlaces): static
     {
         $this->nombrePlaces = $nombrePlaces;
 
@@ -93,114 +93,124 @@ class Reservations
     }
 
 
-    public function getPrixTotal (): ?float
+    public function getPrixTotal(): ?float
     {
         return $this->prixTotal;
     }
 
-    public function setPrixTotal (float $prixTotal): static
+    public function setPrixTotal(float $prixTotal): static
     {
         $this->prixTotal = $prixTotal;
 
         return $this;
     }
 
-    public function getFilms (): ?Films
+    public function getFilms(): ?Films
     {
         return $this->films;
     }
 
-    public function setFilms (?Films $films): static
+    public function setFilms(?Films $films): static
     {
         $this->films = $films;
 
         return $this;
     }
 
-    public function __toString (): string
+    public function __toString(): string
     {
-        return $this->getNombrePlaces ();
+        return $this->getNombrePlaces();
     }
 
     /**
      * @return Collection<int, Sieges>
      */
-    public function getSieges (): Collection
+    public function getSieges(): Collection
     {
         return $this->sieges;
     }
 
-    public function addSiege (Sieges $siege): static
+    public function addSiege(Sieges $siege): static
     {
-        if (!$this->sieges->contains ($siege)) {
-            $this->sieges->add ($siege);
-            $siege->setReservation ($this);
+        if (!$this->sieges->contains($siege)) {
+            $this->sieges->add($siege);
+            $siege->setReservation($this);
         }
 
         return $this;
     }
 
-    public function removeSiege (Sieges $siege): static
+    public function removeSiege(Sieges $siege): static
     {
-        if ($this->sieges->removeElement ($siege)) {
+        if ($this->sieges->removeElement($siege)) {
             // set the owning side to null (unless already changed)
-            if ($siege->getReservation () === $this) {
-                $siege->setReservation (null);
+            if ($siege->getReservation() === $this) {
+                $siege->setReservation(null);
             }
         }
 
         return $this;
     }
 
-    public function getStatus (): ?string
+    public function getStatus(): ?string
     {
         return $this->status;
     }
 
-    public function setStatus (?string $status): static
+    public function setStatus(?string $status): static
     {
         $this->status = $status;
 
         return $this;
     }
 
-    public function getUser (): ?User
+    public function getUser(): ?User
     {
         return $this->user;
     }
 
-    public function setUser (?User $user): static
+    public function setUser(?User $user): static
     {
         $this->user = $user;
 
         return $this;
     }
 
-    public function getDate (): ?\DateTimeInterface
+    public function getDate(): ?\DateTimeInterface
     {
         return $this->date;
     }
 
-    public function setDate (\DateTimeInterface $date): static
+    public function setDate(\DateTimeInterface $date): static
     {
         $this->date = $date;
 
         return $this;
     }
 
-    // Ajoute cette méthode dans ton entité Reservation
-
-    public function calculprixTotal (): float
+    public function calculprixTotal(): float
     {
-        $prixParPlace = 8.0;
-        if ($this->getSeances ()->getQualite () === '3D') {
-            $prixParPlace = 8.0;
-        } elseif ($this->getSeances ()->getQualite () === '4K') {
-            $prixParPlace = 12.0;
+        // Vérifie que la séance est bien définie
+        $seance = $this->getSeances();
+        if ($seance === null) {
+            throw new \LogicException('Une séance doit être définie pour calculer le prix total.');
         }
 
-        return $prixParPlace * $this->getNombrePlaces ();
-    }
+        // Configure les prix selon la qualité
+        $qualite = $seance->getQualite();
+        $prixParPlace = match ($qualite) {
+            '3D' => 8.0,
+            '4K' => 12.0,
+            default => 10.0, // Valeur par défaut pour les autres qualités
+        };
 
+        // Vérifie que le nombre de places est valide
+        $nombrePlaces = $this->getNombrePlaces();
+        if ($nombrePlaces <= 0) {
+            throw new \InvalidArgumentException('Le nombre de places doit être supérieur à 0.');
+        }
+
+        return $prixParPlace * $nombrePlaces;
+    }
 
 }

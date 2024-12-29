@@ -32,16 +32,17 @@ class ReservationsType extends AbstractType
                 'attr' => ['class' => 'form-input mt-1 block w-full'],
             ])
 
-            ->add ('seances', EntityType::class, [
+            ->add('seances', EntityType::class, [
                 'class' => Seance::class,
                 'choice_label' => function(Seance $seance) {
-
-                    return $seance->getHeureDebut ()->format ('d/m/Y H:i');
+                    $salle = $seance->getSalle();
+                    $placesDisponibles = $salle ? $seance->getPlacesDisponibles() : 'Indisponibles';
+                    return sprintf('%s (Places disponibles: %s)', $seance->getHeureDebut()->format('d/m/Y H:i'), $placesDisponibles);
                 },
                 'label' => 'Choisir une séance',
                 'attr' => ['class' => 'form-input mt-1 block w-full'],
-
-                'placeholder' => 'Choisir une séance',
+                'placeholder' => 'Choisissez une séance valide', // Gestion des options
+                'required' => true, // Rend obligatoire
             ])
 
             ->add ('nombrePlaces', IntegerType::class, [

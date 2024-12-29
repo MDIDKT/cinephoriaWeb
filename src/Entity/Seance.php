@@ -17,7 +17,7 @@ class Seance
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?\DateTimeImmutable $HeureDebut = null;
+    private ?\DateTimeImmutable $heureDebut = null;
 
     /**
      * @var Collection<int, Reservations>
@@ -43,6 +43,7 @@ class Seance
     public function __construct()
     {
         $this->reservations = new ArrayCollection();
+        $this->heureDebut = new \DateTimeImmutable(); // Valeur par défaut
     }
 
     public function getId(): ?int
@@ -52,12 +53,12 @@ class Seance
 
     public function getHeureDebut(): ?\DateTimeImmutable
     {
-        return $this->HeureDebut;
+        return $this->heureDebut;
     }
 
-    public function setHeureDebut(\DateTimeImmutable $HeureDebut): static
+    public function setHeureDebut(\DateTimeImmutable $heureDebut): static
     {
-        $this->HeureDebut = $HeureDebut;
+        $this->heureDebut = $heureDebut;
 
         return $this;
     }
@@ -83,7 +84,6 @@ class Seance
     public function removeReservation(Reservations $reservation): static
     {
         if ($this->reservations->removeElement($reservation)) {
-            // set the owning side to null (unless already changed)
             if ($reservation->getSeances() === $this) {
                 $reservation->setSeances(null);
             }
@@ -94,7 +94,10 @@ class Seance
 
     public function __toString(): string
     {
-        return $this->getHeureDebut()?->format('H:i') ?? 'Non défini';
+        $film = $this->getFilms()?->getTitre() ?? 'Film non défini';
+        $heureDebut = $this->getHeureDebut()?->format('H:i') ?? 'Non défini';
+
+        return sprintf('%s (%s)', $film, $heureDebut);
     }
 
     public function getFilms(): ?Films
@@ -159,16 +162,21 @@ class Seance
 
     public function getPlacesDisponibles(): int
     {
-        $nombrePlacesReserves = count($this->getReservations());
-
-        // On vérifie que la salle existe avant d'appeler la méthode getNombreSiege()
         $salle = $this->getSalle();
+
+        // Retourne 0 si aucune salle n'est associée (évite le plantage par exception)
         if ($salle === null) {
-            return 0; // Aucune place disponible si aucune salle n'est associée
+            return 0;
         }
 
         $nombrePlacesTotales = $salle->getNombreSiege();
+        $nombrePlacesReserves = count($this->getReservations());
 
-        return $nombrePlacesTotales - $nombrePlacesReserves;
+        return max(0, $nombrePlacesTotales - $nombrePlacesReserves); // Jamais négatif
+    }
+
+    public function getNombrePlacesTotales(): int
+    {
+        return $this->getSalle()?->getNombreSiege() ?? 0;
     }
 }

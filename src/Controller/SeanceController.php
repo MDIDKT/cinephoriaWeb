@@ -29,11 +29,19 @@ final class SeanceController extends AbstractController
         $form = $this->createForm (SeanceType::class, $seance);
         $form->handleRequest ($request);
 
-        if ($form->isSubmitted () && $form->isValid ()) {
-            $entityManager->persist ($seance);
-            $entityManager->flush ();
+        if ($form->isSubmitted() && $form->isValid()) {
+            if ($seance->getSalle() === null) {
+                $this->addFlash('error', 'Vous devez associer une salle à la séance.');
+                return $this->render('seance/new.html.twig', [
+                    'seance' => $seance,
+                    'form' => $form,
+                ]);
+            }
 
-            return $this->redirectToRoute ('app_seance_index', [], Response::HTTP_SEE_OTHER);
+            $entityManager->persist($seance);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_seance_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render ('seance/new.html.twig', [
@@ -56,10 +64,19 @@ final class SeanceController extends AbstractController
         $form = $this->createForm (SeanceType::class, $seance);
         $form->handleRequest ($request);
 
-        if ($form->isSubmitted () && $form->isValid ()) {
-            $entityManager->flush ();
+        if ($form->isSubmitted() && $form->isValid()) {
+            if ($seance->getSalle() === null) {
+                $this->addFlash('error', 'Vous devez associer une salle à la séance.');
+                return $this->render('seance/new.html.twig', [
+                    'seance' => $seance,
+                    'form' => $form,
+                ]);
+            }
 
-            return $this->redirectToRoute ('app_seance_index', [], Response::HTTP_SEE_OTHER);
+            $entityManager->persist($seance);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_seance_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render ('seance/edit.html.twig', [

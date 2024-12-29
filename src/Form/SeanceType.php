@@ -29,17 +29,21 @@ class SeanceType extends AbstractType
             ])
             ->add ('salle', EntityType::class, [
                 'class' => Salles::class,
-                'choice_label' => 'numeroSalle'
+                'choice_label' => 'numeroSalle',
+                'placeholder' => 'Choisissez une salle',
+                'required' => true, // Rendre obligatoire
             ])
             ->add ('cinemas', EntityType::class, [
                 'class' => Cinemas::class,
                 'choice_label' => 'nom'
             ])
-            ->add ('qualite', ChoiceType::class, [
+            ->add('qualite', ChoiceType::class, [
                 'choices' => [
                     '4K' => '4K',
-                    '3D' => '3D'
-                ]
+                    '3D' => '3D',
+                ],
+                'placeholder' => 'Choisissez une qualité', // Guide l'utilisateur
+                'required' => true,
             ]);
 
     }

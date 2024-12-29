@@ -6,6 +6,8 @@ use App\Repository\SallesRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 #[ORM\Entity(repositoryClass: SallesRepository::class)]
 class Salles
@@ -19,144 +21,127 @@ class Salles
     private ?int $numeroSalle = null;
 
     #[ORM\Column]
+    #[Assert\Positive(message: 'Le nombre de sièges doit être supérieur à 0.')]
     private ?int $nombreSiege = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
+    #[Assert\PositiveOrZero(message: 'Le nombre de sièges PMR doit être supérieur ou égal à 0.')]
     private ?int $nombreSiegePMR = null;
 
-    /**
-     * @var Collection<int, Incidents>
-     */
-    #[ORM\OneToMany(targetEntity: Incidents::class, mappedBy: 'salle')]
-    private Collection $incidents;
+    #[ORM\Column(type: 'integer')]
+    private ?int $nombrePlacesDisponibles = null;
 
-    /**
-     * @var Collection<int, Seance>
-     */
-    #[ORM\OneToMany(targetEntity: Seance::class, mappedBy: 'salle')]
-    private Collection $seances;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $typeQualite = null;
-
-    public function __construct ()
+    public function __construct()
     {
         $this->incidents = new ArrayCollection();
         $this->seances = new ArrayCollection();
     }
 
-    public function getId (): ?int
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNumeroSalle (): ?int
+    public function getNumeroSalle(): ?int
     {
         return $this->numeroSalle;
     }
 
-    public function setNumeroSalle (int $numeroSalle): static
+    public function setNumeroSalle(int $numeroSalle): static
     {
         $this->numeroSalle = $numeroSalle;
-
         return $this;
     }
 
-
-    public function getNombreSiege (): ?int
+    public function getNombreSiege(): ?int
     {
         return $this->nombreSiege;
     }
 
-    public function setNombreSiege (int $nombreSiege): static
+    public function setNombreSiege(int $nombreSiege): static
     {
         $this->nombreSiege = $nombreSiege;
+
+        // Toutes les places disponibles sont libres par défaut
+        $this->nombrePlacesDisponibles = $nombreSiege;
 
         return $this;
     }
 
-    public function getNombreSiegePMR (): ?int
+    public function reservePlaces(int $nombrePlaces): void
+    {
+        if ($this->nombrePlacesDisponibles < $nombrePlaces) {
+            throw new \InvalidArgumentException('Il n\'y a pas assez de places disponibles.');
+        }
+
+        $this->nombrePlacesDisponibles -= $nombrePlaces;
+    }
+
+    public function libererPlaces(int $nombrePlaces): void
+    {
+        $this->nombrePlacesDisponibles += $nombrePlaces;
+
+        // Empêche une incohérence
+        if ($this->nombrePlacesDisponibles > $this->nombreSiege) {
+            $this->nombrePlacesDisponibles = $this->nombreSiege;
+        }
+    }
+    public function getNombreSiegePMR(): ?int
     {
         return $this->nombreSiegePMR;
     }
 
-    public function setNombreSiegePMR (int $nombreSiegePMR): static
+    public function setNombreSiegePMR(?int $nombreSiegePMR): static
     {
         $this->nombreSiegePMR = $nombreSiegePMR;
 
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Incidents>
-     */
-    public function getIncidents (): Collection
-    {
-        return $this->incidents;
-    }
-
-    public function addIncident (Incidents $incident): static
-    {
-        if (!$this->incidents->contains ($incident)) {
-            $this->incidents->add ($incident);
-            $incident->setSalle ($this);
+        // Assure que le total est toujours synchronisé
+        if ($this->nombreSiege !== null) {
+            $this->nombrePlacesDisponibles = max(0, $this->nombreSiege - $this->nombreSiegePMR);
         }
 
         return $this;
     }
 
-    public function removeIncident (Incidents $incident): static
+    public function getNombrePlacesDisponibles(): ?int
     {
-        if ($this->incidents->removeElement ($incident)) {
-            // set the owning side to null (unless already changed)
-            if ($incident->getSalle () === $this) {
-                $incident->setSalle (null);
+        return $this->nombrePlacesDisponibles;
+    }
+
+    public function setNombrePlacesDisponibles(int $nombrePlacesDisponibles): static
+    {
+        // Validation : vérifier que les places disponibles restent cohérentes
+        if ($this->nombreSiege !== null && $this->nombreSiegePMR !== null) {
+            $maxPlaces = $this->nombreSiege - $this->nombreSiegePMR;
+            if ($nombrePlacesDisponibles > $maxPlaces) {
+                throw new \InvalidArgumentException('Le nombre de places disponibles ne peut pas dépasser le total disponible.');
             }
         }
 
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Seance>
-     */
-    public function getSeances (): Collection
-    {
-        return $this->seances;
-    }
-
-    public function addSeance (Seance $seance): static
-    {
-        if (!$this->seances->contains ($seance)) {
-            $this->seances->add ($seance);
-            $seance->setSalle ($this);
-        }
+        $this->nombrePlacesDisponibles = $nombrePlacesDisponibles;
 
         return $this;
     }
 
-    public function removeSeance (Seance $seance): static
+    #[Assert\Callback]
+    public function validateNombreSiegeTotal(ExecutionContextInterface $context): void
     {
-        if ($this->seances->removeElement ($seance)) {
-            // set the owning side to null (unless already changed)
-            if ($seance->getSalle () === $this) {
-                $seance->setSalle (null);
+        // Validation en dernier recours
+        if (
+            $this->nombreSiege !== null &&
+            $this->nombreSiegePMR !== null &&
+            $this->nombrePlacesDisponibles !== null
+        ) {
+            if ($this->nombreSiege !== $this->nombreSiegePMR + $this->nombrePlacesDisponibles) {
+                $context->buildViolation('Le nombre total de sièges doit être égal au nombre de sièges PMR + places disponibles.')
+                    ->atPath('nombreSiege')
+                    ->addViolation();
             }
         }
-
-        return $this;
     }
 
-    public function getTypeQualite (): ?string
+    public function __toString(): string
     {
-        return $this->typeQualite;
+        return sprintf('Salle %d', $this->numeroSalle);
     }
-
-    public function setTypeQualite (?string $typeQualite): static
-    {
-        $this->typeQualite = $typeQualite;
-
-        return $this;
-    }
-
 }

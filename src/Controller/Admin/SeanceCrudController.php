@@ -10,6 +10,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TimeField;
 
 class SeanceCrudController extends AbstractCrudController
 {
@@ -24,6 +25,9 @@ class SeanceCrudController extends AbstractCrudController
         return [
             DateTimeField::new ('HeureDebut'),
             AssociationField::new ('films'),
+            AssociationField::new ('cinemas'),
+            AssociationField::new ('salle'),
+            TimeField::new ('HeureFin'),
         ];
     }
 

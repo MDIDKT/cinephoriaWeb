@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="reformatage du code" />
+    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="reformatage du code">
+      <change beforePath="$PROJECT_DIR$/.idea/Cinephoria_Admin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Cinephoria_Admin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241229154310.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/FilmsCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/FilmsCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/SallesCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/SallesCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/SeanceCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/SeanceCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ReservationsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReservationsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SeanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SeanceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Films.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Films.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Reservations.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Reservations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Salles.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Salles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Seance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Seance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/FilmsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/FilmsType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ReservationsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ReservationsType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/SeanceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SeanceType.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,12 +86,12 @@
       </RecentBranches>
     </option>
   </component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/MDIDKT/Cinephoria_Admin.git&quot;,
-    &quot;accountId&quot;: &quot;9176eb33-27a9-4aef-b1a6-23d04a94eb8b&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/MDIDKT/cinephoriaDeploy.git",
+    "accountId": "37d0f0a0-46b5-46c8-ae7d-b1f5ff4c39c1"
   }
-}</component>
+}]]></component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -244,6 +262,7 @@
       <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
       <path value="$PROJECT_DIR$/vendor/clubdrei/php-dev-server" />
       <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
+      <path value="$PROJECT_DIR$/vendor/symfony/ux-twig-component" />
     </include_path>
   </component>
   <component name="ProblemsViewState">
@@ -261,37 +280,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;PHPUnit.Cinephoria_Admin.executor&quot;: &quot;Run&quot;,
-    &quot;PHPUnit.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.idesettings.emmet.xml&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Applications/PhpStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "PHPUnit.Cinephoria_Admin.executor": "Run",
+    "PHPUnit.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "DEV",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.idesettings.emmet.xml",
+    "ts.external.directory.path": "/Applications/PhpStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
-    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;,
-      &quot;module&quot;,
-      &quot;repository&quot;
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "module",
+      "repository"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/vendor/@symfony/stimulus-bridge" />
@@ -325,8 +344,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PS-243.22562.164" />
-        <option value="bundled-php-predefined-a98d8de5180a-7980c7aaca61-com.jetbrains.php.sharedIndexes-PS-243.22562.164" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PS-243.22562.233" />
+        <option value="bundled-php-predefined-a98d8de5180a-7980c7aaca61-com.jetbrains.php.sharedIndexes-PS-243.22562.233" />
       </set>
     </attachedChunks>
   </component>
@@ -370,6 +389,7 @@
       <workItem from="1731150905151" duration="1973000" />
       <workItem from="1731241372633" duration="19167000" />
       <workItem from="1731738441207" duration="2708000" />
+      <workItem from="1735489030082" duration="8199000" />
     </task>
     <task id="LOCAL-00001" summary="Creation du CRUD cineme, film, seance et salle.&#10;Corriger l'affichage de la colone Films et salles">
       <option name="closed" value="true" />
@@ -611,7 +631,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734181466279</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="reformatage du code">
+      <option name="closed" value="true" />
+      <created>1735489209793</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1735489209793</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
