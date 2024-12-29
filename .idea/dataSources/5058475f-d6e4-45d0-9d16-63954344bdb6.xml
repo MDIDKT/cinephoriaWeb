@@ -4,206 +4,6 @@
     <root id="1">
       <DefaultCasing>exact</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
-      <Grants>modidkte_cinephoria|schema||modidkte_ecfcine||ALTER|G
-modidkte_cinephoria|schema||modidkte_ecfcine||ALTER ROUTINE|G
-modidkte_cinephoria|schema||modidkte_ecfcine||CREATE|G
-modidkte_cinephoria|schema||modidkte_ecfcine||CREATE ROUTINE|G
-modidkte_cinephoria|schema||modidkte_ecfcine||CREATE TEMPORARY TABLES|G
-modidkte_cinephoria|schema||modidkte_ecfcine||CREATE VIEW|G
-modidkte_cinephoria|schema||modidkte_ecfcine||DELETE|G
-modidkte_cinephoria|schema||modidkte_ecfcine||DELETE HISTORY|G
-modidkte_cinephoria|schema||modidkte_ecfcine||DROP|G
-modidkte_cinephoria|schema||modidkte_ecfcine||EVENT|G
-modidkte_cinephoria|schema||modidkte_ecfcine||EXECUTE|G
-modidkte_cinephoria|schema||modidkte_ecfcine||INDEX|G
-modidkte_cinephoria|schema||modidkte_ecfcine||INSERT|G
-modidkte_cinephoria|schema||modidkte_ecfcine||LOCK TABLES|G
-modidkte_cinephoria|schema||modidkte_ecfcine||REFERENCES|G
-modidkte_cinephoria|schema||modidkte_ecfcine||SELECT|G
-modidkte_cinephoria|schema||modidkte_ecfcine||SHOW VIEW|G
-modidkte_cinephoria|schema||modidkte_ecfcine||TRIGGER|G
-modidkte_cinephoria|schema||modidkte_ecfcine||UPDATE|G
-modidkte_cinephoria|schema||modidkte_ecfcine||grant option|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||ALTER|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||ALTER ROUTINE|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||CREATE|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||CREATE ROUTINE|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||CREATE TEMPORARY TABLES|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||CREATE VIEW|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||DELETE|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||DELETE HISTORY|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||DROP|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||EVENT|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||EXECUTE|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||INDEX|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||INSERT|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||LOCK TABLES|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||REFERENCES|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||SELECT|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||SHOW VIEW|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||TRIGGER|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||UPDATE|G
-modidkte_cinephoria2|schema||modidkte_ecfcine||grant option|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||ALTER|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||ALTER ROUTINE|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||CREATE|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||CREATE ROUTINE|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||CREATE TEMPORARY TABLES|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||CREATE VIEW|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||DELETE|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||DELETE HISTORY|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||DROP|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||EVENT|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||EXECUTE|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||INDEX|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||INSERT|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||LOCK TABLES|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||REFERENCES|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||SELECT|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||SHOW VIEW|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||TRIGGER|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||UPDATE|G
-modidkte_cinephoria_3|schema||modidkte_ecfcine||grant option|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||ALTER|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||ALTER ROUTINE|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||CREATE|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||CREATE ROUTINE|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||CREATE TEMPORARY TABLES|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||CREATE VIEW|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||DELETE|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||DELETE HISTORY|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||DROP|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||EVENT|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||EXECUTE|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||INDEX|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||INSERT|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||LOCK TABLES|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||REFERENCES|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||SELECT|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||SHOW VIEW|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||TRIGGER|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||UPDATE|G
-modidkte_cinephoria_ecf|schema||modidkte_ecfcine||grant option|G
-modidkte_ecf|schema||modidkte_ecfcine||ALTER|G
-modidkte_ecf|schema||modidkte_ecfcine||ALTER ROUTINE|G
-modidkte_ecf|schema||modidkte_ecfcine||CREATE|G
-modidkte_ecf|schema||modidkte_ecfcine||CREATE ROUTINE|G
-modidkte_ecf|schema||modidkte_ecfcine||CREATE TEMPORARY TABLES|G
-modidkte_ecf|schema||modidkte_ecfcine||CREATE VIEW|G
-modidkte_ecf|schema||modidkte_ecfcine||DELETE|G
-modidkte_ecf|schema||modidkte_ecfcine||DELETE HISTORY|G
-modidkte_ecf|schema||modidkte_ecfcine||DROP|G
-modidkte_ecf|schema||modidkte_ecfcine||EVENT|G
-modidkte_ecf|schema||modidkte_ecfcine||EXECUTE|G
-modidkte_ecf|schema||modidkte_ecfcine||INDEX|G
-modidkte_ecf|schema||modidkte_ecfcine||INSERT|G
-modidkte_ecf|schema||modidkte_ecfcine||LOCK TABLES|G
-modidkte_ecf|schema||modidkte_ecfcine||REFERENCES|G
-modidkte_ecf|schema||modidkte_ecfcine||SELECT|G
-modidkte_ecf|schema||modidkte_ecfcine||SHOW VIEW|G
-modidkte_ecf|schema||modidkte_ecfcine||TRIGGER|G
-modidkte_ecf|schema||modidkte_ecfcine||UPDATE|G
-modidkte_ecf|schema||modidkte_ecfcine||grant option|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||ALTER|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||ALTER ROUTINE|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||CREATE|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||CREATE ROUTINE|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||CREATE TEMPORARY TABLES|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||CREATE VIEW|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||DELETE|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||DELETE HISTORY|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||DROP|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||EVENT|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||EXECUTE|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||INDEX|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||INSERT|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||LOCK TABLES|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||REFERENCES|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||SELECT|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||SHOW VIEW|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||TRIGGER|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||UPDATE|G
-modidkte_ecf_cinephoria|schema||modidkte_ecfcine||grant option|G
-modidkte_ecf_db|schema||modidkte_ecfcine||ALTER|G
-modidkte_ecf_db|schema||modidkte_ecfcine||ALTER ROUTINE|G
-modidkte_ecf_db|schema||modidkte_ecfcine||CREATE|G
-modidkte_ecf_db|schema||modidkte_ecfcine||CREATE ROUTINE|G
-modidkte_ecf_db|schema||modidkte_ecfcine||CREATE TEMPORARY TABLES|G
-modidkte_ecf_db|schema||modidkte_ecfcine||CREATE VIEW|G
-modidkte_ecf_db|schema||modidkte_ecfcine||DELETE|G
-modidkte_ecf_db|schema||modidkte_ecfcine||DELETE HISTORY|G
-modidkte_ecf_db|schema||modidkte_ecfcine||DROP|G
-modidkte_ecf_db|schema||modidkte_ecfcine||EVENT|G
-modidkte_ecf_db|schema||modidkte_ecfcine||EXECUTE|G
-modidkte_ecf_db|schema||modidkte_ecfcine||INDEX|G
-modidkte_ecf_db|schema||modidkte_ecfcine||INSERT|G
-modidkte_ecf_db|schema||modidkte_ecfcine||LOCK TABLES|G
-modidkte_ecf_db|schema||modidkte_ecfcine||REFERENCES|G
-modidkte_ecf_db|schema||modidkte_ecfcine||SELECT|G
-modidkte_ecf_db|schema||modidkte_ecfcine||SHOW VIEW|G
-modidkte_ecf_db|schema||modidkte_ecfcine||TRIGGER|G
-modidkte_ecf_db|schema||modidkte_ecfcine||UPDATE|G
-modidkte_ecf_db|schema||modidkte_ecfcine||grant option|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||ALTER|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||ALTER ROUTINE|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||CREATE|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||CREATE ROUTINE|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||CREATE TEMPORARY TABLES|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||CREATE VIEW|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||DELETE|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||DELETE HISTORY|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||DROP|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||EVENT|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||EXECUTE|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||INDEX|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||INSERT|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||LOCK TABLES|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||REFERENCES|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||SELECT|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||SHOW VIEW|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||TRIGGER|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||UPDATE|G
-modidkte_ecf_phpstorm|schema||modidkte_ecfcine||grant option|G
-modidkte_live_sql|schema||modidkte_ecfcine||ALTER|G
-modidkte_live_sql|schema||modidkte_ecfcine||ALTER ROUTINE|G
-modidkte_live_sql|schema||modidkte_ecfcine||CREATE|G
-modidkte_live_sql|schema||modidkte_ecfcine||CREATE ROUTINE|G
-modidkte_live_sql|schema||modidkte_ecfcine||CREATE TEMPORARY TABLES|G
-modidkte_live_sql|schema||modidkte_ecfcine||CREATE VIEW|G
-modidkte_live_sql|schema||modidkte_ecfcine||DELETE|G
-modidkte_live_sql|schema||modidkte_ecfcine||DELETE HISTORY|G
-modidkte_live_sql|schema||modidkte_ecfcine||DROP|G
-modidkte_live_sql|schema||modidkte_ecfcine||EVENT|G
-modidkte_live_sql|schema||modidkte_ecfcine||EXECUTE|G
-modidkte_live_sql|schema||modidkte_ecfcine||INDEX|G
-modidkte_live_sql|schema||modidkte_ecfcine||INSERT|G
-modidkte_live_sql|schema||modidkte_ecfcine||LOCK TABLES|G
-modidkte_live_sql|schema||modidkte_ecfcine||REFERENCES|G
-modidkte_live_sql|schema||modidkte_ecfcine||SELECT|G
-modidkte_live_sql|schema||modidkte_ecfcine||SHOW VIEW|G
-modidkte_live_sql|schema||modidkte_ecfcine||TRIGGER|G
-modidkte_live_sql|schema||modidkte_ecfcine||UPDATE|G
-modidkte_live_sql|schema||modidkte_ecfcine||grant option|G
-modidkte_webapp|schema||modidkte_ecfcine||ALTER|G
-modidkte_webapp|schema||modidkte_ecfcine||ALTER ROUTINE|G
-modidkte_webapp|schema||modidkte_ecfcine||CREATE|G
-modidkte_webapp|schema||modidkte_ecfcine||CREATE ROUTINE|G
-modidkte_webapp|schema||modidkte_ecfcine||CREATE TEMPORARY TABLES|G
-modidkte_webapp|schema||modidkte_ecfcine||CREATE VIEW|G
-modidkte_webapp|schema||modidkte_ecfcine||DELETE|G
-modidkte_webapp|schema||modidkte_ecfcine||DELETE HISTORY|G
-modidkte_webapp|schema||modidkte_ecfcine||DROP|G
-modidkte_webapp|schema||modidkte_ecfcine||EVENT|G
-modidkte_webapp|schema||modidkte_ecfcine||EXECUTE|G
-modidkte_webapp|schema||modidkte_ecfcine||INDEX|G
-modidkte_webapp|schema||modidkte_ecfcine||INSERT|G
-modidkte_webapp|schema||modidkte_ecfcine||LOCK TABLES|G
-modidkte_webapp|schema||modidkte_ecfcine||REFERENCES|G
-modidkte_webapp|schema||modidkte_ecfcine||SELECT|G
-modidkte_webapp|schema||modidkte_ecfcine||SHOW VIEW|G
-modidkte_webapp|schema||modidkte_ecfcine||TRIGGER|G
-modidkte_webapp|schema||modidkte_ecfcine||UPDATE|G
-modidkte_webapp|schema||modidkte_ecfcine||grant option|G</Grants>
       <ServerVersion>10.6.18</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
@@ -1216,7 +1016,7 @@ modidkte_webapp|schema||modidkte_ecfcine||grant option|G</Grants>
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
     <schema id="325" parent="1" name="modidkte_cinephoria">
-      <LastIntrospectionLocalTimestamp>2024-11-16.13:26:27</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-12-29.12:50:15</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
     <schema id="326" parent="1" name="modidkte_cinephoria2">
@@ -1277,1042 +1077,1039 @@ modidkte_webapp|schema||modidkte_ecfcine||grant option|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="343" parent="325" name="reservations">
+    <table id="343" parent="325" name="refresh_tokens">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="344" parent="325" name="salles">
+    <table id="344" parent="325" name="reservations">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="345" parent="325" name="seance">
+    <table id="345" parent="325" name="salles">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="346" parent="325" name="sieges">
+    <table id="346" parent="325" name="seance">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="347" parent="325" name="user">
+    <table id="347" parent="325" name="sieges">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="348" parent="328" name="avis">
+    <table id="348" parent="325" name="user">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <table id="349" parent="328" name="avis">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="349" parent="328" name="cinema">
+    <table id="350" parent="328" name="cinema">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="350" parent="328" name="doctrine_migration_versions">
+    <table id="351" parent="328" name="doctrine_migration_versions">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_unicode_ci</CollationName>
     </table>
-    <table id="351" parent="328" name="film">
+    <table id="352" parent="328" name="film">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="352" parent="328" name="film_genre">
+    <table id="353" parent="328" name="film_genre">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="353" parent="328" name="genre">
+    <table id="354" parent="328" name="genre">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="354" parent="328" name="incident">
+    <table id="355" parent="328" name="incident">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="355" parent="328" name="qr_code">
+    <table id="356" parent="328" name="qr_code">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="356" parent="328" name="qualite">
+    <table id="357" parent="328" name="qualite">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="357" parent="328" name="reservation">
+    <table id="358" parent="328" name="reservation">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="358" parent="328" name="salle">
+    <table id="359" parent="328" name="salle">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="359" parent="328" name="seance">
+    <table id="360" parent="328" name="seance">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="360" parent="328" name="utilisateurs">
+    <table id="361" parent="328" name="utilisateurs">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <column id="361" parent="336" name="id">
+    <column id="362" parent="336" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="362" parent="336" name="film_id">
+    <column id="363" parent="336" name="film_id">
       <Position>2</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="363" parent="336" name="user_id">
+    <column id="364" parent="336" name="user_id">
       <Position>3</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="364" parent="336" name="commentaire">
+    <column id="365" parent="336" name="commentaire">
       <Position>4</Position>
       <StoredType>longtext|0s</StoredType>
     </column>
-    <column id="365" parent="336" name="note">
+    <column id="366" parent="336" name="note">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="366" parent="336" name="approuve">
+    <column id="367" parent="336" name="approuve">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>tinyint(1)|0s</StoredType>
     </column>
-    <foreign-key id="367" parent="336" name="FK_8F91ABF0567F5183">
+    <foreign-key id="368" parent="336" name="FK_8F91ABF0567F5183">
       <ColNames>film_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>films</RefTableName>
     </foreign-key>
-    <foreign-key id="368" parent="336" name="FK_8F91ABF0A76ED395">
+    <foreign-key id="369" parent="336" name="FK_8F91ABF0A76ED395">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>user</RefTableName>
     </foreign-key>
-    <index id="369" parent="336" name="PRIMARY">
+    <index id="370" parent="336" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="370" parent="336" name="IDX_8F91ABF0567F5183">
+    <index id="371" parent="336" name="IDX_8F91ABF0567F5183">
       <ColNames>film_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="371" parent="336" name="IDX_8F91ABF0A76ED395">
+    <index id="372" parent="336" name="IDX_8F91ABF0A76ED395">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="372" parent="336" name="PRIMARY">
+    <key id="373" parent="336" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="373" parent="337" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="374" parent="337" name="id">
+      <AutoIncrement>11</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="374" parent="337" name="nom">
+    <column id="375" parent="337" name="nom">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="375" parent="337" name="ville">
+    <column id="376" parent="337" name="ville">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="376" parent="337" name="adresse">
+    <column id="377" parent="337" name="adresse">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>longtext|0s</StoredType>
     </column>
-    <column id="377" parent="337" name="horaire">
+    <column id="378" parent="337" name="horaire">
       <Position>5</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <index id="378" parent="337" name="PRIMARY">
+    <index id="379" parent="337" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="379" parent="337" name="PRIMARY">
+    <key id="380" parent="337" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="380" parent="338" name="cinemas_id">
+    <column id="381" parent="338" name="cinemas_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="381" parent="338" name="films_id">
+    <column id="382" parent="338" name="films_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <foreign-key id="382" parent="338" name="FK_A5215F8FC5C76018">
+    <foreign-key id="383" parent="338" name="FK_A5215F8FC5C76018">
       <ColNames>cinemas_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id</RefColNames>
       <RefTableName>cinemas</RefTableName>
     </foreign-key>
-    <foreign-key id="383" parent="338" name="FK_A5215F8F939610EE">
+    <foreign-key id="384" parent="338" name="FK_A5215F8F939610EE">
       <ColNames>films_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id</RefColNames>
       <RefTableName>films</RefTableName>
     </foreign-key>
-    <index id="384" parent="338" name="PRIMARY">
+    <index id="385" parent="338" name="PRIMARY">
       <ColNames>cinemas_id
 films_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="385" parent="338" name="IDX_A5215F8FC5C76018">
+    <index id="386" parent="338" name="IDX_A5215F8FC5C76018">
       <ColNames>cinemas_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="386" parent="338" name="IDX_A5215F8F939610EE">
+    <index id="387" parent="338" name="IDX_A5215F8F939610EE">
       <ColNames>films_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="387" parent="338" name="PRIMARY">
+    <key id="388" parent="338" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="388" parent="339" name="version">
+    <column id="389" parent="339" name="version">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>varchar(191)|0s</StoredType>
     </column>
-    <column id="389" parent="339" name="executed_at">
+    <column id="390" parent="339" name="executed_at">
       <Position>2</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <column id="390" parent="339" name="execution_time">
+    <column id="391" parent="339" name="execution_time">
       <Position>3</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <index id="391" parent="339" name="PRIMARY">
+    <index id="392" parent="339" name="PRIMARY">
       <ColNames>version</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="392" parent="339" name="PRIMARY">
+    <key id="393" parent="339" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="393" parent="340" name="id">
+    <column id="394" parent="340" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="394" parent="340" name="titre">
+    <column id="395" parent="340" name="titre">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="395" parent="340" name="description">
+    <column id="396" parent="340" name="description">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>longtext|0s</StoredType>
     </column>
-    <column id="396" parent="340" name="age_minimum">
+    <column id="397" parent="340" name="age_minimum">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="397" parent="340" name="coup_de_coeur">
+    <column id="398" parent="340" name="coup_de_coeur">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>tinyint(1)|0s</StoredType>
     </column>
-    <column id="398" parent="340" name="note">
+    <column id="399" parent="340" name="note">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>double|0s</StoredType>
     </column>
-    <column id="399" parent="340" name="qualite">
+    <column id="400" parent="340" name="qualite">
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="400" parent="340" name="image_name">
+    <column id="401" parent="340" name="image_name">
       <Position>8</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="401" parent="340" name="image_size">
+    <column id="402" parent="340" name="image_size">
       <Position>9</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <index id="402" parent="340" name="PRIMARY">
+    <index id="403" parent="340" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="403" parent="340" name="PRIMARY">
+    <key id="404" parent="340" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="404" parent="341" name="id">
+    <column id="405" parent="341" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="405" parent="341" name="salle_id">
+    <column id="406" parent="341" name="salle_id">
       <Position>2</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="406" parent="341" name="employes_id">
+    <column id="407" parent="341" name="employes_id">
       <Position>3</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="407" parent="341" name="description">
+    <column id="408" parent="341" name="description">
       <Position>4</Position>
       <StoredType>longtext|0s</StoredType>
     </column>
-    <column id="408" parent="341" name="date">
+    <column id="409" parent="341" name="date">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <foreign-key id="409" parent="341" name="FK_E65135D0DC304035">
+    <foreign-key id="410" parent="341" name="FK_E65135D0DC304035">
       <ColNames>salle_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>salles</RefTableName>
     </foreign-key>
-    <foreign-key id="410" parent="341" name="FK_E65135D0F971F91F">
+    <foreign-key id="411" parent="341" name="FK_E65135D0F971F91F">
       <ColNames>employes_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>user</RefTableName>
     </foreign-key>
-    <index id="411" parent="341" name="PRIMARY">
+    <index id="412" parent="341" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="412" parent="341" name="IDX_E65135D0DC304035">
+    <index id="413" parent="341" name="IDX_E65135D0DC304035">
       <ColNames>salle_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="413" parent="341" name="IDX_E65135D0F971F91F">
+    <index id="414" parent="341" name="IDX_E65135D0F971F91F">
       <ColNames>employes_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="414" parent="341" name="PRIMARY">
+    <key id="415" parent="341" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="415" parent="342" name="id">
-      <AutoIncrement>2</AutoIncrement>
+    <column id="416" parent="342" name="id">
+      <AutoIncrement>4</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint(20)|0s</StoredType>
     </column>
-    <column id="416" parent="342" name="body">
+    <column id="417" parent="342" name="body">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>longtext|0s</StoredType>
     </column>
-    <column id="417" parent="342" name="headers">
+    <column id="418" parent="342" name="headers">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>longtext|0s</StoredType>
     </column>
-    <column id="418" parent="342" name="queue_name">
+    <column id="419" parent="342" name="queue_name">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>varchar(190)|0s</StoredType>
     </column>
-    <column id="419" parent="342" name="created_at">
+    <column id="420" parent="342" name="created_at">
       <Comment>(DC2Type:datetime_immutable)</Comment>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <column id="420" parent="342" name="available_at">
+    <column id="421" parent="342" name="available_at">
       <Comment>(DC2Type:datetime_immutable)</Comment>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <column id="421" parent="342" name="delivered_at">
+    <column id="422" parent="342" name="delivered_at">
       <Comment>(DC2Type:datetime_immutable)</Comment>
       <Position>7</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <index id="422" parent="342" name="PRIMARY">
+    <index id="423" parent="342" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="423" parent="342" name="IDX_75EA56E0FB7336F0">
+    <index id="424" parent="342" name="IDX_75EA56E0FB7336F0">
       <ColNames>queue_name</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="424" parent="342" name="IDX_75EA56E0E3BD61CE">
+    <index id="425" parent="342" name="IDX_75EA56E0E3BD61CE">
       <ColNames>available_at</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="425" parent="342" name="IDX_75EA56E016BA31DB">
+    <index id="426" parent="342" name="IDX_75EA56E016BA31DB">
       <ColNames>delivered_at</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="426" parent="342" name="PRIMARY">
+    <key id="427" parent="342" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="427" parent="343" name="id">
+    <column id="428" parent="343" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="428" parent="343" name="cinemas_id">
+    <column id="429" parent="343" name="refresh_token">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(128)|0s</StoredType>
+    </column>
+    <column id="430" parent="343" name="username">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="431" parent="343" name="valid">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <index id="432" parent="343" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="433" parent="343" name="UNIQ_9BACE7E1C74F2195">
+      <ColNames>refresh_token</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="434" parent="343" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="435" parent="343" name="UNIQ_9BACE7E1C74F2195">
+      <UnderlyingIndexName>UNIQ_9BACE7E1C74F2195</UnderlyingIndexName>
+    </key>
+    <column id="436" parent="344" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="437" parent="344" name="cinemas_id">
       <Position>2</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="429" parent="343" name="seances_id">
+    <column id="438" parent="344" name="seances_id">
       <Position>3</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="430" parent="343" name="films_id">
+    <column id="439" parent="344" name="films_id">
       <Position>4</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="431" parent="343" name="user_id">
+    <column id="440" parent="344" name="user_id">
       <Position>5</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="432" parent="343" name="nombre_places">
+    <column id="441" parent="344" name="nombre_places">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="433" parent="343" name="prix_total">
+    <column id="442" parent="344" name="prix_total">
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StoredType>double|0s</StoredType>
     </column>
-    <column id="434" parent="343" name="status">
+    <column id="443" parent="344" name="status">
       <Position>8</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="435" parent="343" name="date">
+    <column id="444" parent="344" name="date">
       <NotNull>1</NotNull>
       <Position>9</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <foreign-key id="436" parent="343" name="FK_4DA239C5C76018">
+    <foreign-key id="445" parent="344" name="FK_4DA239C5C76018">
       <ColNames>cinemas_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>cinemas</RefTableName>
     </foreign-key>
-    <foreign-key id="437" parent="343" name="FK_4DA23910F09302">
+    <foreign-key id="446" parent="344" name="FK_4DA23910F09302">
       <ColNames>seances_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>seance</RefTableName>
     </foreign-key>
-    <foreign-key id="438" parent="343" name="FK_4DA239939610EE">
+    <foreign-key id="447" parent="344" name="FK_4DA239939610EE">
       <ColNames>films_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>films</RefTableName>
     </foreign-key>
-    <foreign-key id="439" parent="343" name="FK_4DA239A76ED395">
+    <foreign-key id="448" parent="344" name="FK_4DA239A76ED395">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>user</RefTableName>
     </foreign-key>
-    <index id="440" parent="343" name="PRIMARY">
+    <index id="449" parent="344" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="441" parent="343" name="IDX_4DA239C5C76018">
+    <index id="450" parent="344" name="IDX_4DA239C5C76018">
       <ColNames>cinemas_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="442" parent="343" name="IDX_4DA23910F09302">
+    <index id="451" parent="344" name="IDX_4DA23910F09302">
       <ColNames>seances_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="443" parent="343" name="IDX_4DA239939610EE">
+    <index id="452" parent="344" name="IDX_4DA239939610EE">
       <ColNames>films_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="444" parent="343" name="IDX_4DA239A76ED395">
+    <index id="453" parent="344" name="IDX_4DA239A76ED395">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="445" parent="343" name="PRIMARY">
+    <key id="454" parent="344" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="446" parent="344" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="455" parent="345" name="id">
+      <AutoIncrement>2</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="447" parent="344" name="numero_salle">
+    <column id="456" parent="345" name="numero_salle">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="448" parent="344" name="nombre_siege">
+    <column id="457" parent="345" name="nombre_siege">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="449" parent="344" name="nombre_siege_pmr">
+    <column id="458" parent="345" name="nombre_siege_pmr">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="450" parent="344" name="type_qualite">
+    <column id="459" parent="345" name="type_qualite">
       <Position>5</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <index id="451" parent="344" name="PRIMARY">
+    <index id="460" parent="345" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="452" parent="344" name="PRIMARY">
+    <key id="461" parent="345" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="453" parent="345" name="id">
+    <column id="462" parent="346" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="454" parent="345" name="heure_debut">
+    <column id="463" parent="346" name="heure_debut">
       <Comment>(DC2Type:datetime_immutable)</Comment>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <column id="455" parent="345" name="heure_fin">
+    <column id="464" parent="346" name="heure_fin">
       <Position>3</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <column id="456" parent="345" name="films_id">
+    <column id="465" parent="346" name="films_id">
       <Position>4</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="457" parent="345" name="salle_id">
+    <column id="466" parent="346" name="salle_id">
       <Position>5</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="458" parent="345" name="cinemas_id">
+    <column id="467" parent="346" name="cinemas_id">
       <Position>6</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="459" parent="345" name="qualite">
+    <column id="468" parent="346" name="qualite">
       <Position>7</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <foreign-key id="460" parent="345" name="FK_DF7DFD0E939610EE">
+    <foreign-key id="469" parent="346" name="FK_DF7DFD0E939610EE">
       <ColNames>films_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>films</RefTableName>
     </foreign-key>
-    <foreign-key id="461" parent="345" name="FK_DF7DFD0EDC304035">
+    <foreign-key id="470" parent="346" name="FK_DF7DFD0EDC304035">
       <ColNames>salle_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>salles</RefTableName>
     </foreign-key>
-    <foreign-key id="462" parent="345" name="FK_DF7DFD0EC5C76018">
+    <foreign-key id="471" parent="346" name="FK_DF7DFD0EC5C76018">
       <ColNames>cinemas_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>cinemas</RefTableName>
     </foreign-key>
-    <index id="463" parent="345" name="PRIMARY">
+    <index id="472" parent="346" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="464" parent="345" name="IDX_DF7DFD0E939610EE">
+    <index id="473" parent="346" name="IDX_DF7DFD0E939610EE">
       <ColNames>films_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="465" parent="345" name="IDX_DF7DFD0EDC304035">
+    <index id="474" parent="346" name="IDX_DF7DFD0EDC304035">
       <ColNames>salle_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="466" parent="345" name="IDX_DF7DFD0EC5C76018">
+    <index id="475" parent="346" name="IDX_DF7DFD0EC5C76018">
       <ColNames>cinemas_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="467" parent="345" name="PRIMARY">
+    <key id="476" parent="346" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="468" parent="346" name="id">
+    <column id="477" parent="347" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="469" parent="346" name="reservation_id">
+    <column id="478" parent="347" name="reservation_id">
       <Position>2</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="470" parent="346" name="numero_siege">
+    <column id="479" parent="347" name="numero_siege">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="471" parent="346" name="siege_pmr">
+    <column id="480" parent="347" name="siege_pmr">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>tinyint(1)|0s</StoredType>
     </column>
-    <foreign-key id="472" parent="346" name="FK_38B0AE00B83297E7">
+    <foreign-key id="481" parent="347" name="FK_38B0AE00B83297E7">
       <ColNames>reservation_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>reservations</RefTableName>
     </foreign-key>
-    <index id="473" parent="346" name="PRIMARY">
+    <index id="482" parent="347" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="474" parent="346" name="IDX_38B0AE00B83297E7">
+    <index id="483" parent="347" name="IDX_38B0AE00B83297E7">
       <ColNames>reservation_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="475" parent="346" name="PRIMARY">
+    <key id="484" parent="347" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <check id="476" parent="347" name="roles">
+    <check id="485" parent="348" name="roles">
       <ColNames>roles</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Predicate>json_valid(`roles`)</Predicate>
     </check>
-    <column id="477" parent="347" name="id">
-      <AutoIncrement>148</AutoIncrement>
+    <column id="486" parent="348" name="id">
+      <AutoIncrement>162</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="478" parent="347" name="email">
+    <column id="487" parent="348" name="email">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(180)|0s</StoredType>
     </column>
-    <column id="479" parent="347" name="roles">
+    <column id="488" parent="348" name="roles">
       <Comment>(DC2Type:json)</Comment>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>longtext|0s</StoredType>
       <CollationName>utf8mb4_bin</CollationName>
     </column>
-    <column id="480" parent="347" name="password">
+    <column id="489" parent="348" name="password">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="481" parent="347" name="nom">
+    <column id="490" parent="348" name="nom">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="482" parent="347" name="prenom">
+    <column id="491" parent="348" name="prenom">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="483" parent="347" name="is_verified">
+    <column id="492" parent="348" name="is_verified">
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StoredType>tinyint(1)|0s</StoredType>
     </column>
-    <column id="484" parent="347" name="type">
+    <column id="493" parent="348" name="type">
       <NotNull>1</NotNull>
       <Position>8</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <index id="485" parent="347" name="PRIMARY">
+    <index id="494" parent="348" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="486" parent="347" name="UNIQ_IDENTIFIER_EMAIL">
+    <index id="495" parent="348" name="UNIQ_IDENTIFIER_EMAIL">
       <ColNames>email</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="487" parent="347" name="PRIMARY">
+    <key id="496" parent="348" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="488" parent="347" name="UNIQ_IDENTIFIER_EMAIL">
+    <key id="497" parent="348" name="UNIQ_IDENTIFIER_EMAIL">
       <UnderlyingIndexName>UNIQ_IDENTIFIER_EMAIL</UnderlyingIndexName>
     </key>
-    <check id="489" parent="348" name="note">
+    <check id="498" parent="349" name="note">
       <ColNames>note</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Predicate>`note` between 1 and 5</Predicate>
     </check>
-    <column id="490" parent="348" name="id">
+    <column id="499" parent="349" name="id">
       <AutoIncrement>3</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="491" parent="348" name="utilisateur_id">
+    <column id="500" parent="349" name="utilisateur_id">
       <Position>2</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="492" parent="348" name="film_id">
+    <column id="501" parent="349" name="film_id">
       <Position>3</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="493" parent="348" name="note">
+    <column id="502" parent="349" name="note">
       <Position>4</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="494" parent="348" name="commentaire">
+    <column id="503" parent="349" name="commentaire">
       <Position>5</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <column id="495" parent="348" name="createdAt">
+    <column id="504" parent="349" name="createdAt">
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>timestamp|0s</StoredType>
     </column>
-    <foreign-key id="496" parent="348" name="avis_ibfk_1">
+    <foreign-key id="505" parent="349" name="avis_ibfk_1">
       <ColNames>utilisateur_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id</RefColNames>
       <RefTableName>utilisateurs</RefTableName>
     </foreign-key>
-    <foreign-key id="497" parent="348" name="avis_ibfk_2">
+    <foreign-key id="506" parent="349" name="avis_ibfk_2">
       <ColNames>film_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id</RefColNames>
       <RefTableName>film</RefTableName>
     </foreign-key>
-    <index id="498" parent="348" name="PRIMARY">
+    <index id="507" parent="349" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="499" parent="348" name="utilisateur_id">
+    <index id="508" parent="349" name="utilisateur_id">
       <ColNames>utilisateur_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="500" parent="348" name="film_id">
+    <index id="509" parent="349" name="film_id">
       <ColNames>film_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="501" parent="348" name="PRIMARY">
+    <key id="510" parent="349" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="502" parent="349" name="id">
+    <column id="511" parent="350" name="id">
       <AutoIncrement>2</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="503" parent="349" name="nom">
+    <column id="512" parent="350" name="nom">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="504" parent="349" name="adresse">
+    <column id="513" parent="350" name="adresse">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <index id="505" parent="349" name="PRIMARY">
+    <index id="514" parent="350" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="506" parent="349" name="PRIMARY">
+    <key id="515" parent="350" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="507" parent="350" name="version">
+    <column id="516" parent="351" name="version">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>varchar(191)|0s</StoredType>
     </column>
-    <column id="508" parent="350" name="executed_at">
+    <column id="517" parent="351" name="executed_at">
       <Position>2</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <column id="509" parent="350" name="execution_time">
+    <column id="518" parent="351" name="execution_time">
       <Position>3</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <index id="510" parent="350" name="PRIMARY">
+    <index id="519" parent="351" name="PRIMARY">
       <ColNames>version</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="511" parent="350" name="PRIMARY">
+    <key id="520" parent="351" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="512" parent="351" name="id">
+    <column id="521" parent="352" name="id">
       <AutoIncrement>4</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="513" parent="351" name="affiche">
+    <column id="522" parent="352" name="affiche">
       <Position>2</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="514" parent="351" name="titre">
+    <column id="523" parent="352" name="titre">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="515" parent="351" name="description">
+    <column id="524" parent="352" name="description">
       <Position>4</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <column id="516" parent="351" name="qualite_id">
+    <column id="525" parent="352" name="qualite_id">
       <Position>5</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="517" parent="351" name="ageMinimum">
+    <column id="526" parent="352" name="ageMinimum">
       <Position>6</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="518" parent="351" name="coupDeCoeur">
+    <column id="527" parent="352" name="coupDeCoeur">
       <DefaultExpression>0</DefaultExpression>
       <Position>7</Position>
       <StoredType>tinyint(1)|0s</StoredType>
     </column>
-    <column id="519" parent="351" name="note">
+    <column id="528" parent="352" name="note">
       <Position>8</Position>
       <StoredType>decimal(2,1 digit)|0s</StoredType>
     </column>
-    <column id="520" parent="351" name="createdAt">
+    <column id="529" parent="352" name="createdAt">
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>9</Position>
       <StoredType>timestamp|0s</StoredType>
     </column>
-    <foreign-key id="521" parent="351" name="film_ibfk_1">
+    <foreign-key id="530" parent="352" name="film_ibfk_1">
       <ColNames>qualite_id</ColNames>
       <OnDelete>set-null</OnDelete>
       <RefColNames>id</RefColNames>
       <RefTableName>qualite</RefTableName>
     </foreign-key>
-    <index id="522" parent="351" name="PRIMARY">
+    <index id="531" parent="352" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="523" parent="351" name="qualite_id">
+    <index id="532" parent="352" name="qualite_id">
       <ColNames>qualite_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="524" parent="351" name="PRIMARY">
+    <key id="533" parent="352" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="525" parent="352" name="film_id">
+    <column id="534" parent="353" name="film_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="526" parent="352" name="genre_id">
+    <column id="535" parent="353" name="genre_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <foreign-key id="527" parent="352" name="film_genre_ibfk_1">
+    <foreign-key id="536" parent="353" name="film_genre_ibfk_1">
       <ColNames>film_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id</RefColNames>
       <RefTableName>film</RefTableName>
     </foreign-key>
-    <foreign-key id="528" parent="352" name="film_genre_ibfk_2">
+    <foreign-key id="537" parent="353" name="film_genre_ibfk_2">
       <ColNames>genre_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id</RefColNames>
       <RefTableName>genre</RefTableName>
     </foreign-key>
-    <index id="529" parent="352" name="PRIMARY">
+    <index id="538" parent="353" name="PRIMARY">
       <ColNames>film_id
 genre_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="530" parent="352" name="genre_id">
+    <index id="539" parent="353" name="genre_id">
       <ColNames>genre_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="531" parent="352" name="PRIMARY">
+    <key id="540" parent="353" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="532" parent="353" name="id">
+    <column id="541" parent="354" name="id">
       <AutoIncrement>2</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="533" parent="353" name="nom">
+    <column id="542" parent="354" name="nom">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <index id="534" parent="353" name="PRIMARY">
+    <index id="543" parent="354" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="535" parent="353" name="nom">
+    <index id="544" parent="354" name="nom">
       <ColNames>nom</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="536" parent="353" name="PRIMARY">
+    <key id="545" parent="354" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="537" parent="353" name="nom">
+    <key id="546" parent="354" name="nom">
       <UnderlyingIndexName>nom</UnderlyingIndexName>
     </key>
-    <check id="538" parent="354" name="chk_status">
+    <check id="547" parent="355" name="chk_status">
       <Predicate>`status` in (&apos;en_cours&apos;,&apos;résolu&apos;,&apos;non_résolu&apos;)</Predicate>
     </check>
-    <column id="539" parent="354" name="id">
+    <column id="548" parent="355" name="id">
       <AutoIncrement>2</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="540" parent="354" name="salle_id">
+    <column id="549" parent="355" name="salle_id">
       <Position>2</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="541" parent="354" name="employe_id">
+    <column id="550" parent="355" name="employe_id">
       <Position>3</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="542" parent="354" name="description">
+    <column id="551" parent="355" name="description">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <column id="543" parent="354" name="dateSignalement">
+    <column id="552" parent="355" name="dateSignalement">
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>timestamp|0s</StoredType>
     </column>
-    <column id="544" parent="354" name="status">
+    <column id="553" parent="355" name="status">
       <DefaultExpression>&apos;en_cours&apos;</DefaultExpression>
       <Position>6</Position>
       <StoredType>varchar(20)|0s</StoredType>
     </column>
-    <column id="545" parent="354" name="createdAt">
+    <column id="554" parent="355" name="createdAt">
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StoredType>timestamp|0s</StoredType>
     </column>
-    <foreign-key id="546" parent="354" name="incident_ibfk_1">
+    <foreign-key id="555" parent="355" name="incident_ibfk_1">
       <ColNames>salle_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id</RefColNames>
       <RefTableName>salle</RefTableName>
     </foreign-key>
-    <foreign-key id="547" parent="354" name="incident_ibfk_2">
+    <foreign-key id="556" parent="355" name="incident_ibfk_2">
       <ColNames>employe_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id</RefColNames>
       <RefTableName>utilisateurs</RefTableName>
-    </foreign-key>
-    <index id="548" parent="354" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="549" parent="354" name="salle_id">
-      <ColNames>salle_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="550" parent="354" name="employe_id">
-      <ColNames>employe_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="551" parent="354" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="552" parent="355" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <column id="553" parent="355" name="reservation_id">
-      <Position>2</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <column id="554" parent="355" name="code">
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="555" parent="355" name="createdAt">
-      <DefaultExpression>current_timestamp()</DefaultExpression>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-      <StoredType>timestamp|0s</StoredType>
-    </column>
-    <foreign-key id="556" parent="355" name="qr_code_ibfk_1">
-      <ColNames>reservation_id</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>id</RefColNames>
-      <RefTableName>reservation</RefTableName>
     </foreign-key>
     <index id="557" parent="355" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="558" parent="355" name="code">
-      <ColNames>code</ColNames>
+    <index id="558" parent="355" name="salle_id">
+      <ColNames>salle_id</ColNames>
       <Type>btree</Type>
-      <Unique>1</Unique>
     </index>
-    <index id="559" parent="355" name="reservation_id">
-      <ColNames>reservation_id</ColNames>
+    <index id="559" parent="355" name="employe_id">
+      <ColNames>employe_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="560" parent="355" name="PRIMARY">
@@ -2320,150 +2117,152 @@ genre_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="561" parent="355" name="code">
+    <column id="561" parent="356" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="562" parent="356" name="reservation_id">
+      <Position>2</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="563" parent="356" name="code">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="564" parent="356" name="createdAt">
+      <DefaultExpression>current_timestamp()</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>timestamp|0s</StoredType>
+    </column>
+    <foreign-key id="565" parent="356" name="qr_code_ibfk_1">
+      <ColNames>reservation_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefTableName>reservation</RefTableName>
+    </foreign-key>
+    <index id="566" parent="356" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="567" parent="356" name="code">
+      <ColNames>code</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="568" parent="356" name="reservation_id">
+      <ColNames>reservation_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="569" parent="356" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="570" parent="356" name="code">
       <UnderlyingIndexName>code</UnderlyingIndexName>
     </key>
-    <column id="562" parent="356" name="id">
+    <column id="571" parent="357" name="id">
       <AutoIncrement>2</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="563" parent="356" name="nom">
+    <column id="572" parent="357" name="nom">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="564" parent="356" name="prix">
+    <column id="573" parent="357" name="prix">
       <DefaultExpression>0.00</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>decimal(5,2 digit)|0s</StoredType>
     </column>
-    <index id="565" parent="356" name="PRIMARY">
+    <index id="574" parent="357" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="566" parent="356" name="nom">
+    <index id="575" parent="357" name="nom">
       <ColNames>nom</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="567" parent="356" name="PRIMARY">
+    <key id="576" parent="357" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="568" parent="356" name="nom">
+    <key id="577" parent="357" name="nom">
       <UnderlyingIndexName>nom</UnderlyingIndexName>
     </key>
-    <check id="569" parent="357" name="chk_status">
+    <check id="578" parent="358" name="chk_status">
       <Predicate>`status` in (&apos;confirmée&apos;,&apos;annulée&apos;,&apos;en_attente&apos;)</Predicate>
     </check>
-    <column id="570" parent="357" name="id">
+    <column id="579" parent="358" name="id">
       <AutoIncrement>2</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="571" parent="357" name="utilisateur_id">
+    <column id="580" parent="358" name="utilisateur_id">
       <Position>2</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="572" parent="357" name="seance_id">
+    <column id="581" parent="358" name="seance_id">
       <Position>3</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="573" parent="357" name="nombrePlaces">
+    <column id="582" parent="358" name="nombrePlaces">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="574" parent="357" name="status">
+    <column id="583" parent="358" name="status">
       <DefaultExpression>&apos;en_attente&apos;</DefaultExpression>
       <Position>5</Position>
       <StoredType>varchar(20)|0s</StoredType>
     </column>
-    <column id="575" parent="357" name="createdAt">
+    <column id="584" parent="358" name="createdAt">
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>timestamp|0s</StoredType>
     </column>
-    <column id="576" parent="357" name="prixTotal">
+    <column id="585" parent="358" name="prixTotal">
       <DefaultExpression>0.00</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StoredType>decimal(5,2 digit)|0s</StoredType>
     </column>
-    <foreign-key id="577" parent="357" name="reservation_ibfk_1">
+    <foreign-key id="586" parent="358" name="reservation_ibfk_1">
       <ColNames>utilisateur_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id</RefColNames>
       <RefTableName>utilisateurs</RefTableName>
     </foreign-key>
-    <foreign-key id="578" parent="357" name="reservation_ibfk_2">
+    <foreign-key id="587" parent="358" name="reservation_ibfk_2">
       <ColNames>seance_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id</RefColNames>
       <RefTableName>seance</RefTableName>
     </foreign-key>
-    <index id="579" parent="357" name="PRIMARY">
+    <index id="588" parent="358" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="580" parent="357" name="utilisateur_id">
+    <index id="589" parent="358" name="utilisateur_id">
       <ColNames>utilisateur_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="581" parent="357" name="seance_id">
+    <index id="590" parent="358" name="seance_id">
       <ColNames>seance_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="582" parent="357" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="583" parent="358" name="id">
-      <AutoIncrement>2</AutoIncrement>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <column id="584" parent="358" name="cinema_id">
-      <Position>2</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <column id="585" parent="358" name="nom">
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="586" parent="358" name="capacite">
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <column id="587" parent="358" name="typeSiege">
-      <Position>5</Position>
-      <StoredType>varchar(50)|0s</StoredType>
-    </column>
-    <foreign-key id="588" parent="358" name="salle_ibfk_1">
-      <ColNames>cinema_id</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>id</RefColNames>
-      <RefTableName>cinema</RefTableName>
-    </foreign-key>
-    <index id="589" parent="358" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="590" parent="358" name="cinema_id">
-      <ColNames>cinema_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="591" parent="358" name="PRIMARY">
@@ -2472,123 +2271,167 @@ genre_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="592" parent="359" name="id">
+      <AutoIncrement>2</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="593" parent="359" name="cinema_id">
+      <Position>2</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="594" parent="359" name="nom">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="595" parent="359" name="capacite">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="596" parent="359" name="typeSiege">
+      <Position>5</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <foreign-key id="597" parent="359" name="salle_ibfk_1">
+      <ColNames>cinema_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefTableName>cinema</RefTableName>
+    </foreign-key>
+    <index id="598" parent="359" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="599" parent="359" name="cinema_id">
+      <ColNames>cinema_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="600" parent="359" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="601" parent="360" name="id">
       <AutoIncrement>4</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="593" parent="359" name="film_id">
+    <column id="602" parent="360" name="film_id">
       <Position>2</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="594" parent="359" name="salle_id">
+    <column id="603" parent="360" name="salle_id">
       <Position>3</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="595" parent="359" name="heureDebut">
+    <column id="604" parent="360" name="heureDebut">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>time|0s</StoredType>
     </column>
-    <column id="596" parent="359" name="heureFin">
+    <column id="605" parent="360" name="heureFin">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>time|0s</StoredType>
     </column>
-    <column id="597" parent="359" name="prix">
+    <column id="606" parent="360" name="prix">
       <DefaultExpression>8.00</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>decimal(5,2 digit)|0s</StoredType>
     </column>
-    <column id="598" parent="359" name="createdAt">
+    <column id="607" parent="360" name="createdAt">
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StoredType>timestamp|0s</StoredType>
     </column>
-    <foreign-key id="599" parent="359" name="seance_ibfk_1">
+    <foreign-key id="608" parent="360" name="seance_ibfk_1">
       <ColNames>film_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id</RefColNames>
       <RefTableName>film</RefTableName>
     </foreign-key>
-    <foreign-key id="600" parent="359" name="seance_ibfk_2">
+    <foreign-key id="609" parent="360" name="seance_ibfk_2">
       <ColNames>salle_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id</RefColNames>
       <RefTableName>salle</RefTableName>
     </foreign-key>
-    <index id="601" parent="359" name="PRIMARY">
+    <index id="610" parent="360" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="602" parent="359" name="film_id">
+    <index id="611" parent="360" name="film_id">
       <ColNames>film_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="603" parent="359" name="salle_id">
+    <index id="612" parent="360" name="salle_id">
       <ColNames>salle_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="604" parent="359" name="PRIMARY">
+    <key id="613" parent="360" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="605" parent="360" name="id">
+    <column id="614" parent="361" name="id">
       <AutoIncrement>3</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="606" parent="360" name="nom">
+    <column id="615" parent="361" name="nom">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="607" parent="360" name="prenom">
+    <column id="616" parent="361" name="prenom">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="608" parent="360" name="email">
+    <column id="617" parent="361" name="email">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="609" parent="360" name="motDePasse">
+    <column id="618" parent="361" name="motDePasse">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="610" parent="360" name="role">
+    <column id="619" parent="361" name="role">
       <Position>6</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="611" parent="360" name="createdAt">
+    <column id="620" parent="361" name="createdAt">
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StoredType>timestamp|0s</StoredType>
     </column>
-    <index id="612" parent="360" name="PRIMARY">
+    <index id="621" parent="361" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="613" parent="360" name="email">
+    <index id="622" parent="361" name="email">
       <ColNames>email</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="614" parent="360" name="PRIMARY">
+    <key id="623" parent="361" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="615" parent="360" name="email">
+    <key id="624" parent="361" name="email">
       <UnderlyingIndexName>email</UnderlyingIndexName>
     </key>
   </database-model>
