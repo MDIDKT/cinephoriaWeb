@@ -139,9 +139,4 @@ class Salles
             }
         }
     }
-
-    public function __toString(): string
-    {
-        return sprintf('Salle %d', $this->numeroSalle);
-    }
 }
