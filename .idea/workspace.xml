@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="ajout heroku" />
+    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="ajour debug">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,12 +24,12 @@
     </execution>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="DEV_save" />
+    <option name="BRANCH" value="mainDeploy" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="DEV_save" />
+        <entry key="$PROJECT_DIR$" value="mainDeploy" />
       </map>
     </option>
     <option name="RECENT_COMMON_BRANCH" value="main" />
@@ -270,7 +272,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "mainDeploy",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
@@ -661,7 +663,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735592826790</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="ajour debug">
+      <option name="closed" value="true" />
+      <created>1735593605863</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1735593605863</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -718,7 +728,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="implementation de la page de reservation&#10;test manuel OK" />
     <MESSAGE value="Ajout de la page utilisateur" />
     <MESSAGE value="test de mise en place de webpack" />
     <MESSAGE value="mise en forme de la la landing page avec navbar" />
@@ -743,7 +752,8 @@
     <MESSAGE value="reformatage du code" />
     <MESSAGE value="correctif" />
     <MESSAGE value="ajout heroku" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout heroku" />
+    <MESSAGE value="ajour debug" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajour debug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
