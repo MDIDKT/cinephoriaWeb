@@ -23,22 +23,22 @@ class Salles
     #[ORM\Column(type: "integer")]
     private int $nombreSiegePMR;
 
-    #[ORM\Column(type: "integer")]
+    #[ORM\Column(type: 'integer')]
     private int $numeroSalle;
 
-    #[ORM\Column(type: "integer")]
+    #[ORM\Column(type: 'integer')]
     private int $nombrePlacesDisponibles;
 
-    #[ORM\Column(type: "integer")]
+    #[ORM\Column(type: 'integer')]
     private int $placesOccupees = 0; // Ajout de la propriété manquante
 
-    #[ORM\OneToMany(mappedBy: "salles", targetEntity: Reservations::class, cascade: ["persist", "remove"])]
+    #[ORM\OneToMany(targetEntity: Reservations::class, mappedBy: 'salle', cascade: ['persist', 'remove'])]
     private Collection $reservations;
 
-    #[ORM\OneToMany(mappedBy: "salles", targetEntity: Incidents::class)]
+    #[ORM\OneToMany(targetEntity: Incidents::class, mappedBy: 'salle')]
     private Collection $incidents;
 
-    #[ORM\OneToMany(mappedBy: "salles", targetEntity: Seance::class)]
+    #[ORM\OneToMany(targetEntity: Seance::class, mappedBy: 'salles')]
     private Collection $seances;
 
     public function __construct()
@@ -122,7 +122,7 @@ class Salles
     {
         if (!$this->reservations->contains($reservation)) {
             $this->reservations->add($reservation);
-            $reservation->setSalles($this);
+            $reservation->setSalle($this);
         }
 
         return $this;
@@ -212,11 +212,7 @@ class Salles
     {
         return max(0, $this->nombreSiege - $this->placesOccupees - $this->nombreSiegePMR);
     }
-
-    public function setNombrePlacesDisponibles(int $nombrePlacesDisponibles): void
-    {
-        $this->nombrePlacesDisponibles = $nombrePlacesDisponibles;
-    }
+    public function setNombrePlacesDisponibles(int $nombrePlacesDisponibles): void{$this->nombrePlacesDisponibles = $nombrePlacesDisponibles;}
 
     public function reservePlaces(int $nombre): self
     {
