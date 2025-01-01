@@ -138,6 +138,7 @@ class Seance
 
     public function getSalle(): ?Salles
     {
+
         return $this->salle;
     }
 
