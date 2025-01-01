@@ -30,21 +30,12 @@ class Cinemas
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $horaire = null;
 
-    /**
-     * @var Collection<int, Seance>
-     */
-    #[ORM\OneToMany(targetEntity: Seance::class, mappedBy: 'cinemas')]
+    #[ORM\OneToMany(mappedBy: 'cinemas', targetEntity: Seance::class)]
     private Collection $seance;
 
-    /**
-     * @var Collection<int, Films>
-     */
-    #[ORM\ManyToMany(targetEntity: Films::class, inversedBy: 'cinemas')]
+    #[ORM\ManyToMany(targetEntity: Films::class, mappedBy: 'cinemas')]
     private Collection $film;
 
-    /**
-     * @var Collection<int, Reservations>
-     */
     #[ORM\OneToMany(mappedBy: 'cinemas', targetEntity: Reservations::class)]
     private Collection $reservations;
 
@@ -113,9 +104,6 @@ class Cinemas
         return $this;
     }
 
-    /**
-     * @return Collection<int, Seance>
-     */
     public function getSeance(): Collection
     {
         return $this->seance;
@@ -134,7 +122,6 @@ class Cinemas
     public function removeSeance(Seance $seance): static
     {
         if ($this->seance->removeElement($seance)) {
-            // set the owning side to null (unless already changed)
             if ($seance->getCinemas() === $this) {
                 $seance->setCinemas(null);
             }
@@ -143,9 +130,6 @@ class Cinemas
         return $this;
     }
 
-    /**
-     * @return Collection<int, Films>
-     */
     public function getFilm(): Collection
     {
         return $this->film;
@@ -160,9 +144,15 @@ class Cinemas
         return $this;
     }
 
-    /**
-     * @return Collection<int, Reservations>
-     */
+    public function removeFilm(Films $film): static
+    {
+        if ($this->film->removeElement($film)) {
+            $film->removeCinema($this);
+        }
+
+        return $this;
+    }
+
     public function getReservations(): Collection
     {
         return $this->reservations;
@@ -181,7 +171,6 @@ class Cinemas
     public function removeReservation(Reservations $reservation): static
     {
         if ($this->reservations->removeElement($reservation)) {
-            // set the owning side to null (unless already changed)
             if ($reservation->getCinemas() === $this) {
                 $reservation->setCinemas(null);
             }
