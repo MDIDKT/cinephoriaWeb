@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="ajour debug">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Seance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Seance.php" afterDir="false" />
-    </list>
+    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="correctif" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -672,7 +669,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735593605863</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="correctif">
+      <option name="closed" value="true" />
+      <created>1735727588809</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1735727588809</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -751,10 +756,10 @@
     <MESSAGE value="merge de DEV vers main" />
     <MESSAGE value="ajout de heroku" />
     <MESSAGE value="reformatage du code" />
-    <MESSAGE value="correctif" />
     <MESSAGE value="ajout heroku" />
     <MESSAGE value="ajour debug" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajour debug" />
+    <MESSAGE value="correctif" />
+    <option name="LAST_COMMIT_MESSAGE" value="correctif" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
