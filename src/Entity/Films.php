@@ -9,7 +9,6 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
-use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: FilmsRepository::class)]
@@ -61,6 +60,9 @@ class Films
     #[ORM\ManyToMany(targetEntity: Cinemas::class, inversedBy: 'film')]
     private Collection $cinemas;
 
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    private ?\DateTimeInterface $updatedAt = null;
+
     public function __construct()
     {
         $this->seances = new ArrayCollection();
@@ -82,6 +84,42 @@ class Films
     public function setTitre(string $titre): self
     {
         $this->titre = $titre;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getAgeMinimum(): ?int
+    {
+        return $this->ageMinimum;
+    }
+
+    public function setAgeMinimum(int $ageMinimum): self
+    {
+        $this->ageMinimum = $ageMinimum;
+
+        return $this;
+    }
+
+    public function getQualite(): ?string
+    {
+        return $this->qualite;
+    }
+
+    public function setQualite(string $qualite): self
+    {
+        $this->qualite = $qualite;
 
         return $this;
     }
@@ -113,5 +151,102 @@ class Films
         }
 
         return $this;
+    }
+
+    // Méthodes pour gérer les images
+    public function getImageName(): ?string
+    {
+        return $this->imageName;
+    }
+
+    public function setImageName(?string $imageName): self
+    {
+        $this->imageName = $imageName;
+
+        return $this;
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageFile(?File $imageFile): self
+    {
+        $this->imageFile = $imageFile;
+
+        if ($imageFile) {
+            // Mettre la date à jour si un nouveau fichier est chargé
+            $this->updatedAt = new \DateTime('now');
+        }
+
+        return $this;
+    }
+
+    public function getImageSize(): ?int
+    {
+        return $this->imageSize;
+    }
+
+    public function setImageSize(?int $imageSize): self
+    {
+        $this->imageSize = $imageSize;
+
+        return $this;
+    }
+
+    public function getCoupDeCoeur(): ?bool
+    {
+        return $this->coupDeCoeur;
+    }
+
+    public function setCoupDeCoeur(?bool $coupDeCoeur): void
+    {
+        $this->coupDeCoeur = $coupDeCoeur;
+    }
+
+    public function getNote(): ?float
+    {
+        return $this->note;
+    }
+
+    public function setNote(?float $note): void
+    {
+        $this->note = $note;
+    }
+
+    public function getAvis(): Collection
+    {
+        return $this->avis;
+    }
+
+    public function setAvis(Collection $avis): void
+    {
+        $this->avis = $avis;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): void
+    {
+        $this->updatedAt = $updatedAt;
+    }
+
+    public function getReservations(): Collection
+    {
+        return $this->reservations;
+    }
+
+    public function setReservations(Collection $reservations): void
+    {
+        $this->reservations = $reservations;
+    }
+
+    public function __toString(): string
+    {
+        return $this->titre;
     }
 }

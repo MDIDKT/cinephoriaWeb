@@ -19,17 +19,22 @@ class Seance
     #[ORM\Column]
     private ?\DateTimeImmutable $heureDebut = null;
 
+    #[ORM\Column]
+    private ?\DateTimeImmutable $heureFin = null;
+
     #[ORM\OneToMany(mappedBy: 'seances', targetEntity: Reservations::class)]
     private Collection $reservations;
 
     #[ORM\ManyToOne(inversedBy: 'seances')]
     private ?Films $films = null;
 
-    #[ORM\ManyToOne(targetEntity: Salles::class, inversedBy: 'seances')]
-    private ?Salles $salle = null; // Ajout correct de l'association avec la salle.
+    #[ORM\ManyToOne(targetEntity: Salles::class, inversedBy: "seances")]
+    private ?Salles $salle = null;
 
     #[ORM\ManyToOne(inversedBy: 'seance')]
     private ?Cinemas $cinemas = null;
+
+
 
     public function __construct()
     {
@@ -138,5 +143,15 @@ class Seance
         $heureDebut = $this->getHeureDebut()?->format('H:i') ?? 'Non défini';
 
         return sprintf('%s (%s)', $film, $heureDebut);
+    }
+
+    public function getHeureFin(): ?\DateTimeImmutable
+    {
+        return $this->heureFin;
+    }
+
+    public function setHeureFin(?\DateTimeImmutable $heureFin): void
+    {
+        $this->heureFin = $heureFin;
     }
 }

@@ -20,7 +20,8 @@ class Incidents
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
-    #[ORM\ManyToOne(inversedBy: 'incidents')]
+    #[ORM\ManyToOne(targetEntity: Salles::class, inversedBy: "incidents")]
+    #[ORM\JoinColumn(nullable: false)]
     private ?Salles $salle = null;
 
     #[ORM\ManyToOne(inversedBy: 'incident')]

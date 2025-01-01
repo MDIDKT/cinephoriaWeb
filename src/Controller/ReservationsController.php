@@ -47,7 +47,7 @@ final class ReservationsController extends AbstractController
     {
         $seance = $reservation->getSeances();
 
-        // Vérifie que la séance est valable
+        // Vérification de la validité de la séance et de la salle
         if ($seance === null || $seance->getSalle() === null) {
             $this->addFlash('error', 'Séance ou salle invalide pour cette réservation.');
             return $this->render($view, [
@@ -59,6 +59,7 @@ final class ReservationsController extends AbstractController
         $salle = $seance->getSalle();
         $requestedSeats = $reservation->getNombrePlaces();
 
+        // 1. Validation du nombre de places demandé
         if ($requestedSeats <= 0) {
             $this->addFlash('error', 'Le nombre de places doit être supérieur à 0.');
             return $this->render($view, [
@@ -67,18 +68,27 @@ final class ReservationsController extends AbstractController
             ]);
         }
 
-        if ($requestedSeats > $salle->getNombrePlacesDisponibles()) {
-            $this->addFlash('error', 'Pas assez de places disponibles.');
+        // 2. Calcul des places disponibles
+        $placesDisponibles = $salle->getNombreSiege()
+            - $salle->getPlacesOccupees()
+            - $salle->getNombreSiegePMR();
+
+        if ($requestedSeats > $placesDisponibles) {
+            $this->addFlash('error', sprintf(
+                'Réservation impossible : vous demandez %d places, mais il n’en reste que %d disponibles.',
+                $requestedSeats,
+                $placesDisponibles
+            ));
             return $this->render($view, [
                 'reservation' => $reservation,
                 'form' => $this->createForm(ReservationsType::class, $reservation)->createView(),
             ]);
         }
 
-        // Réduction des places disponibles dans la salle
+        // 3. Réduction des places disponibles et sauvegarde
         $salle->reservePlaces($requestedSeats);
 
-        // Calcul du prix total
+        // 4. Calculer le prix total
         $reservation->setPrixTotal($reservation->calculprixTotal());
 
         $entityManager->persist($salle);
@@ -86,21 +96,7 @@ final class ReservationsController extends AbstractController
         $entityManager->flush();
 
         $this->addFlash('success', 'Réservation effectuée avec succès.');
-
         return $this->redirectToRoute('app_reservations_index', [], Response::HTTP_SEE_OTHER);
-    }
-
-    #[Route('/{id}', name: 'app_reservations_show', methods: ['GET'])]
-    public function show(?Reservations $reservation): Response
-    {
-        if ($reservation === null) {
-            throw $this->createNotFoundException('Réservation non trouvée.');
-        }
-
-        return $this->render('reservations/show.html.twig', [
-            'reservation' => $reservation,
-            'films' => $reservation->getFilms(),
-        ]);
     }
 
     #[Route('/{id}/edit', name: 'app_reservations_edit', methods: ['GET', 'POST'])]
@@ -110,24 +106,36 @@ final class ReservationsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $initialReservedSeats = $reservation->getNombrePlaces();
+            $initialReservedSeats = $reservation->getNombrePlaces(); // Places réservées avant modification
             $salle = $reservation->getSeances()->getSalle();
 
             if ($salle !== null) {
-                // Rétablir les places initiales
+                // Rétablir les places initiales avant de recalculer
                 $salle->libererPlaces($initialReservedSeats);
 
-                // Appliquer les nouvelles réservations
                 $newRequestedSeats = $reservation->getNombrePlaces();
-                if ($newRequestedSeats > $salle->getNombrePlacesDisponibles()) {
-                    $this->addFlash('error', 'Pas assez de places disponibles.');
+
+                // Validation du nouveau nombre de places demandées
+                $placesDisponibles = $salle->getNombreSiege()
+                    - $salle->getPlacesOccupees()
+                    - $salle->getNombreSiegePMR();
+
+                if ($newRequestedSeats > $placesDisponibles) {
+                    $this->addFlash('error', sprintf(
+                        'Modification impossible : vous demandez %d places, mais seulement %d sont disponibles.',
+                        $newRequestedSeats,
+                        $placesDisponibles
+                    ));
                     return $this->render('reservations/edit.html.twig', [
                         'reservation' => $reservation,
                         'form' => $form->createView(),
                     ]);
                 }
 
+                // Réserver les nouvelles places
                 $salle->reservePlaces($newRequestedSeats);
+
+                // Mettre à jour l'entité Reservation
                 $reservation->setPrixTotal($reservation->calculprixTotal());
 
                 $entityManager->persist($salle);

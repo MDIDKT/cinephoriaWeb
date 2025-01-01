@@ -22,7 +22,9 @@ class SallesCrudController extends AbstractCrudController
             IntegerField::new('nombreSiegePMR', 'Nombre de sièges PMR')
                 ->setHelp('Nombre de sièges réservés aux personnes à mobilité réduite.'),
             IntegerField::new('nombrePlacesDisponibles', 'Places disponibles')
-                ->setHelp('Nombre de places disponibles après allocation des sièges PMR.'),
+                ->setHelp('Nombre de places disponibles après allocation des sièges PMR.')
+                ->setFormTypeOption('disabled', true) // Empêche la modification
+                ->onlyOnIndex(), // Ne s'affiche que dans les listes ou les détails
         ];
     }
 }

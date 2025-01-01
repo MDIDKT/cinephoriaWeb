@@ -45,6 +45,9 @@ class Reservations
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
+    #[ORM\ManyToOne(targetEntity: Salles::class, inversedBy: "reservations")]
+    private ?Salles $salle = null;
+
     public function __construct()
     {
         $this->prixTotal = $this->getNombrePlaces() * 8;
@@ -211,6 +214,16 @@ class Reservations
         }
 
         return $prixParPlace * $nombrePlaces;
+    }
+
+    public function getSalle(): ?Salles
+    {
+        return $this->salle;
+    }
+
+    public function setSalle(?Salles $salle): void
+    {
+        $this->salle = $salle;
     }
 
 }
