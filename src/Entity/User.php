@@ -76,6 +76,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function setEmail (string $email): static
     {
+        if (empty($email)) {
+            throw new \InvalidArgumentException('Email cannot be null');
+        }
         $this->email = $email;
         return $this;
     }
