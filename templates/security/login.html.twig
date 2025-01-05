@@ -24,6 +24,7 @@
             {{ form_start(form) }}
                 {{ form_row(form.email) }}
                 {{ form_row(form.password) }}
+                {{ form_row(form._csrf_token) }}
                 {{ form_row(form.submit) }}
             {{ form_end(form) }}
         </form>

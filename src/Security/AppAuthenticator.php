@@ -30,6 +30,10 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
     {
         $email = $request->request->get('email');
 
+        if (!$email) {
+            throw new \InvalidArgumentException('Email cannot be null');
+        }
+
         $request->getSession()->set(SecurityRequestAttributes::LAST_USERNAME, $email);
 
         return new Passport(
