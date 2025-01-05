@@ -27,15 +27,11 @@ security:
 
     main:
       pattern: ^/
-      entry_point: form_login # Ou App\Security\AppAuthenticator selon ton choix
+      entry_point: App\Security\AppAuthenticator
       lazy: true
       provider: app_user_provider
       custom_authenticators:
         - App\Security\AppAuthenticator # Définition de l'authenticator personnalisé
-      form_login:
-        login_path: app_login
-        check_path: app_login
-        enable_csrf: true
       logout:
         path: app_logout
 
