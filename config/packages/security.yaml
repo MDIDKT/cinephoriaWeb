@@ -46,8 +46,6 @@ security:
         path: /
         always_remember_me: true
 
-      anonymous: true
-
   # Contrôle d'accès
   access_control:
     - { path: ^/admin, roles: ROLE_ADMIN }
