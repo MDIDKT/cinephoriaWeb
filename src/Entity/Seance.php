@@ -37,6 +37,9 @@ class Seance
     #[ORM\Column(type: Types::INTEGER, nullable: true)]
     private ?int $nombrePlaces = null;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private string $qualite;
+
     public function __construct()
     {
         $this->reservations = new ArrayCollection();
@@ -164,6 +167,18 @@ class Seance
     public function setNombrePlaces(?int $nombrePlaces): void
     {
         $this->nombrePlaces = $nombrePlaces;
+    }
+
+    public function getQualite(): string
+    {
+        return $this->qualite;
+    }
+
+    public function setQualite(string $qualite): self
+    {
+        $this->qualite = $qualite;
+
+        return $this;
     }
 
 }

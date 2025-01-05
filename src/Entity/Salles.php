@@ -38,7 +38,7 @@ class Salles
     #[ORM\OneToMany(targetEntity: Incidents::class, mappedBy: 'salle')]
     private Collection $incidents;
 
-    #[ORM\OneToMany(targetEntity: Seance::class, mappedBy: 'salles')]
+    #[ORM\OneToMany(targetEntity: Seance::class, mappedBy: 'salle')]
     private Collection $seances;
 
     public function __construct()
@@ -222,7 +222,7 @@ class Salles
     public function reservePlaces(int $nombre): self
     {
         // Vérifiez si vous pouvez réserver ce nombre de places
-        $placesDisponibles = $this->getNombrePlaces() - $this->placesOccupees;
+        $placesDisponibles = $this->getNombrePlacesDisponibles();
 
         if ($nombre > $placesDisponibles) {
             throw new \InvalidArgumentException(

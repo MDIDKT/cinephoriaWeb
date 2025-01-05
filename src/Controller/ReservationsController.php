@@ -69,9 +69,7 @@ final class ReservationsController extends AbstractController
         }
 
         // 2. Calcul des places disponibles
-        $placesDisponibles = $salle->getNombreSiege()
-            - $salle->getPlacesOccupees()
-            - $salle->getNombreSiegePMR();
+        $placesDisponibles = $salle->getNombreSiege() - $salle->getPlacesOccupees();
 
         if ($requestedSeats > $placesDisponibles) {
             $this->addFlash('error', sprintf(
@@ -86,6 +84,17 @@ final class ReservationsController extends AbstractController
         }
 
         // 3. Réduction des places disponibles et sauvegarde
+        if ($requestedSeats > $placesDisponibles) {
+            $this->addFlash('error', sprintf(
+                'Impossible de réserver %d places. Seulement %d places disponibles.',
+                $requestedSeats,
+                $placesDisponibles
+            ));
+            return $this->render('reservations/new.html.twig', [
+                'reservation' => $reservation,
+                'form' => $this->createForm(ReservationsType::class, $reservation)->createView(),
+            ]);
+        }
         $salle->reservePlaces($requestedSeats);
 
         // 4. Calculer le prix total
@@ -110,6 +119,15 @@ final class ReservationsController extends AbstractController
             $salle = $reservation->getSeances()->getSalle();
 
             if ($salle !== null) {
+                // Vérifier si le nombre de places à libérer est valide
+                if ($initialReservedSeats > $salle->getPlacesOccupees()) {
+                    $this->addFlash('error', 'Impossible de libérer plus de places qu\'occupées.');
+                    return $this->render('reservations/edit.html.twig', [
+                        'reservation' => $reservation,
+                        'form' => $form->createView(),
+                    ]);
+                }
+
                 // Rétablir les places initiales avant de recalculer
                 $salle->libererPlaces($initialReservedSeats);
 
@@ -136,7 +154,7 @@ final class ReservationsController extends AbstractController
                 $salle->reservePlaces($newRequestedSeats);
 
                 // Mettre à jour l'entité Reservation
-                $reservation->setPrixTotal($reservation->calculprixTotal($reservation));
+                $reservation->setPrixTotal($reservation->calculprixTotal($reservation->getSeances()));
 
                 $entityManager->persist($salle);
                 $entityManager->persist($reservation);
