@@ -46,6 +46,15 @@ security:
         path: /
         always_remember_me: true
 
+      anonymous: true
+      form_login:
+        login_path: app_login
+        check_path: app_login
+        csrf_token_generator: security.csrf.token_manager
+      logout:
+        path: app_logout
+        target: app_home
+
   # Contrôle d'accès
   access_control:
     - { path: ^/admin, roles: ROLE_ADMIN }
