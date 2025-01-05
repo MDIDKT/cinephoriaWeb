@@ -9,39 +9,33 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 
 class LoginFormType extends AbstractType
 {
-    private CsrfTokenManagerInterface $csrfTokenManager;
-
-    public function __construct(CsrfTokenManagerInterface $csrfTokenManager)
-    {
-        $this->csrfTokenManager = $csrfTokenManager;
-    }
-
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('email', EmailType::class, [
-                'label' => 'Email',
+                'label' => 'Adresse email',
                 'required' => true,
             ])
             ->add('password', PasswordType::class, [
-                'label' => 'Password',
+                'label' => 'Mot de passe',
                 'required' => true,
             ])
-            ->add('csrf_token', HiddenType::class, [
-                'data' => $this->csrfTokenManager->getToken('authenticate')->getValue(),
+            ->add('_csrf_token', HiddenType::class, [
+                'data' => $options['csrf_token'],
                 'mapped' => false,
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Login',
+                'label' => 'Se connecter',
             ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults([]);
+        $resolver->setDefaults([
+            'csrf_token' => '',
+        ]);
     }
 }

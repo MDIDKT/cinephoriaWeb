@@ -1,4 +1,4 @@
-<?php /** @noinspection PhpMethodNamingConventionInspection */
+<?php
 
 namespace App\Security;
 
@@ -22,23 +22,29 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
 
     public const LOGIN_ROUTE = 'app_login';
 
-    public function __construct (private UrlGeneratorInterface $urlGenerator)
+    public function __construct(private UrlGeneratorInterface $urlGenerator)
     {
     }
 
-    public function authenticate (Request $request): Passport
+    public function authenticate(Request $request): Passport
     {
-        $email = $request->request->get('email');
+        $email = $request->request->get('email', null);
 
-        if (!$email) {
-            throw new \InvalidArgumentException('Email cannot be null');
+        // Vérifie si l'email est vide ou manquant.
+        if (empty($email)) {
+            throw new \InvalidArgumentException('L\'adresse email est obligatoire.');
+        }
+
+        $password = $request->request->get('password', null);
+        if (empty($password)) {
+            throw new \InvalidArgumentException('Le mot de passe est obligatoire.');
         }
 
         $request->getSession()->set(SecurityRequestAttributes::LAST_USERNAME, $email);
 
         return new Passport(
             new UserBadge($email),
-            new PasswordCredentials($request->request->get('password')),
+            new PasswordCredentials($password),
             [
                 new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
                 new RememberMeBadge(),
@@ -46,19 +52,17 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
         );
     }
 
-    public function onAuthenticationSuccess (Request $request, TokenInterface $token, string $firewallName): ?Response
+    public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
-        if ($targetPath = $this->getTargetPath ($request->getSession (), $firewallName)) {
+        if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         }
 
-        // For example:
-        return new RedirectResponse($this->urlGenerator->generate ('app_home'));
-        // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        return new RedirectResponse($this->urlGenerator->generate('app_home'));
     }
 
-    protected function getLoginUrl (Request $request): string
+    protected function getLoginUrl(Request $request): string
     {
-        return $this->urlGenerator->generate (self::LOGIN_ROUTE);
+        return $this->urlGenerator->generate(self::LOGIN_ROUTE);
     }
 }

@@ -1,32 +1,48 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Connexion{% endblock %}
 
 {% block body %}
-
     <div class="bg-gray-200 p-6 rounded-lg mx-auto mb-5 mt-8" style="max-width: 600px;">
-        <h1 class="text-2xl font-bold mb-4 flex justify-center text-blue-50">Connexion</h1>
+        <h1 class="text-2xl font-bold mb-4 flex justify-center text-blue-500">Connexion</h1>
         <form method="post">
             {% if error %}
-                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                <div class="alert alert-danger text-red-600 mb-4">
+                    {{ error.messageKey|trans(error.messageData, 'security') }}
+                </div>
             {% endif %}
 
             {% if app.user %}
                 <div class="mb-3 mt-2">
-                    <div class="text-red-800 mb-3">
-                        Vous êtes déjà connecté en tant que : {{ app.user.userIdentifier }}
+                    <div class="text-green-800 mb-3">
+                        Vous êtes déjà connecté en tant que : <strong>{{ app.user.userIdentifier }}</strong>
                     </div>
-                    <a href="{{ path('app_logout') }}" class="btn btn-dark uppercase">Déconnexion</a>
+                    <a href="{{ path('app_logout') }}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                        Déconnexion
+                    </a>
                 </div>
-            {% endif %}
+            {% else %}
+                <h2 class="text-lg mb-4 text-gray-700">Veuillez vous connecter</h2>
+                {{ form_start(form, { 'attr': {'class': 'space-y-4'} }) }}
+                    <div>
+                        {{ form_label(form.email, 'Adresse email', {'label_attr': {'class': 'block text-gray-700'}}) }}
+                        {{ form_widget(form.email, {'attr': {'class': 'w-full px-4 py-2 border rounded-lg'}}) }}
+                        {{ form_errors(form.email) }}
+                    </div>
 
-            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-            {{ form_start(form) }}
-                {{ form_row(form.email) }}
-                {{ form_row(form.password) }}
-                {{ form_widget(form.csrf_token) }}
-                {{ form_row(form.submit) }}
-            {{ form_end(form) }}
+                    <div>
+                        {{ form_label(form.password, 'Mot de passe', {'label_attr': {'class': 'block text-gray-700'}}) }}
+                        {{ form_widget(form.password, {'attr': {'class': 'w-full px-4 py-2 border rounded-lg'}}) }}
+                        {{ form_errors(form.password) }}
+                    </div>
+
+                    {{ form_widget(form._csrf_token) }}
+
+                    <div class="flex justify-center mt-4">
+                        {{ form_widget(form.submit, {'attr': {'class': 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'}}) }}
+                    </div>
+                {{ form_end(form) }}
+            {% endif %}
         </form>
     </div>
 {% endblock %}
