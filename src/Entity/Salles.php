@@ -14,13 +14,13 @@ class Salles
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: "integer")]
+    #[ORM\Column(type: 'integer')]
     private ?int $nombrePlaces = null;
 
-    #[ORM\Column(type: "integer")]
+    #[ORM\Column(type: 'integer')]
     private int $nombreSiege;
 
-    #[ORM\Column(type: "integer")]
+    #[ORM\Column(type: 'integer')]
     private int $nombreSiegePMR;
 
     #[ORM\Column(type: 'integer')]
@@ -193,6 +193,7 @@ class Salles
 
         return $this;
     }
+
     public function __toString(): string
     {
         return sprintf('Salle %s', $this->id);
@@ -212,7 +213,11 @@ class Salles
     {
         return max(0, $this->nombreSiege - $this->placesOccupees - $this->nombreSiegePMR);
     }
-    public function setNombrePlacesDisponibles(int $nombrePlacesDisponibles): void{$this->nombrePlacesDisponibles = $nombrePlacesDisponibles;}
+
+    public function setNombrePlacesDisponibles(int $nombrePlacesDisponibles): void
+    {
+        $this->nombrePlacesDisponibles = $nombrePlacesDisponibles;
+    }
 
     public function reservePlaces(int $nombre): self
     {

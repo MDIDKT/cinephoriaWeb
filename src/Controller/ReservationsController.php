@@ -34,7 +34,7 @@ final class ReservationsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            return $this->processReservation($reservation, $entityManager, 'reservations/new.html.twig');
+            return $this->processReservation($reservation, $entityManager);
         }
 
         return $this->render('reservations/new.html.twig', [
@@ -43,14 +43,14 @@ final class ReservationsController extends AbstractController
         ]);
     }
 
-    private function processReservation(Reservations $reservation, EntityManagerInterface $entityManager, string $view): Response
+    private function processReservation(Reservations $reservation, EntityManagerInterface $entityManager): Response
     {
         $seance = $reservation->getSeances();
 
         // Vérification de la validité de la séance et de la salle
         if ($seance === null || $seance->getSalle() === null) {
             $this->addFlash('error', 'Séance ou salle invalide pour cette réservation.');
-            return $this->render($view, [
+            return $this->render('reservations/new.html.twig', [
                 'reservation' => $reservation,
                 'form' => $this->createForm(ReservationsType::class, $reservation)->createView(),
             ]);
@@ -62,7 +62,7 @@ final class ReservationsController extends AbstractController
         // 1. Validation du nombre de places demandé
         if ($requestedSeats <= 0) {
             $this->addFlash('error', 'Le nombre de places doit être supérieur à 0.');
-            return $this->render($view, [
+            return $this->render('reservations/new.html.twig', [
                 'reservation' => $reservation,
                 'form' => $this->createForm(ReservationsType::class, $reservation)->createView(),
             ]);
@@ -79,7 +79,7 @@ final class ReservationsController extends AbstractController
                 $requestedSeats,
                 $placesDisponibles
             ));
-            return $this->render($view, [
+            return $this->render('reservations/new.html.twig', [
                 'reservation' => $reservation,
                 'form' => $this->createForm(ReservationsType::class, $reservation)->createView(),
             ]);

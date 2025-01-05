@@ -34,7 +34,8 @@ class Seance
     #[ORM\ManyToOne(inversedBy: 'seance')]
     private ?Cinemas $cinemas = null;
 
-
+    #[ORM\Column(type: Types::INTEGER, nullable: true)]
+    private ?int $nombrePlaces = null;
 
     public function __construct()
     {
@@ -153,6 +154,16 @@ class Seance
     public function setHeureFin(?\DateTimeImmutable $heureFin): void
     {
         $this->heureFin = $heureFin;
+    }
+
+    public function getNombrePlaces(): ?int
+    {
+        return $this->nombrePlaces;
+    }
+
+    public function setNombrePlaces(?int $nombrePlaces): void
+    {
+        $this->nombrePlaces = $nombrePlaces;
     }
 
 }
