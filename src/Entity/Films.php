@@ -177,7 +177,7 @@ class Films
 
         if ($imageFile) {
             // Mettre la date à jour si un nouveau fichier est chargé
-            $this->updatedAt = new \DateTime('now');
+            $this->createdAt = new \DateTime('now');
         }
 
         return $this;
