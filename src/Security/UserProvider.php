@@ -7,7 +7,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
-use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
+use Symfony\Component\Security\Core\Exception\UserNotFoundException;
 
 class UserProvider implements UserProviderInterface
 {
@@ -24,7 +24,7 @@ class UserProvider implements UserProviderInterface
         $user = $this->entityManager->getRepository (User::class)->findOneBy (['email' => $identifier]);
 
         if (!$user) {
-            throw new UsernameNotFoundException(sprintf ('User "%s" not found.', $identifier));
+            throw new UserNotFoundException(sprintf ('User "%s" not found.', $identifier));
         }
 
         return $user;
