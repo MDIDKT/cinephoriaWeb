@@ -16,6 +16,16 @@ class FilmsRepository extends ServiceEntityRepository
         parent::__construct ($registry, Films::class);
     }
 
+
+    public function findAll (): array
+    {
+        return $this->createQueryBuilder ('f')
+            ->getQuery ()
+            ->getResult ();
+    }
+
+
+
     //    /**
     //     * @return Films[] Returns an array of Films objects
     //     */
