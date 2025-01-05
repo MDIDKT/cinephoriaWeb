@@ -89,7 +89,7 @@ final class ReservationsController extends AbstractController
         $salle->reservePlaces($requestedSeats);
 
         // 4. Calculer le prix total
-        $reservation->setPrixTotal($reservation->calculprixTotal());
+        $reservation->setPrixTotal($reservation->calculprixTotal($seance));
 
         $entityManager->persist($salle);
         $entityManager->persist($reservation);
@@ -136,7 +136,7 @@ final class ReservationsController extends AbstractController
                 $salle->reservePlaces($newRequestedSeats);
 
                 // Mettre à jour l'entité Reservation
-                $reservation->setPrixTotal($reservation->calculprixTotal());
+                $reservation->setPrixTotal($reservation->calculprixTotal($reservation));
 
                 $entityManager->persist($salle);
                 $entityManager->persist($reservation);
@@ -171,5 +171,13 @@ final class ReservationsController extends AbstractController
         }
 
         return $this->redirectToRoute('app_reservations_index', [], Response::HTTP_SEE_OTHER);
+    }
+
+    #[Route('/{id}', name: 'app_reservations_show', methods: ['GET'])]
+    public function show(Reservations $reservation): Response
+    {
+        return $this->render('reservations/show.html.twig', [
+            'reservation' => $reservation,
+        ]);
     }
 }

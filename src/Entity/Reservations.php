@@ -45,7 +45,7 @@ class Reservations
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
-    #[ORM\ManyToOne(targetEntity: Salles::class, inversedBy: "reservations")]
+    #[ORM\ManyToOne(targetEntity: Salles::class, inversedBy: 'reservations')]
     private ?Salles $salle = null;
 
     public function __construct()
