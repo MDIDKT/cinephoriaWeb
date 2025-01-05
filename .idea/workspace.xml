@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AIAssistantCustomInstructionsStorage">
+    <option name="instructions">
+      <map>
+        <entry key="AIAssistant.General.ProjectPrompt">
+          <value>
+            <AIAssistantStoredInstruction>
+              <option name="actionId" value="AIAssistant.General.ProjectPrompt" />
+              <option name="content" value="Je suis en formation pour passer un bachelor  de concepteur développeur d'application.&#10;J’aime plutôt le backend en php 8.3 et symfony 7.2. Pour le frontend j’utilise Tailwind css&#10;l'objectif est de faire mon ECF suivant les competences du diplome CDA code RNCP37873&#10;j'utilise Jira pour la gestion de projet&#10;PHPstorm comme IDE&#10;j'utilise git hub&#10;mailtrap pour les test d'envoie de mail&#10;Pour affichage des images j’utilise vichupoader&#10;Je souhaite avec des réponse très détaillé et un bout de code précis avec des commentaires, que je peux utiliser immédiatement. Ajoute des commentaires en français dans le code. Dans le code donne moi le retour attendu.&#10;Donne moi également des conseils d’amélioration.&#10;Nous sommes en 2024 donne moi uniquement des réponses avec des informations mis en jour cette année. Donne moi que des réponses compatibles avec symfony 7&#10;Donne aussi des suggestions pour avoir une application sécurisée en 2024. Toutes les réponse doivent être utilisées en php8.3 et symfony. 7.2 et plus je ne veux pas de réponse sur d’autres versions inférieur &#10;chatgpt peux donner son opinion et il peut me tutoyer comme il parlerais a un collegue&#10;Ne met pas de etc dans les réponses je veux des réponses exactes et complète.&#10;La réponse doit suivre le principe SOLID et clean code et agile" />
+            </AIAssistantStoredInstruction>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="supprssion du database_url mysql">
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="correction des entité">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,38 +279,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;PHPUnit.Cinephoria_Admin.executor&quot;: &quot;Run&quot;,
-    &quot;PHPUnit.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary&quot;: &quot;PHPUnit&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.idesettings.emmet.xml&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Applications/PhpStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "PHPUnit.Cinephoria_Admin.executor": "Run",
+    "PHPUnit.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary": "PHPUnit",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/diakite/CINEPHORIA",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev-server.executor": "Run",
+    "settings.editor.selected.configurable": "editing.templates",
+    "ts.external.directory.path": "/Applications/PhpStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
-    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;,
-      &quot;module&quot;,
-      &quot;repository&quot;
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "module",
+      "repository"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/vendor/@symfony/stimulus-bridge" />
@@ -312,13 +329,24 @@
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" scope="XML" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
+    <configuration name="dev-server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev-server" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="PHPUnit.Cinephoria_Admin" />
       <item itemvalue="PHPUnit.Main" />
+      <item itemvalue="npm.dev-server" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.Cinephoria_Admin" />
+        <item itemvalue="npm.dev-server" />
         <item itemvalue="PHPUnit.Cinephoria_Admin" />
         <item itemvalue="PHPUnit.Cinephoria_Admin" />
         <item itemvalue="PHPUnit.Cinephoria_Admin" />
@@ -377,6 +405,12 @@
       <workItem from="1735489030082" duration="8699000" />
       <workItem from="1735735623566" duration="516000" />
       <workItem from="1735742102646" duration="55000" />
+      <workItem from="1735742421741" duration="12279000" />
+      <workItem from="1735835552833" duration="2536000" />
+      <workItem from="1735838131532" duration="291000" />
+      <workItem from="1735838482729" duration="1162000" />
+      <workItem from="1735847730971" duration="4000" />
+      <workItem from="1736075420981" duration="242000" />
     </task>
     <task id="LOCAL-00001" summary="Creation du CRUD cineme, film, seance et salle.&#10;Corriger l'affichage de la colone Films et salles">
       <option name="closed" value="true" />
@@ -698,7 +732,79 @@
       <option name="project" value="LOCAL" />
       <updated>1735735670410</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="supprssion du database_url mysql">
+      <option name="closed" value="true" />
+      <created>1735742480766</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1735742480766</updated>
+    </task>
+    <task id="LOCAL-00042" summary="supprssion du database_url mysql">
+      <option name="closed" value="true" />
+      <created>1735742719233</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1735742719233</updated>
+    </task>
+    <task id="LOCAL-00043" summary="ajout de la traduction">
+      <option name="closed" value="true" />
+      <created>1735743459945</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1735743459945</updated>
+    </task>
+    <task id="LOCAL-00044" summary="correction des entité">
+      <option name="closed" value="true" />
+      <created>1735743929309</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1735743929309</updated>
+    </task>
+    <task id="LOCAL-00045" summary="correction des entité">
+      <option name="closed" value="true" />
+      <created>1735744361629</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1735744361629</updated>
+    </task>
+    <task id="LOCAL-00046" summary="correction des entité">
+      <option name="closed" value="true" />
+      <created>1735744504862</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1735744504862</updated>
+    </task>
+    <task id="LOCAL-00047" summary="correction des entité">
+      <option name="closed" value="true" />
+      <created>1735750345776</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1735750345776</updated>
+    </task>
+    <task id="LOCAL-00048" summary="correction des entité">
+      <option name="closed" value="true" />
+      <created>1735750528416</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1735750528416</updated>
+    </task>
+    <task id="LOCAL-00049" summary="correction des entité">
+      <option name="closed" value="true" />
+      <created>1735751742708</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1735751742708</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -742,7 +848,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="heroku/main" />
                       </list>
                     </value>
                   </entry>
@@ -755,8 +861,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="mise en forme de la la landing page avec navbar" />
-    <MESSAGE value="remise en place de webpack car il n'étatit plus vu" />
     <MESSAGE value="creation de la branche DEV à partir de DEV_Correctif" />
     <MESSAGE value="correction de la logique de reservation" />
     <MESSAGE value="validation de la reservation" />
@@ -780,7 +884,9 @@
     <MESSAGE value="correctif" />
     <MESSAGE value="ajout de mailtrap" />
     <MESSAGE value="supprssion du database_url mysql" />
-    <option name="LAST_COMMIT_MESSAGE" value="supprssion du database_url mysql" />
+    <MESSAGE value="ajout de la traduction" />
+    <MESSAGE value="correction des entité" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction des entité" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

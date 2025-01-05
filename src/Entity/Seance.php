@@ -154,4 +154,5 @@ class Seance
     {
         $this->heureFin = $heureFin;
     }
+
 }

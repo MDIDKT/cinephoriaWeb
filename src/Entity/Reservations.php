@@ -191,7 +191,7 @@ class Reservations
         return $this;
     }
 
-    public function calculprixTotal(): float
+    public function calculprixTotal($films): float
     {
         // Vérifie que la séance est bien définie
         $seance = $this->getSeances();
@@ -200,7 +200,7 @@ class Reservations
         }
 
         // Configure les prix selon la qualité
-        $qualite = $seance->getQualite();
+        $qualite = $films->getQualite();
         $prixParPlace = match ($qualite) {
             '3D' => 8.0,
             '4K' => 12.0,
