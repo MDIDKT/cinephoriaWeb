@@ -23,7 +23,7 @@ security:
     api:
       pattern: ^/api/
       stateless: true
-      jwt: ~  # Active le support JWT
+      
 
     main:
       pattern: ^/

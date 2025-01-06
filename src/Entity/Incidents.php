@@ -24,8 +24,6 @@ class Incidents
     #[ORM\JoinColumn(nullable: false)]
     private ?Salles $salle = null;
 
-    #[ORM\ManyToOne(inversedBy: 'incident')]
-    private ?Employes $employes = null;
 
     public function getId (): ?int
     {
@@ -64,18 +62,6 @@ class Incidents
     public function setSalle (?Salles $salle): static
     {
         $this->salle = $salle;
-
-        return $this;
-    }
-
-    public function getEmployes (): ?Employes
-    {
-        return $this->employes;
-    }
-
-    public function setEmployes (?Employes $employes): static
-    {
-        $this->employes = $employes;
 
         return $this;
     }
