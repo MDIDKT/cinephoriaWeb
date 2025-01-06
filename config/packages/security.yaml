@@ -27,11 +27,8 @@ security:
 
     main:
       pattern: ^/
-      entry_point: App\Security\AppAuthenticator
       lazy: true
       provider: app_user_provider
-      custom_authenticators:
-        - App\Security\AppAuthenticator # Définition de l'authenticator personnalisé
       logout:
         path: app_logout
 
