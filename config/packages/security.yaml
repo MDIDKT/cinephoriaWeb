@@ -12,6 +12,7 @@ security:
       entity:
         class: App\Entity\User
         property: email
+    # used to reload user from session & other features (e.g. switch_user)
 
   # Définition des firewalls
   firewalls:
@@ -38,6 +39,7 @@ security:
         lifetime: 604800
         path: /
         always_remember_me: true
+      custom_authenticator: App\Security\AppAuthenticator
 
   # Contrôle d'accès
   access_control:
