@@ -28,25 +28,15 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
 
     public function authenticate(Request $request): Passport
     {
-        $email = $request->request->get('email', null);
-
-        // Vérifie si l'email est vide ou manquant.
-        if (empty($email)) {
-            throw new \InvalidArgumentException('L\'adresse email est obligatoire.');
-        }
-
-        $password = $request->request->get('password', null);
-        if (empty($password)) {
-            throw new \InvalidArgumentException('Le mot de passe est obligatoire.');
-        }
+        $email = $request->getPayload()->getString('email');
 
         $request->getSession()->set(SecurityRequestAttributes::LAST_USERNAME, $email);
 
         return new Passport(
             new UserBadge($email),
-            new PasswordCredentials($password),
+            new PasswordCredentials($request->getPayload()->getString('password')),
             [
-                new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
+                new CsrfTokenBadge('authenticate', $request->getPayload()->getString('_csrf_token')),
                 new RememberMeBadge(),
             ]
         );
@@ -54,11 +44,17 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
+        if (in_array('ROLE_ADMIN', $token->getRoleNames())) {
+            return new RedirectResponse($this->urlGenerator->generate('admin'));
+        }
+
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         }
 
-        return new RedirectResponse($this->urlGenerator->generate('app_home'));
+        // For example:
+         return new RedirectResponse($this->urlGenerator->generate('app_home'));
+        //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
     protected function getLoginUrl(Request $request): string
