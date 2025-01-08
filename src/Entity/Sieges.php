@@ -2,10 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\SiegesRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\SiegesRepository;
+use ApiPlatform\Metadata\ApiResource;
 
 #[ORM\Entity(repositoryClass: SiegesRepository::class)]
+#[ApiResource]
 class Sieges
 {
     #[ORM\Id]
