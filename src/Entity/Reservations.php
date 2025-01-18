@@ -2,13 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\ReservationsRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+use App\Repository\ReservationsRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use App\Entity\User;
 
 #[ORM\Entity(repositoryClass: ReservationsRepository::class)]
+#[ApiResource]
 class Reservations
 {
     #[ORM\Id]
@@ -45,6 +48,9 @@ class Reservations
 
     #[ORM\ManyToOne(targetEntity: Salles::class, inversedBy: 'reservations')]
     private ?Salles $salle = null;
+
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'reservations')]
+    private ?User $user = null;
 
     public function __construct()
     {
@@ -209,6 +215,18 @@ class Reservations
     public function setSalle(?Salles $salle): void
     {
         $this->salle = $salle;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
+
+        return $this;
     }
 
 }

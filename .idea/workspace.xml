@@ -19,12 +19,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="correction de la reservation">
+      <change afterPath="$PROJECT_DIR$/src/Controller/Api/ApiReservationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/SeanceCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/SeanceCrudController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ReservationsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReservationsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Salles.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Salles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Seance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Seance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ReservationsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ReservationsType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Reservations.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Reservations.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +291,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary": "PHPUnit",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main__Correctif",
+    "git-widget-placeholder": "Main__Api",
     "last_opened_file_path": "/Users/diakite/CINEPHORIA",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
@@ -302,7 +301,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.dev-server.executor": "Run",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "Errors",
     "ts.external.directory.path": "/Applications/PhpStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   },
@@ -413,6 +412,8 @@
       <workItem from="1735847730971" duration="4000" />
       <workItem from="1736075420981" duration="242000" />
       <workItem from="1736079351428" duration="9219000" />
+      <workItem from="1736668442934" duration="46000" />
+      <workItem from="1736668505952" duration="3188000" />
     </task>
     <task id="LOCAL-00003" summary="Correction de la page cinema&#10;reorganisation des entité&#10;creation de l'entité reservation&#10;creation du crud&#10;correction de la page reservation a faire">
       <option name="closed" value="true" />

@@ -12,11 +12,11 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[Route('/reservations')]
-#[IsGranted('ROLE_USER')] // Seuls les utilisateurs connectés peuvent accéder à ces routes  et effectuer des réservations
+#[IsGranted('ROLE_USER')] // Seuls les utilisateurs connectés peuvent accéder à ces routes et effectuer des réservations
 final class ReservationsController extends AbstractController
 {
     #[Route('/index', name: 'app_reservations_index', methods: ['GET'])]
