@@ -19,11 +19,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="correction de la reservation">
-      <change afterPath="$PROJECT_DIR$/src/Controller/Api/ApiReservationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ReservationsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReservationsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Reservations.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Reservations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20250106184531.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20250106203340.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20250106210927.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20250107183950.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/UserCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/UserCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +53,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Main_Api" />
       </map>
     </option>
     <option name="RECENT_COMMON_BRANCH" value="main" />
@@ -291,7 +297,8 @@
     "RunOnceActivity.git.unshallow": "true",
     "com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary": "PHPUnit",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "Main__Api",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/diakite/CINEPHORIA",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
@@ -349,6 +356,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.Cinephoria_Admin" />
+        <item itemvalue="npm.dev-server" />
+        <item itemvalue="PHPUnit.Cinephoria_Admin" />
         <item itemvalue="npm.dev-server" />
         <item itemvalue="PHPUnit.Cinephoria_Admin" />
       </list>
@@ -864,7 +874,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="validation de la reservation" />
     <MESSAGE value="ajout de la logique de calcul du prix total" />
     <MESSAGE value="ajout de l'authentification user et admin" />
     <MESSAGE value="changement dans php unit" />
@@ -889,7 +898,8 @@
     <MESSAGE value="correction des entité" />
     <MESSAGE value="correction de la reservation et sceance" />
     <MESSAGE value="correction de la reservation" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction de la reservation" />
+    <MESSAGE value="creation de l'API de la reservation" />
+    <option name="LAST_COMMIT_MESSAGE" value="creation de l'API de la reservation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

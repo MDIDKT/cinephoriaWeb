@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -43,6 +44,23 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private bool $isVerified = false;
 
+    //ajout de la relation avec la table reservations
+    #[ORM\OneToMany(targetEntity: Reservations::class, mappedBy: 'user')]
+    private $reservations;
+
+    public function __construct()
+    {
+        $this->reservations = new ArrayCollection();
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getReservations(): ArrayCollection
+    {
+        return $this->reservations;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +70,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         return $this->nom;
     }
+
     public function setNom(string $nom): static
     {
         $this->nom = $nom;
@@ -69,7 +88,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->prenom = $prenom;
 
         return $this;
-    }   
+    }
 
     public function getEmail(): ?string
     {
@@ -90,7 +109,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getUserIdentifier(): string
     {
-        return (string) $this->email;
+        return (string)$this->email;
     }
 
     /**

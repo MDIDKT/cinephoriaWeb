@@ -45,20 +45,13 @@ class UserCrudController extends AbstractCrudController
 
     public function configureFields (string $pageName): iterable
     {
+
+
         $fields = [
             IdField::new ('id')->hideOnForm (),
             EmailField::new ('email'),
         ];
 
-        /*        $password = TextField::new('password')
-                    ->setFormType(RepeatedType::class)
-                    ->setFormTypeOptions([
-                        'type' => PasswordType::class,
-                        'first_options' => ['label' => 'Password'],
-                    ])
-                    ->setRequired($pageName === Crud::PAGE_NEW)
-                    ->onlyOnForms();
-                $fields[] = $password;*/
         $password = TextField::new ('password')
             ->setFormType (PasswordType::class)
             ->setRequired ($pageName === Crud::PAGE_NEW)
