@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -25,7 +26,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 180, unique: true)]
     private ?string $prenom = null;
 
-
     #[ORM\Column(length: 180)]
     private ?string $email = null;
 
@@ -44,9 +44,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private bool $isVerified = false;
 
-    //ajout de la relation avec la table reservations
-    #[ORM\OneToMany(targetEntity: Reservations::class, mappedBy: 'user')]
-    private $reservations;
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Reservations::class)]
+    private Collection $reservations;
 
     public function __construct()
     {
@@ -54,11 +53,33 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return ArrayCollection
+     * @return Collection<int, Reservations>
      */
-    public function getReservations(): ArrayCollection
+    public function getReservations(): Collection
     {
         return $this->reservations;
+    }
+
+    public function addReservation(Reservations $reservation): static
+    {
+        if (!$this->reservations->contains($reservation)) {
+            $this->reservations->add($reservation);
+            $reservation->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservation(Reservations $reservation): static
+    {
+        if ($this->reservations->removeElement($reservation)) {
+            // set the owning side to null (unless already changed)
+            if ($reservation->getUser() === $this) {
+                $reservation->setUser(null);
+            }
+        }
+
+        return $this;
     }
 
     public function getId(): ?int

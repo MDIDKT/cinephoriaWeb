@@ -18,17 +18,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="correction de la reservation">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="3f7ae7d5-da2c-4312-a684-400f0b5fd711" name="Changes" comment="correction des migration">
+      <change afterPath="$PROJECT_DIR$/src/Controller/Api/ApiFilmsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20250106184531.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20250106203340.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20250106210927.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20250107183950.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/UserCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/UserCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -325,6 +319,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Controller/Api" />
       <recent name="$PROJECT_DIR$/assets/vendor/@symfony/stimulus-bridge" />
       <recent name="$PROJECT_DIR$/assets/vendor/@symfony" />
       <recent name="$PROJECT_DIR$/assets/vendor" />
@@ -424,22 +419,6 @@
       <workItem from="1736079351428" duration="9219000" />
       <workItem from="1736668442934" duration="46000" />
       <workItem from="1736668505952" duration="3188000" />
-    </task>
-    <task id="LOCAL-00003" summary="Correction de la page cinema&#10;reorganisation des entité&#10;creation de l'entité reservation&#10;creation du crud&#10;correction de la page reservation a faire">
-      <option name="closed" value="true" />
-      <created>1728327854227</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1728327854227</updated>
-    </task>
-    <task id="LOCAL-00004" summary="implementation de la page de reservation&#10;test manuel OK">
-      <option name="closed" value="true" />
-      <created>1728414246126</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1728414246126</updated>
     </task>
     <task id="LOCAL-00005" summary="implementation de la page de reservation&#10;test manuel OK">
       <option name="closed" value="true" />
@@ -817,7 +796,23 @@
       <option name="project" value="LOCAL" />
       <updated>1736089559188</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="correction des migration">
+      <option name="closed" value="true" />
+      <created>1737186452448</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1737186452448</updated>
+    </task>
+    <task id="LOCAL-00053" summary="correction des migration">
+      <option name="closed" value="true" />
+      <created>1737186464961</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1737186464961</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -874,7 +869,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ajout de la logique de calcul du prix total" />
     <MESSAGE value="ajout de l'authentification user et admin" />
     <MESSAGE value="changement dans php unit" />
     <MESSAGE value="mise a jour de la BDD" />
@@ -899,7 +893,8 @@
     <MESSAGE value="correction de la reservation et sceance" />
     <MESSAGE value="correction de la reservation" />
     <MESSAGE value="creation de l'API de la reservation" />
-    <option name="LAST_COMMIT_MESSAGE" value="creation de l'API de la reservation" />
+    <MESSAGE value="correction des migration" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction des migration" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
