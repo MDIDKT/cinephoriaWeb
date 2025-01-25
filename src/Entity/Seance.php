@@ -7,8 +7,14 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Groups;
+use ApiPlatform\Metadata\ApiResource;
 
 #[ORM\Entity(repositoryClass: SeanceRepository::class)]
+#[ApiResource(
+    normalizationContext: ['groups' => ['seance:read']],
+    denormalizationContext: ['groups' => ['seance:write']]
+)]
 class Seance
 {
     #[ORM\Id]
@@ -26,12 +32,15 @@ class Seance
     private Collection $reservations;
 
     #[ORM\ManyToOne(inversedBy: 'seances')]
+    #[Groups(['seance:write', 'seance:read' ])]
     private ?Films $films = null;
 
     #[ORM\ManyToOne(targetEntity: Salles::class, inversedBy: "seances")]
+    #[Groups(['seance:write', 'seance:read' ])]
     private ?Salles $salle = null;
 
     #[ORM\ManyToOne(inversedBy: 'seance')]
+    #[Groups(['seance:write', 'seance:read' ])]
     private ?Cinemas $cinemas = null;
 
     #[ORM\Column(type: Types::INTEGER, nullable: true)]

@@ -1,22 +1,19 @@
 <?php
 
-// src/Controller/Api/FilmController.php
 namespace App\Controller\Api;
 
+use App\Repository\FilmsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ApiFilmsController extends AbstractController
 {
-#[Route('/api/films', name: 'api_films', methods: ['GET'])]
-public function listFilms(): JsonResponse
-{
-$films = [
-['id' => 1, 'title' => 'Film 1', 'description' => 'Description du film 1'],
-['id' => 2, 'title' => 'Film 2', 'description' => 'Description du film 2'],
-];
+    #[Route('/api/films', name: 'api_get_films', methods: ['GET'])]
+    public function getFilms(FilmsRepository $filmRepository): JsonResponse
+    {
+        $films = $filmRepository->findAll();
 
-return $this->json($films);
-}
+        return $this->json($films, 200, [], ['groups' => 'film:read']);
+    }
 }

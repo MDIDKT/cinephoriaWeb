@@ -24,7 +24,10 @@ security:
     api:
       pattern: ^/api/
       stateless: true
-      
+      jwt: ~
+      entry_point: lexik_jwt_authentication.handler.authentication_entry_point
+
+
 
     main:
       pattern: ^/
@@ -43,9 +46,9 @@ security:
 
   # Contrôle d'accès
   access_control:
-    #- { path: ^/admin, roles: ROLE_ADMIN }
-    #- { path: ^/profile, roles: ROLE_USER }
-   # - { path: ^/reservations, roles: ROLE_USER }
+  #- { path: ^/admin, roles: ROLE_ADMIN }
+  #- { path: ^/profile, roles: ROLE_USER }
+  # - { path: ^/reservations, roles: ROLE_USER }
 
 # Configuration pour l'environnement de test
 when@test:

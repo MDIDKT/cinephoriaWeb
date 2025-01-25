@@ -4,16 +4,23 @@ namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\FilmsRepository;
+use DateTime;
+use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Serializer\Attribute\Groups;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: FilmsRepository::class)]
 #[Vich\Uploadable]
 #[ApiResource]
+#[ApiResource(
+    normalizationContext: ['groups' => ['films:read']],
+    denormalizationContext: ['groups' => ['films:write']]
+)]
 class Films
 {
     #[ORM\Id]
@@ -22,9 +29,11 @@ class Films
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['films:read', 'films:write'])]
     private ?string $titre = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Groups(['films:read', 'films:write'])]
     private ?string $description = null;
 
     #[ORM\Column]
@@ -36,16 +45,18 @@ class Films
     #[ORM\Column]
     private ?float $note = null;
 
-    #[ORM\OneToMany(mappedBy: 'films', targetEntity: Seance::class)]
+    #[ORM\OneToMany(targetEntity: Seance::class, mappedBy: 'films')]
+    #[Groups(['films:read', 'films:write'])]
     private Collection $seances;
 
     #[ORM\Column(length: 255)]
     private ?string $qualite = null;
 
-    #[ORM\OneToMany(mappedBy: 'films', targetEntity: Reservations::class)]
+    #[ORM\OneToMany(targetEntity: Reservations::class, mappedBy: 'films',)]
     private Collection $reservations;
 
     #[Vich\UploadableField(mapping: 'affiche', fileNameProperty: 'imageName', size: 'imageSize')]
+    #[Groups(['films:read', 'films:write'])]
     private ?File $imageFile = null;
 
     #[ORM\Column(nullable: true)]
@@ -54,14 +65,15 @@ class Films
     #[ORM\Column(nullable: true)]
     private ?int $imageSize = null;
 
-    #[ORM\OneToMany(mappedBy: 'film', targetEntity: Avis::class)]
+    #[ORM\OneToMany(targetEntity: Avis::class, mappedBy: 'film')]
     private Collection $avis;
 
     #[ORM\ManyToMany(targetEntity: Cinemas::class, inversedBy: 'film')]
+    #[Groups(['films:read', 'films:write'])]
     private Collection $cinemas;
 
     #[ORM\Column(type: 'datetime', nullable: true)]
-    private ?\DateTimeInterface $createdAt = null;
+    private ?DateTimeInterface $createdAt = null;
 
     public function __construct()
     {
@@ -177,7 +189,7 @@ class Films
 
         if ($imageFile) {
             // Mettre la date à jour si un nouveau fichier est chargé
-            $this->createdAt = new \DateTime('now');
+            $this->createdAt = new DateTime('now');
         }
 
         return $this;
@@ -225,12 +237,12 @@ class Films
         $this->avis = $avis;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
+    public function getCreatedAt(): ?DateTimeInterface
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(?\DateTimeInterface $createdAt): void
+    public function setCreatedAt(?DateTimeInterface $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
